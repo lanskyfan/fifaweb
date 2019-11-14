@@ -1,0 +1,157 @@
+{% extends 'base.html' %} {% block title %}Profile{% endblock %} {% block
+content %}
+<div class="container mt-5">
+  <div class="row tm-content-row">
+    <div class="col-12 tm-block-col">
+      <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+        <h2 class="tm-block-title">Your Position</h2>
+        <div class="row">
+          <div
+            class="ml-3 form-control validate col-lg-2"
+            style="width:fit-content;border-radius:12px 12px 12px 12px"
+          >
+            <p style="margin-top: -5%; text-align: center;">
+              {{ profiles.position }}
+            </p>
+          </div>
+          <div
+            class="ml-5 form-control validate col-lg-2"
+            style="width:fit-content; border-radius:12px 12px 12px 12px"
+          >
+            <p style="margin-top: -5%; text-align: center;">
+              {{ profiles.level.title() }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- row -->
+  <div class="row tm-content-row">
+    <div class="tm-block-col tm-col-avatar">
+      <div class="tm-bg-primary-dark tm-block tm-block-avatar">
+        <!-- <h2 class="tm-block-title">Picture</h2> -->
+        <div class="tm-avatar-container">
+          {% if profiles.position=="Project Manager" %}
+          <img
+            src="/static/images/projectmanager.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid mb-4"
+            style="height: 304px; width: 304px"
+          />
+          {% elif profiles.position=="After Effect" %}
+          <img
+            src="/static/images/aftereffect.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid"
+            style="height: 304px; width: 304px"
+          />
+          {% elif profiles.position=="Photographer" %}
+          <img
+            src="/static/images/photographer.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid mb-4"
+            style="height: 304px; width: 304px"
+          />
+          {% elif profiles.position=="Device Manager" %}
+          <img
+            src="/static/images/devicemanager.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid mb-4"
+            style="height: 304px; width: 304px"
+          />
+          {% elif profiles.position=="Boss" %}
+          <img
+            src="/static/images/boss.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid mb-4"
+            style="height: 304px; width: 304px"
+          />
+          {% endif %}
+          <!-- <a href="#" class="tm-avatar-delete-link">
+              <i class="far fa-trash-alt tm-product-delete-icon"></i>
+            </a> -->
+        </div>
+        <!-- <button class="btn btn-primary btn-block text-uppercase">
+            Edit
+          </button> -->
+      </div>
+    </div>
+    <div class="tm-block-col tm-col-account-settings">
+      <div class="tm-bg-primary-dark tm-block tm-block-settings">
+        <p class="tm-block-title">
+          <a
+            >Account
+            Information&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a
+          >
+          <a
+            class="btn btn-primary text-uppercase"
+            style="border-radius: 12px 12px 12px 12px"
+            href="{{ url_for('profile.update', id=g.user['id'], position = g.user['position']) }}"
+          >
+            Update
+          </a>
+          <!-- <a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+                  <a
+                    class="btn btn-primary text-uppercase"
+                    style="border-radius: 12px 12px 12px 12px"
+                    href="{{ url_for('profile.delete', id=g.user['id']) }}"
+                  >
+                    Delete
+                  </a> -->
+        </p>
+        <!-- <h2 class="tm-block-title">Account Information</h2> -->
+        <form action="" class="tm-signup-form row">
+          <div class="form-group col-lg-4">
+            <label for="name">Your Alias</label>
+            <div class="form-control validate">
+              <p style="margin-top: -2%;">{{ profiles.username }}</p>
+            </div>
+          </div>
+          <div class="form-group col-lg-4">
+            <label for="accentlevel">Account Level</label>
+            <div class="form-control validate">
+              <p style="margin-top: -2%;">{{ profiles.level.title() }}</p>
+            </div>
+          </div>
+          <div class="form-group col-lg-4">
+            <label for="birthday">Birthday</label>
+            <div class="form-control validate">
+              <p style="margin-top: -2%;">{{ profiles.birthday }}</p>
+            </div>
+          </div>
+          <div class="form-group col-lg-4">
+            <label for="phone">Phone</label>
+            <div class="form-control validate">
+              <p style="margin-top: -2%;">{{ profiles.phone }}</p>
+            </div>
+          </div>
+          <div class="form-group col-lg-4">
+            <label for="address">Address</label>
+            <div class="form-control validate">
+              <p style="margin-top: -2%;">{{ profiles.home }}</p>
+            </div>
+          </div>
+          <!-- <div class="form-group col-lg-4">
+              <label class="tm-hide-sm">&nbsp;</label>
+              <a
+                class="btn btn-primary btn-block text-uppercase"
+                href="{{ url_for('profile.update', id=g.user['id'], position = g.user['position']) }}"
+              >
+                Update Profile
+              </a>
+            </div>
+            <div class="col-12">
+              <a
+                href="{{ url_for('profile.delete', id=g.user['id']) }}"
+                class="btn btn-primary btn-block text-uppercase"
+              >
+                Delete Account
+              </a>
+            </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

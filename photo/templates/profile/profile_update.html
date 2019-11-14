@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %} 
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row tm-content-row">
+      <div class="col-12 tm-block-col">
+        <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+          <h3 class="tm-block-title">Your Position</h2>
+            <div class="row">
+                <div class="ml-3 form-control validate col-lg-2" style="width:fit-content;border-radius:12px 12px 12px 12px"><p style="margin-top: -5%; text-align: center;">{{profiles.position}}</p></div>          
+                <div class="ml-5 form-control validate col-lg-2" style="width:fit-content; border-radius:12px 12px 12px 12px"><p style="margin-top: -5%; text-align: center;">{{profiles.level.title()}}</p></div>                         
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- row -->
+    <div class="row tm-content-row">
+      <p class="col-12 text-center" >
+          {% if error %}
+            <i class="tm-block-title" style="opacity:0.8; color:red"> {{error}} </i>
+          {% endif %}
+      </p>
+      <div class="tm-block-col tm-col-avatar">
+        <div class="tm-bg-primary-dark tm-block tm-block-avatar">
+          <h2 class="tm-block-title">Picture</h2>
+          <div class="tm-avatar-container">
+            {% if profiles.position=="Project Manager" %}
+            <img
+              src="/static/images/projectmanager.png"
+              alt="Avatar"
+              class="tm-avatar img-fluid mb-4"
+              style="height: 304px; width: 304px"
+            />
+            {% elif profiles.position=="After Effect" %}
+            <img
+            src="/static/images/aftereffect.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid"
+            style="height: 304px; width: 304px"
+            />
+            {% elif profiles.position=="Photographer" %}
+            <img
+            src="/static/images/photographer.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid mb-4"
+            style="height: 304px; width: 304px"
+            />
+            {% elif profiles.position=="Device Manager" %}
+            <img
+            src="/static/images/devicemanager.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid mb-4"
+            style="height: 304px; width: 304px"
+            />
+            {% elif profiles.position=="Boss" %}
+            <img
+            src="/static/images/boss.png"
+            alt="Avatar"
+            class="tm-avatar img-fluid mb-4"
+            style="height: 304px; width: 304px"
+            />
+            {% endif %}
+
+            <!-- <a href="#" class="tm-avatar-delete-link">
+              <i class="far fa-trash-alt tm-product-delete-icon"></i>
+            </a> -->
+          </div>
+          <!-- <button class="btn btn-primary btn-block text-uppercase">
+            Edit
+          </button> -->
+        </div>
+      </div>
+      
+      <div class="tm-block-col tm-col-account-settings">
+        <div class="tm-bg-primary-dark tm-block tm-block-settings">
+            <p class="tm-block-title">
+                <a>Account Setting&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+                  <!-- <a
+                    class="btn btn-primary text-uppercase"
+                    style="border-radius: 12px 12px 12px 12px"
+                    href="{{ url_for('profile.index', id=g.user['id'], position = g.user['position']) }}"
+                  >
+                    Cancel
+                  </a> -->
+            </p>
+          <form method="post" class="tm-signup-form row">
+            <div class="form-group col-lg-4">
+              <label for="username">Your Alias</label>
+              <input
+                id="username"
+                value="{{profiles.username}}"
+                name="username"
+                type="text"
+                class="form-control validate"
+                required
+              />
+            </div>
+            <div class="form-group col-lg-4">
+              <label for="birthday">Birthday</label>
+              <input
+                id="birthday"
+                value="{{profiles.birthday}}"
+                name="birthday"
+                type="date"
+                class="form-control validate"
+                required
+              />
+            </div>
+            <div class="form-group col-lg-4">
+                <label for="phone">Phone</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  value="{{profiles.phone}}"
+                  type="tel"
+                  class="form-control validate"
+                  required
+                />
+              </div>
+              <div class="form-group col-lg-4">
+                  <label for="address">Address</label>
+                  <input
+                  id="address"
+                  name="address"
+                  value="{{profiles.home}}"
+                  type="text"
+                  class="form-control validate"
+                  required
+                />
+                </div>
+            <div class="form-group col-lg-4">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="form-control validate"
+              />
+            </div>
+            <div class="form-group col-lg-4">
+              <label for="password2">Re-enter Password</label>
+              <input
+                id="password2"
+                name="password2"
+                type="password"
+                class="form-control validate"
+              />
+            </div>
+            
+            <div class="form-group col-lg-3">
+              <label class="tm-hide-sm">&nbsp;</label>
+              <input
+                type="submit"
+                value="update"
+                class="btn btn-primary btn-block text-uppercase"
+                style="border-radius: 12px 12px 12px 12px"
+              >
+              </input>
+            </div>
+
+            <div class="form-group col-lg-3">
+                <label class="tm-hide-sm">&nbsp;</label>
+                <a class="btn btn-primary btn-block text-uppercase"
+                style="border-radius: 12px 12px 12px 12px"
+                    href="{{ url_for('profile.index', id=g.user['id'], position = g.user['position']) }}" >
+                    Cancel  
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
