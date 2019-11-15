@@ -100,5 +100,3 @@ for i in tqdm(range(data.ID.shape[0])):
         detailed_data.loc[detailed_data.ID == id, key] = value
 
 
-full_data = pd.merge(data, detailed_data, how = 'inner', on = 'ID')
-full_data.to_csv('fifa19data.csv', encoding='utf-8-sig')
