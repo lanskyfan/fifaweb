@@ -65,7 +65,7 @@ It aims at Designing a FIFA website with an integrated data management system. T
 For Linux and Mac:
 
 ```shell
-export FLASK_APP=photo
+export FLASK_APP=fifa
 export FLASK_ENV=development
 flask run
 ```

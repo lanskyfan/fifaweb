@@ -3,63 +3,70 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from photo.auth import login_required
-from photo.db import get_db
+# from photo.auth import login_required
+# from photo.db import get_db
 
 bp = Blueprint('dashboard', __name__)
 
 @bp.route('/')
 def index():
-    if (g.user):
-        g.current = "index"
-        db = get_db()
-        cursor = db.cursor()
-        if g.user['position'] == 'projectmanager':
-            cursor.execute(
-                "SELECT *"
-                " FROM porder"
-                " WHERE NOT status = 'complete' AND managerid = '%d' "
-                " ORDER BY orderid" % (g.user['id'])
-            )
-        if g.user['position'] == 'photographer':
-            cursor.execute(
-                "SELECT *"
-                " FROM porder"
-                " WHERE NOT status = 'complete' AND orderid IN (SELECT"
-                " orderid FROM takephoto WHERE photographerid = '%d')"
-                " ORDER BY orderid" % (g.user['id'])
-            )
-        if g.user['position'] == 'aftereffect':
-            cursor.execute(
-                "SELECT *"
-                " FROM porder"
-                " WHERE NOT status = 'complete' AND orderid IN (SELECT "
-                "orderid FROM doeffect WHERE effectid = '%d')"
-                " ORDER BY orderid" % (g.user['id'])
-            )
-        print(g.user['position'])
-        orders = cursor.fetchall()
+    # Here we need to implement an algorithm to select the team to display
+    g.current = "index"
+    # db = get_db()
+    # cursor = db.cursor()
+    return render_template('index.html')
 
-        cursor.execute(
-            "SELECT MONTH(startdate) month, SUM(price) sale"
-            " FROM porder"
-            " WHERE YEAR(startdate) = YEAR(CURDATE())"
-            " GROUP BY MONTH(startdate)"
-        )
-        sales = cursor.fetchall()
+
+    # if (g.user):
+    #     g.current = "index"
+    #     db = get_db()
+    #     cursor = db.cursor()
+    #     if g.user['position'] == 'projectmanager':
+    #         cursor.execute(
+    #             "SELECT *"
+    #             " FROM porder"
+    #             " WHERE NOT status = 'complete' AND managerid = '%d' "
+    #             " ORDER BY orderid" % (g.user['id'])
+    #         )
+    #     if g.user['position'] == 'photographer':
+    #         cursor.execute(
+    #             "SELECT *"
+    #             " FROM porder"
+    #             " WHERE NOT status = 'complete' AND orderid IN (SELECT"
+    #             " orderid FROM takephoto WHERE photographerid = '%d')"
+    #             " ORDER BY orderid" % (g.user['id'])
+    #         )
+    #     if g.user['position'] == 'aftereffect':
+    #         cursor.execute(
+    #             "SELECT *"
+    #             " FROM porder"
+    #             " WHERE NOT status = 'complete' AND orderid IN (SELECT "
+    #             "orderid FROM doeffect WHERE effectid = '%d')"
+    #             " ORDER BY orderid" % (g.user['id'])
+    #         )
+    #     print(g.user['position'])
+    #     orders = cursor.fetchall()
+
+    #     cursor.execute(
+    #         "SELECT MONTH(startdate) month, SUM(price) sale"
+    #         " FROM porder"
+    #         " WHERE YEAR(startdate) = YEAR(CURDATE())"
+    #         " GROUP BY MONTH(startdate)"
+    #     )
+    #     sales = cursor.fetchall()
 
         # cursor.execute(
         #     "SELECT o.managerid o.SUM(price) m.username"
         #     "FROM porder o, projectmanager m"
         #     "WHERE o.managerid = m.id AND"
         # )
-        return render_template('dashboard/index.html', orders=orders, sales = sales)
-    else:
-        return redirect(url_for('auth.login'))
+    #     return render_template('dashboard/index.html', orders=orders, sales = sales)
+    # else:
+    #     return redirect(url_for('auth.login'))
 
 
 @bp.route('/create', methods=('GET', 'POST'))
-@login_required
+# @login_required
 def create():
     if request.method == 'POST':
         title = request.form['title']
@@ -104,7 +111,7 @@ def get_post(id, check_author=True):
     return post
 
 @bp.route('/<int:id>/update', methods=('GET', 'POST'))
-@login_required
+# @login_required
 def update(id):
     post = get_post(id)
 
@@ -132,7 +139,7 @@ def update(id):
     return render_template('dashboard/update.html', post=post)
 
 @bp.route('/<int:id>/delete', methods=('POST',))
-@login_required
+# @login_required
 def delete(id):
     get_post(id)
     db = get_db()
