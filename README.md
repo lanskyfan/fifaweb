@@ -81,7 +81,7 @@ flask run
 For Windows PowerShell, use $env: instead of export:
 
 ```powershell
-$env:FLASK_APP = "photo"
+$env:FLASK_APP = "fifa"
 $env:FLASK_ENV = "development"
 flask run
 ```
@@ -93,10 +93,10 @@ flask init-db
 flask run
 ```
 
- The log in page should be on
+ The main page should be on
 
 ```http
-http://127.0.0.1:5000/auth/login
+http://127.0.0.1:5000/
 ```
 
 
