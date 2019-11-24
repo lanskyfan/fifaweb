@@ -48,13 +48,13 @@ It aims at Designing a FIFA website with an integrated data management system. T
    pip install cryptography
    ```
 
-3. To simplify development, create a mysql database called 'photo'. 
+3. To simplify development, create a mysql database called 'photo'. **[for now: skip the step]**
 
    ```
    CREATE DATABASE photo;
    ```
 
-4. When log in mysql as root, create a  user 'photodev' and grant privilege.
+4. When log in mysql as root, create a  user 'photodev' and grant privilege.**[for now: skip the step]**
 
    ```
    CREATE USER 'photodev'@'localhost' IDENTIFIED BY '123456';
