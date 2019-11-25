@@ -250,6 +250,7 @@ select * from GK;
 
 
 
+
 SHOW GLOBAL VARIABLES LIKE 'local_infile';
 show variables like 'secure_file_priv';
 
