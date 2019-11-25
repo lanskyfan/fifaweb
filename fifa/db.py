@@ -35,11 +35,11 @@ def parse_sql(filename):
 
 def get_db():
     if 'db' not in g:
-        g.db = pymysql.connect(host='localhost',
-                               user='photodev',
+        g.db = pymysql.connect(host='106.54.207.45/',
+                               user='erg2',
                                port=3306,
-                               password='123456',
-                               db='photo',
+                               password='12345678',
+                               db='fifadata',
                                charset='utf8mb4',
                                conv=pymysql.converters.conversions,
                                cursorclass=pymysql.cursors.DictCursor)
@@ -57,20 +57,20 @@ def close_db(e=None):
         db.close()
 
 
-def init_db():
-    db = get_db()
-    cursor = db.cursor()
-    DATABASE=os.path.join(os.path.dirname(__file__), 'schema_order.sql')
-    stmts = parse_sql(DATABASE)
-    for stmt in stmts:
-        cursor.execute(stmt)
+# def init_db():
+#     db = get_db()
+#     cursor = db.cursor()
+#     DATABASE=os.path.join(os.path.dirname(__file__), 'schema_order.sql')
+#     stmts = parse_sql(DATABASE)
+#     for stmt in stmts:
+#         cursor.execute(stmt)
     
-    db.commit()
-    INSERTION=os.path.join(os.path.dirname(__file__), 'insert.sql')
-    insts = parse_sql(INSERTION)
-    for inst in insts:
-        cursor.execute(inst)
-    db.commit()
+#     db.commit()
+#     INSERTION=os.path.join(os.path.dirname(__file__), 'insert.sql')
+#     insts = parse_sql(INSERTION)
+#     for inst in insts:
+#         cursor.execute(inst)
+#     db.commit()
 
 
 
@@ -78,7 +78,7 @@ def init_db():
 @with_appcontext
 def init_db_command():
     """Clear the existing data and create new tables."""
-    init_db()
+    # init_db()
     click.echo('Initialized the database.')
 
 def init_app(app):
