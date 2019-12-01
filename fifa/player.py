@@ -10,18 +10,17 @@ from fifa.db import get_db
 bp = Blueprint('player', __name__)
 # @bp.route('/player/index', methods=('GET', 'POST'))
 
-@bp.route('/player/index', methods=('GET', 'POST'))
-def index(id, position):
+@bp.route('/player', methods=('GET', 'POST'))
+def index():
     g.current = "player"
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
         "SELECT *"
-        " FROM porder"
-        " WHERE status = 'complete'"
-        " ORDER BY satisfaction DESC"
+        " FROM player"
+        " WHERE ID = 1"
     )
-    orders = cursor.fetchall()
+    player = cursor.fetchone()
     # cursor.execute("SELECT phone FROM %s_phone WHERE id = '%d'" % (position, id,))
     # phone = cursor.fetchone()
     # if phone == None:
