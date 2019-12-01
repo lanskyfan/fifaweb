@@ -40,8 +40,8 @@ def create_app(test_config=None):
     app.register_blueprint(dashboard.bp)
     app.add_url_rule('/', endpoint='index')
 
-    # from . import profile
-    # app.register_blueprint(profile.bp)
+    from . import player
+    app.register_blueprint(player.bp)
 
     # from . import order_detail
     # app.register_blueprint(order_detail.bp)
