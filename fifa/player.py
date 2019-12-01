@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, flash, g, redirect, render_template, request, url_for, Response, request, jsonify
 )
 from werkzeug.exceptions import abort
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -45,7 +45,7 @@ def index():
     #     players['position'] = 'Project Manager'
     # if players['position'] == 'photographer':
     #     players['position'] = 'Photographer'
-    return render_template('player.html')
+    return render_template('player.html', player = jsonify(player))
 
 # def get_player(id, position, check_author=True):   
 #     db = get_db()

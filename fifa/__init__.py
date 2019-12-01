@@ -46,7 +46,7 @@ def create_app(test_config=None):
     # from . import order_detail
     # app.register_blueprint(order_detail.bp)
 
-    # from . import history_order
-    # app.register_blueprint(history_order.bp)
+    from . import team_list
+    app.register_blueprint(team_list.bp)
     
     return app
