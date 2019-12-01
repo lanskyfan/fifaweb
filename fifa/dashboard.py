@@ -14,8 +14,8 @@ def index():
     g.current = "index"
     db = get_db()
     cursor = db.cursor()
-    # return render_template('index.html')
-    return render_template('base.html')
+    return render_template('index.html')
+    # return render_template('base.html')
 
 
     # if (g.user):
