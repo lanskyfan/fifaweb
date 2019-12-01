@@ -35,7 +35,7 @@ def parse_sql(filename):
 
 def get_db():
     if 'db' not in g:
-        g.db = pymysql.connect(host='106.54.207.45/',
+        g.db = pymysql.connect(host='106.54.207.45',
                                user='erg2', 
                                port=3306,
                                password='12345678',

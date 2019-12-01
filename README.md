@@ -78,7 +78,7 @@ flask run
 For Windows cmd, use set instead of export:
 
 ```
-set FLASK_APP=photo
+set FLASK_APP=fifa
 set FLASK_ENV=development
 flask run
 ```

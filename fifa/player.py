@@ -4,8 +4,8 @@ from flask import (
 from werkzeug.exceptions import abort
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from photo.auth import login_required
-from photo.db import get_db
+# from photo.auth import login_required
+from fifa.db import get_db
 
 bp = Blueprint('player', __name__)
 # @bp.route('/player/index', methods=('GET', 'POST'))
@@ -13,8 +13,8 @@ bp = Blueprint('player', __name__)
 @bp.route('/player/index', methods=('GET', 'POST'))
 def index(id, position):
     g.current = "player"
-    # db = get_db()
-    # cursor = db.cursor()
+    db = get_db()
+    cursor = db.cursor()
     # cursor.execute("SELECT phone FROM %s_phone WHERE id = '%d'" % (position, id,))
     # phone = cursor.fetchone()
     # if phone == None:

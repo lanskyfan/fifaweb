@@ -4,7 +4,7 @@ from flask import (
 from werkzeug.exceptions import abort
 
 # from photo.auth import login_required
-# from photo.db import get_db
+from fifa.db import get_db
 
 bp = Blueprint('dashboard', __name__)
 
@@ -12,8 +12,8 @@ bp = Blueprint('dashboard', __name__)
 def index():
     # Here we need to implement an algorithm to select the team to display
     g.current = "index"
-    # db = get_db()
-    # cursor = db.cursor()
+    db = get_db()
+    cursor = db.cursor()
     # return render_template('index.html')
     return render_template('base.html')
 
