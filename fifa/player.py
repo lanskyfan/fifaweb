@@ -15,6 +15,13 @@ def index(id, position):
     g.current = "player"
     db = get_db()
     cursor = db.cursor()
+    cursor.execute(
+        "SELECT *"
+        " FROM porder"
+        " WHERE status = 'complete'"
+        " ORDER BY satisfaction DESC"
+    )
+    orders = cursor.fetchall()
     # cursor.execute("SELECT phone FROM %s_phone WHERE id = '%d'" % (position, id,))
     # phone = cursor.fetchone()
     # if phone == None:
@@ -39,7 +46,7 @@ def index(id, position):
     #     players['position'] = 'Project Manager'
     # if players['position'] == 'photographer':
     #     players['position'] = 'Photographer'
-    return render_template('player/player_index.html')
+    return render_template('player.html')
 
 # def get_player(id, position, check_author=True):   
 #     db = get_db()
