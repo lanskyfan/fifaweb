@@ -37,14 +37,6 @@ def index():
     #             " WHERE pos.id = '%d' AND"
     #             " pos.id = phone.id" % (position, position, id,))
     #     players = cursor.fetchone()
-    # if players['position'] == 'aftereffect':
-    #     players['position'] = 'After Effect'
-    # if players['position'] == 'devicemanager':
-    #     players['position'] = 'Device Manager'
-    # if players['position'] == 'projectmanager':
-    #     players['position'] = 'Project Manager'
-    # if players['position'] == 'photographer':
-    #     players['position'] = 'Photographer'
     return render_template('player.html', player = jsonify(player))
 
 # def get_player(id, position, check_author=True):   
