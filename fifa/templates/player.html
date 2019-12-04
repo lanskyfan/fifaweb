@@ -1,10 +1,18 @@
-{% extends 'base.html' %} {% block title %}Player Page{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %}Player Page{% endblock %} {% block content %}
 <!-- Content -->
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- <button onclick="fetch_data_and_change()">Fetch Data and Change</button> -->
+                        <h4 class="mb-3">Rader chart </h4>
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- /# column -->
 
             <div class="col-lg-6">
                 <div class="card">
@@ -13,7 +21,8 @@
                         <canvas id="sales-chart"></canvas>
                     </div>
                 </div>
-            </div><!-- /# column -->
+            </div>
+            <!-- /# column -->
 
             <div class="col-lg-6">
                 <div class="card">
@@ -22,7 +31,8 @@
                         <canvas id="team-chart"></canvas>
                     </div>
                 </div>
-            </div><!-- /# column -->
+            </div>
+            <!-- /# column -->
 
             <div class="col-lg-6">
                 <div class="card">
@@ -31,17 +41,9 @@
                         <canvas id="barChart"></canvas>
                     </div>
                 </div>
-            </div><!-- /# column -->
+            </div>
+            <!-- /# column -->
 
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                       <!-- <button onclick="fetch_data_and_change()">Fetch Data and Change</button> -->
-                        <h4 class="mb-3">Rader chart </h4>
-                        <canvas id="radarChart"></canvas>
-                    </div>
-                </div>
-            </div><!-- /# column -->
 
             <div class="col-lg-6">
                 <div class="card">
@@ -58,9 +60,11 @@
                             <canvas id="doughutChart"></canvas>
                         </div>
                     </div>
-                </div><!-- /# column -->
+                </div>
+                <!-- /# column -->
 
-            </div><!-- /# column -->
+            </div>
+            <!-- /# column -->
 
             <div class="col-lg-6">
                 <div class="card">
@@ -69,7 +73,8 @@
                         <canvas id="pieChart"></canvas>
                     </div>
                 </div>
-            </div><!-- /# column -->
+            </div>
+            <!-- /# column -->
 
 
             <div class="col-lg-6">
@@ -79,7 +84,8 @@
                         <canvas id="polarChart"></canvas>
                     </div>
                 </div>
-            </div><!-- /# column -->
+            </div>
+            <!-- /# column -->
 
             <div class="col-lg-6">
                 <div class="card">
@@ -88,24 +94,24 @@
                         <canvas id="singelBarChart"></canvas>
                     </div>
                 </div>
-            </div><!-- /# column -->
+            </div>
+            <!-- /# column -->
 
 
 
         </div>
 
-    </div><!-- .animated -->
+    </div>
+    <!-- .animated -->
 </div>
 <!-- /.content -->
-{% endblock %}
+{% endblock %} {% block script %}
 
-{% block script %}
-
-    <!--  Chart js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
-    <script src="../static/js/init/chartjs-init.js"></script>
-    <!--Flot Chart-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+<!--  Chart js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
+<script src="../static/js/init/chartjs-init.js"></script>
+<!--Flot Chart-->
+<script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
 
 {% endblock %}
