@@ -455,15 +455,15 @@ function radar_charts_update_data(data){
 
 function fetch_data_and_change() {
     // console.log(1)
-    // fetch("/player/score").then(
-    //     function (response) {
-    //         console.log(1)
-    //         return response.json()
-    //     }
-    // ).then(
-    //     function (data) {
-    //         //rader_charts_update_data(data);
-    //         //console.log(data)
-    //     }
-    // )
+    fetch("/player/score").then(
+        function (response) {
+            console.log(1)
+            return response.json()
+        }
+    ).then(
+        function (data) {
+            //rader_charts_update_data(data);
+            //console.log(data)
+        }
+    )
 }

@@ -12,41 +12,42 @@ bp = Blueprint('player', __name__)
 
 
 
+@bp.route('/score', methods=('GET', 'POST'))
+def player_score():
+    g.current = "player"
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute(
+        "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score"
+        " FROM rating"
+        " WHERE ID = 231747"
+    )
+    # fake = [
+    # [1, 2, 3, 4, 5, 6,1],
+    # [15, 20, 3, 40, 5, 60],
+    # [20, 23, 10, 49, 23, 1],
+    # [100, 2, 30, 23, 54, 64],
+    # [72, 64, 36, 20, 92, 9], 
+    #     ]
+    player = cursor.fetchone()
+    print(player)
+    player_score = []
+    for key in player:
+        player_score.append(player[key])
+    return  jsonify(player_score)
+
 # @bp.route('/score')
-# def player_score():
-#     g.current = "player"
-#     db = get_db()
-#     cursor = db.cursor()
-#     cursor.execute(
-#         "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score"
-#         " FROM rating"
-#         " WHERE ID = 231747"
-#     )
+# def fake_data():
+#     # id = max(0, id)
+#     # id = min(4, id)
 #     fake = [
 #     [1, 2, 3, 4, 5, 6,1],
 #     [15, 20, 3, 40, 5, 60],
 #     [20, 23, 10, 49, 23, 1],
-#     [100, 2, 30, 23, 54, 64],
+#     [100, 80, 80, 73, 64, 94],
 #     [72, 64, 36, 20, 92, 9], 
 #         ]
-#     player = cursor.fetchall()
-#     player_score=[]
-#     for i in range(6):
-#         player_score.append(player[0][i])
-#     return  jsonify(fake[0])
-
-@bp.route('/score')
-def fake_data():
-    # id = max(0, id)
-    # id = min(4, id)
-    fake = [
-    [1, 2, 3, 4, 5, 6,1],
-    [15, 20, 3, 40, 5, 60],
-    [20, 23, 10, 49, 23, 1],
-    [100, 80, 80, 73, 64, 94],
-    [72, 64, 36, 20, 92, 9], 
-        ]
-    return jsonify(fake[3])
+#     return jsonify(fake[3])
 
 @bp.route('/player', methods=('GET', 'POST'))
 def index():
