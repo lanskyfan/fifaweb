@@ -103,7 +103,7 @@
                         <h4>3-5-2 (Attacking formation)</h4>
                     </div>
                     <div class="Vector-map-js">
-                        <div id="f8025ae2-8478-45ed-a7b4-aa24d86ac3e4" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                        <div id="6ddf6428-5152-4c86-ac64-434f0e1ea16d" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
                     </div>
                 </div>
                 <!-- /# card -->
@@ -299,7 +299,7 @@
             data: map_figure.data,
             layout: map_figure.layout,
             frames: map_figure.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {"showLink": true, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
         });
         
    }());
@@ -335,7 +335,7 @@
             data: ground_figure1.data,
             layout: ground_figure1.layout,
             frames: ground_figure1.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {"showLink": true, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
         });
         
    }());
@@ -368,46 +368,10 @@
 
         
         Plotly.plot(gd,  {
-            data: ground_figure2.data,
-            layout: ground_figure2.layout,
-            frames: ground_figure2.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
-        });
-        
-   }());
-</script>
-
-
-<script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
-
-        var gd = document.getElementById('f8025ae2-8478-45ed-a7b4-aa24d86ac3e4')
-        var resizeDebounce = null;
-
-        function resizePlot() {
-            var bb = gd.getBoundingClientRect();
-            Plotly.relayout(gd, {
-                width: bb.width,
-                height: bb.height
-            });
-        }
-
-        
-        window.addEventListener('resize', function() {
-            if (resizeDebounce) {
-                window.clearTimeout(resizeDebounce);
-            }
-            resizeDebounce = window.setTimeout(resizePlot, 100);
-        });
-        
-
-        
-        Plotly.plot(gd,  {
-            data: ground_figure3.data,
-            layout: ground_figure3.layout,
-            frames: ground_figure3.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            data: figure.data,
+            layout: figure.layout,
+            frames: figure.frames,
+            config: {"showLink": true, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
         });
         
    }());
