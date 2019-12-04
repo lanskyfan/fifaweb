@@ -14,7 +14,6 @@ bp = Blueprint('player', __name__)
 
 @bp.route('/score', methods=('GET', 'POST'))
 def player_score():
-    g.current = "player"
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
@@ -22,32 +21,28 @@ def player_score():
         " FROM rating"
         " WHERE ID = 231747"
     )
-    # fake = [
-    # [1, 2, 3, 4, 5, 6,1],
-    # [15, 20, 3, 40, 5, 60],
-    # [20, 23, 10, 49, 23, 1],
-    # [100, 2, 30, 23, 54, 64],
-    # [72, 64, 36, 20, 92, 9], 
-    #     ]
     player = cursor.fetchone()
-    print(player)
     player_score = []
     for key in player:
         player_score.append(player[key])
     return  jsonify(player_score)
 
-# @bp.route('/score')
-# def fake_data():
-#     # id = max(0, id)
-#     # id = min(4, id)
-#     fake = [
-#     [1, 2, 3, 4, 5, 6,1],
-#     [15, 20, 3, 40, 5, 60],
-#     [20, 23, 10, 49, 23, 1],
-#     [100, 80, 80, 73, 64, 94],
-#     [72, 64, 36, 20, 92, 9], 
-#         ]
-#     return jsonify(fake[3])
+@bp.route('/passing', methods=('GET', 'POST'))
+def passing_func():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute(
+        "SELECT vision, crossing, FK_accuracy, short_passing, long_passing, curve"
+        " FROM passing"
+        " WHERE ID = 231747"
+    )
+    passing = cursor.fetchone()
+    print(passing)
+    passing_list = []
+    for key in passing:
+        passing_list.append(passing[key])
+    return jsonify(passing_list)
+    
 
 @bp.route('/player', methods=('GET', 'POST'))
 def index():

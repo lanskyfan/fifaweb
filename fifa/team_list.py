@@ -13,13 +13,14 @@ def team_index():
     g.current = "team_list.history_index"
     db = get_db()
     cursor = db.cursor()
-    # cursor.execute(
-    #     "SELECT *"
-    #     " FROM porder"
-    #     " WHERE status = 'complete'"
-    #     " ORDER BY satisfaction DESC"
-    # )
-    # orders = cursor.fetchall()
-    return render_template('team_list.html')
+
+    cursor.execute(
+        "SELECT player.club_id, club.club_name ,club.logo,count(*),avg(overall), avg(potential) ,sum(Value), sum(Wage) "
+        " FROM player, club"
+        " WHERE player.club_id = club.club_id"
+        " GROUP BY club_id;"
+    )
+    teams = cursor.fetchall()
+    return render_template('team_list.html', teams = teams)
 
 

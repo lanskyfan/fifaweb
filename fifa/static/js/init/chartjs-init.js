@@ -35,6 +35,41 @@ function radar_charts_update_data(data) {
         }
     });
 }
+
+function polar_charts_update_data(data) {
+    //polar chart
+    var ctx = document.getElementById( "polarChart" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'polarArea',
+        data: {
+            datasets: [ {
+                data: data,
+                backgroundColor: [
+                    "rgba(0, 194, 146,0.9)",
+                    "rgba(0, 194, 146,0.8)",
+                    "rgba(0, 194, 146,0.7)",
+                    "rgba(0,0,0,0.2)",
+                    "rgba(0, 194, 146,0.5)",
+                    "rgba(0,100,100,0.2)",
+                    "rgba(0, 194, 146,0.5)"
+                                ]
+
+                            } ],
+            labels: [
+                "Vision",
+                "Crossing",
+                "FK accuracy",
+                "Short passing",
+                "Long passing",
+                "Curve"
+                ]
+        },
+        options: {
+            responsive: true
+        }
+    } );
+}
 function fetch_data_and_change() {
     // console.log(234)
     fetch("/score").then(
@@ -49,6 +84,19 @@ function fetch_data_and_change() {
     )
 }
 
+function fetch_passing_and_change() {
+    // console.log(234)
+    fetch("/passing").then(
+        function (response) {
+            return response.json()
+        }
+    ).then(
+        function (data) {
+            polar_charts_update_data(data);
+            console.log(data);
+        }
+    )
+}
 
 (function ($) {
     "use strict";
@@ -429,33 +477,7 @@ function fetch_data_and_change() {
     } );
 
     //polar chart
-    var ctx = document.getElementById( "polarChart" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'polarArea',
-        data: {
-            datasets: [ {
-                data: [ 15, 18, 10, 7, 19],
-                backgroundColor: [
-                                    "rgba(0, 194, 146,0.9)",
-                                    "rgba(0, 194, 146,0.8)",
-                                    "rgba(0, 194, 146,0.7)",
-                                    "rgba(0,0,0,0.2)",
-                                    "rgba(0, 194, 146,0.5)"
-                                ]
-
-                            } ],
-            labels: [
-                            "green",
-                            "green",
-                            "green",
-                            "green"
-                        ]
-        },
-        options: {
-            responsive: true
-        }
-    } );
+    fetch_passing_and_change()
 
     // single bar chart
     var ctx = document.getElementById( "singelBarChart" );
