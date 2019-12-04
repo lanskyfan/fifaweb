@@ -171,11 +171,6 @@
     } );
 
 
-
-
-
-
-
     //line chart
     var ctx = document.getElementById( "lineChart" );
     ctx.height = 150;
@@ -251,24 +246,26 @@
         }
     } );
 
+    
     //radar chart
     var ctx = document.getElementById( "radarChart" );
     ctx.height = 160;
     var myChart = new Chart( ctx, {
         type: 'radar',
         data: {
-            labels: [ [ "Eating", "Dinner" ], [ "Drinking", "Water" ], "Sleeping", [ "Designing", "Graphics" ], "Coding", "Cycling", "Running" ],
+            labels: [ "PAC",  "SHO", 
+            "PAS", "DRI", "DEF", "PHY" ],
             datasets: [
                 {
-                    label: "My First dataset",
-                    data: [ 65, 70, 66, 45, 5, 55, 40 ],
+                    label: "First player",
+                    data: [10,99,30,40,50,60],
                     borderColor: "rgba(0, 194, 146, 0.6)",
                     borderWidth: "1",
                     backgroundColor: "rgba(0, 194, 146, 0.4)"
                             },
                 {
-                    label: "My Second dataset",
-                    data: [ 28, 5, 55, 19, 63, 27, 68 ],
+                    label: "Second player",
+                    data: [19,29,39,49,59,63],
                     borderColor: "rgba(0, 194, 146, 0.7",
                     borderWidth: "1",
                     backgroundColor: "rgba(0, 194, 146, 0.5)"
@@ -286,6 +283,7 @@
             }
         }
     });
+
 
 
     //pie chart
@@ -416,3 +414,56 @@
 
 
 } )( jQuery );
+
+function radar_charts_update_data(data){
+    var ctx = document.getElementById( "radarChart" );
+    ctx.height = 160;
+    var myChart = new Chart( ctx, {
+        type: 'radar',
+        data: {
+            labels: [ "PAC",  "SHO", 
+            "PAS", "DRI", "DEF", "PHY" ],
+            datasets: [
+                {
+                    label: "First player",
+                    data: data,
+                    borderColor: "rgba(0, 194, 146, 0.6)",
+                    borderWidth: "1",
+                    backgroundColor: "rgba(0, 194, 146, 0.4)"
+                            },
+                 {
+                     label: "Second player",
+                     data: [10,20,30,40,50,60],
+                     borderColor: "rgba(0, 194, 146, 0.7",
+                     borderWidth: "1",
+                     backgroundColor: "rgba(0, 194, 146, 0.5)"
+                             }
+                         ]
+        },
+        options: {
+            legend: {
+                position: 'top'
+            },
+            scale: {
+                ticks: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+function fetch_data_and_change() {
+    // console.log(1)
+    // fetch("/player/score").then(
+    //     function (response) {
+    //         console.log(1)
+    //         return response.json()
+    //     }
+    // ).then(
+    //     function (data) {
+    //         //rader_charts_update_data(data);
+    //         //console.log(data)
+    //     }
+    // )
+}

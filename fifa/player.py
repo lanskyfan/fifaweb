@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for, Response, request, jsonify
+    Blueprint, flash, g, redirect, render_template, request, url_for, Response, request, jsonify,json
 )
 from werkzeug.exceptions import abort
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -10,17 +10,56 @@ from fifa.db import get_db
 bp = Blueprint('player', __name__)
 # @bp.route('/player/index', methods=('GET', 'POST'))
 
+
+
+# @bp.route('/score')
+# def player_score():
+#     g.current = "player"
+#     db = get_db()
+#     cursor = db.cursor()
+#     cursor.execute(
+#         "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score"
+#         " FROM rating"
+#         " WHERE ID = 231747"
+#     )
+#     fake = [
+#     [1, 2, 3, 4, 5, 6,1],
+#     [15, 20, 3, 40, 5, 60],
+#     [20, 23, 10, 49, 23, 1],
+#     [100, 2, 30, 23, 54, 64],
+#     [72, 64, 36, 20, 92, 9], 
+#         ]
+#     player = cursor.fetchall()
+#     player_score=[]
+#     for i in range(6):
+#         player_score.append(player[0][i])
+#     return  jsonify(fake[0])
+
+@bp.route('/score')
+def fake_data():
+    # id = max(0, id)
+    # id = min(4, id)
+    fake = [
+    [1, 2, 3, 4, 5, 6,1],
+    [15, 20, 3, 40, 5, 60],
+    [20, 23, 10, 49, 23, 1],
+    [100, 80, 80, 73, 64, 94],
+    [72, 64, 36, 20, 92, 9], 
+        ]
+    return jsonify(fake[3])
+
 @bp.route('/player', methods=('GET', 'POST'))
 def index():
-    g.current = "player"
-    db = get_db()
-    cursor = db.cursor()
-    cursor.execute(
-        "SELECT *"
-        " FROM player"
-        " WHERE ID = 1"
-    )
-    player = cursor.fetchone()
+    # g.current = "player"
+    # db = get_db()
+    # cursor = db.cursor()
+    # cursor.execute(
+    #     "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score"
+    #     " FROM rating"
+    #     " WHERE ID = 231747"
+    # )
+    # player = cursor.fetchone()
+
     # cursor.execute("SELECT phone FROM %s_phone WHERE id = '%d'" % (position, id,))
     # phone = cursor.fetchone()
     # if phone == None:
@@ -37,7 +76,7 @@ def index():
     #             " WHERE pos.id = '%d' AND"
     #             " pos.id = phone.id" % (position, position, id,))
     #     players = cursor.fetchone()
-    return render_template('player.html', player = jsonify(player))
+    return render_template('player.html')
 
 # def get_player(id, position, check_author=True):   
 #     db = get_db()
