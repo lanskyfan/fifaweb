@@ -17,7 +17,7 @@ def player_score():
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
-        "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score"
+        "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score"
         " FROM rating"
         " WHERE ID = 231747"
     )

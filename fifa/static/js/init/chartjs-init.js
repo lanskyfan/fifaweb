@@ -5,22 +5,22 @@ function radar_charts_update_data(data) {
         type: 'radar',
         data: {
             labels: [ "PAC",  "SHO", 
-            "PAS", "DRI", "DEF", "PHY","GK" ],
+            "PAS", "DRI", "DEF", "PHY" ],
             datasets: [
                 {
-                    label: "First player",
+                    // label: "First player",
                     data: data,
                     borderColor: "rgba(0, 194, 146, 0.6)",
                     borderWidth: "1",
                     backgroundColor: "rgba(0, 194, 146, 0.4)"
                             },
-                 {
-                     label: "Second player",
-                     data: [10,20,30,40,50,60,70],
-                     borderColor: "rgba(0, 194, 146, 0.7",
-                     borderWidth: "1",
-                     backgroundColor: "rgba(0, 194, 146, 0.5)"
-                             }
+                //  {
+                //      label: "Second player",
+                //      data: [10,10,10,10,10,10,10],
+                //      borderColor: "rgba(0, 194, 146, 0.7",
+                //      borderWidth: "1",
+                //      backgroundColor: "rgba(0, 194, 146, 0.5)"
+                //              }
                          ]
         },
         options: {
@@ -47,12 +47,12 @@ function polar_charts_update_data(data) {
                 data: data,
                 backgroundColor: [
                     "rgba(0, 194, 146,0.9)",
-                    "rgba(0, 194, 146,0.8)",
-                    "rgba(0, 194, 146,0.7)",
-                    "rgba(0,0,0,0.2)",
-                    "rgba(0, 194, 146,0.5)",
-                    "rgba(0,100,100,0.2)",
-                    "rgba(0, 194, 146,0.5)"
+                    "rgba(50, 150, 120,0.8)",
+                    "rgba(100, 194, 146,0.7)",
+                    "rgba(0,50,50,0.2)",
+                    "rgba(0, 150, 146,0.5)",
+                    "rgba(0,100,150,0.2)",
+                    "rgba(0, 50, 146,0.5)"
                                 ]
 
                             } ],

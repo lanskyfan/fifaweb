@@ -15,7 +15,7 @@ def team_index():
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT player.club_id, club.club_name ,club.logo,count(*),avg(overall), avg(potential) ,sum(Value), sum(Wage) "
+        "SELECT player.club_id, club.club_name club_name ,club.logo club_logo,count(*) count,avg(overall) overall, avg(potential) potential,sum(Value) value, sum(Wage) wage"
         " FROM player, club"
         " WHERE player.club_id = club.club_id"
         " GROUP BY club_id;"
