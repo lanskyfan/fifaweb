@@ -1,4 +1,4 @@
-var map_figure = {
+var map_figure1 = {
     "data": [
         {
             "meta": {
@@ -131,6 +131,7 @@ var map_figure = {
                 2,
                 2,
                 2,
+                1,
                 1,
                 1,
                 1,
@@ -301,11 +302,12 @@ var map_figure = {
                 "United Arab Emirates",
                 "Belize",
                 "Fiji",
-                "Mauritius"
+                "Mauritius",
+                "China"
             ],
             "colorbar": {
                 "x": 0.8425412919858393,
-                "y": 0.6235431235431237,
+                "y": 0.5466200466200468,
                 "title": {
                     "text": "Players"
                 },
@@ -491,7 +493,8 @@ var map_figure = {
                 "ARE",
                 "BLZ",
                 "FJI",
-                "MUS"
+                "MUS",
+                "CHN"
             ],
             "reversescale": false,
             "hovertemplate": "",
@@ -501,21 +504,21 @@ var map_figure = {
     "layout": {
         "geo": {
             "center": {
-                "lat": 7.4826706548491675,
-                "lon": -7.610488455406299
+                "lat": 24.277862930582195,
+                "lon": 52.761443811487545
             },
             "showframe": false,
             "projection": {
                 "type": "Mercator",
                 "scale": 1.2709534677051089,
                 "rotation": {
-                    "lon": -7.610488455406299
+                    "lon": 52.761443811487545
                 }
             },
             "showcoastlines": false
         },
         "title": {
-            "text": "FIFA Players by Country"
+            "text": ""
         },
         "autosize": true,
         "colorway": [
