@@ -15,17 +15,15 @@ def team_index():
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT player0.club_id, club.club_name club_name ,club.logo club_logo,count(*) count,avg(overall) overall, avg(potential) potential,sum(Value) value, sum(Wage) wage"
-        " FROM player0, club"
-        " WHERE player0.club_id = club.club_id"
-        " GROUP BY club_id;"
+        "SELECT *"
+        " FROM team"
     )
     teams = cursor.fetchall()
-    # for i in range(len(teams)):
-    #     teams[i]["sum(Value)"]='%.1f'%(teams[i]["sum(Value)"])
     for i in range(650):
-        teams[i]["value"]='%.1f'%(teams[i]["value"])
-        teams[i]["wage"]=int(teams[i]["wage"])
+        teams[i]["overall"]='%.1f'%(teams[i]["overall"])
+        teams[i]["potential"]='%.1f'%(teams[i]["potential"])
+        teams[i]["totalvalue"]='%.1f'%(teams[i]["totalvalue"])
+        teams[i]["totalwage"]=int(teams[i]["totalwage"])
     return render_template('team_list.html', teams = teams)
 
 
