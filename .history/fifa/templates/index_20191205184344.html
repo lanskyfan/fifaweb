@@ -36,7 +36,7 @@
                         <h4>Top Players with High Market Values</h4>
                     </div>
                     <div class="Vector-map-js">
-                        <div id="9a36cdf3-f2b4-4ee5-b109-0db21437df20" style="width: 800px; height: 800px;" class="plotly-graph-div"></div>
+                        <div id="9a36cdf3-f2b4-4ee5-b109-0db21437df20" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
                     </div>
                 </div>
                 <!-- /# card -->
@@ -111,7 +111,7 @@
 {% endblock %} {% block script %}
 <script type="text/javascript" src="../static/js/figure/plotlyjs-bundle.js"></script>
 <script type="text/javascript" src="../static/js/figure/piechart.js"></script>
-<script type="text/javascript" src="../static/js/figure/threedfigure1_.js"></script>
+<script type="text/javascript" src="../static/js/figure/threedfigure11.js"></script>
 <!-- <script type="text/javascript" src="../static/js/figure/marketvalues.js"></script> -->
 <script type="text/javascript" src="../static/js/figure/threedfigure2.js"></script>
 
@@ -212,12 +212,13 @@
         }
 
         
+
         
         Plotly.plot(gd,  {
-            data: threedfigure1_.data,
-            layout: threedfigure1_.layout,
-            frames: threedfigure1_.frames,
-            config: {"showLink": true, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            data: threedfigure11.data,
+            layout: threedfigure11.layout,
+            frames: threedfigure11.frames,
+            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
         });
         
    }());

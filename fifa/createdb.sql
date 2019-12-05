@@ -2,6 +2,21 @@ show databases;
 use fifadata;
 show tables;
 
+drop table describe0;
+CREATE TABLE `fifadata`.`describe0` (
+  `attribute` VARCHAR(20) NOT NULL,
+  `description` VARCHAR(150) NULL,
+  PRIMARY KEY (`attribute`));
+  
+LOAD DATA LOCAL INFILE '/home/ubuntu/data/description.csv'
+INTO TABLE describe0 character set utf8
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+select * from describe0;
+
 drop table fulldata;
 CREATE TABLE `fifadata`.`fulldata` (
   `ID` INT NOT NULL,
@@ -68,14 +83,14 @@ CREATE TABLE `fifadata`.`fulldata` (
   `gk` INT NOT NULL,
   PRIMARY KEY (`ID`));
 
-LOAD DATA LOCAL INFILE '/home/ubuntu/data/fifa19data4.csv'
-INTO TABLE fulldata character set utf8
+LOAD DATA LOCAL INFILE '/home/ubuntu/data/fifa19data444.csv'
+INTO TABLE fulldata character set latin1
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
 
-select * from fulldata;
+select distinct club from fulldata;
 
 drop table player;
 CREATE TABLE `fifadata`.`player` (
@@ -89,8 +104,8 @@ CREATE TABLE `fifadata`.`player` (
   `photo` VARCHAR(20) NOT NULL,
   `overall` INT NOT NULL,
   `potential` INT NOT NULL,
-  `value` VARCHAR(10) NOT NULL,
-  `wage` VARCHAR(10) NOT NULL,
+  `value` float8 NOT NULL,
+  `wage` float8 NOT NULL,
   `preferred_foot` VARCHAR(5) NOT NULL,
   `international_reputation` INT NOT NULL,
   `weak_foot` INT NOT NULL,
@@ -102,7 +117,7 @@ INSERT INTO player
 select ID, name, age, height, weight, nation_id, club_id, photo, overall, potential, 
 value, wage, preferred_foot, international_reputation, weak_foot, skill_move, position
 from fulldata;
-select count(*) from player;
+select * from player;
  
 drop table nation; 
 CREATE TABLE `fifadata`.`nation` (
@@ -143,7 +158,7 @@ CREATE TABLE `fifadata`.`rating` (
 INSERT INTO rating
 select ID, pace, shooting, passing, defending, dribbling2, physical, GK
 from fulldata;
-select * from rating;
+select count(*) from rating;
   
 drop table physical;  
 CREATE TABLE `fifadata`.`physical` (
@@ -250,6 +265,7 @@ select * from GK;
 
 
 
+
 SHOW GLOBAL VARIABLES LIKE 'local_infile';
 show variables like 'secure_file_priv';
 
@@ -261,3 +277,116 @@ where name like "%ISco";
 
 
 
+
+
+
+
+
+SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score
+FROM rating
+WHERE ID = 20801;
+
+describe player;
+
+select * from club
+where club_name like "Real%";
+
+select * from rating
+where ID = 231747;
+
+select player0.club_id, club.club_name ,club.logo,count(*),avg(overall), avg(potential) ,sum(Value), sum(Wage) 
+from player0, club
+where player0.club_id = club.club_id
+group by club_id;
+
+select count(*) from player as p
+where (select count(*) 
+	   from player as p1 
+       where  p1.club_id = p.club_id and p1.overall > p.overall) < 25;
+
+drop table player0;
+CREATE TABLE `fifadata`.`player0` (
+  `ID` INT NOT NULL,
+  `name` VARCHAR(25) NOT NULL,
+  `age` INT NOT NULL,
+  `height` float8 NOT NULL,
+  `weight` INT NOT NULL,
+  `nation_id` INT NOT NULL,
+  `club_id` INT NOT NULL,
+  `photo` VARCHAR(20) NOT NULL,
+  `overall` INT NOT NULL,
+  `potential` INT NOT NULL,
+  `value` float8 NOT NULL,
+  `wage` float8 NOT NULL,
+  `preferred_foot` VARCHAR(5) NOT NULL,
+  `international_reputation` INT NOT NULL,
+  `weak_foot` INT NOT NULL,
+  `skill_move` INT NOT NULL,
+  `position` VARCHAR(5) NOT NULL,
+  PRIMARY KEY (`ID`));
+
+INSERT INTO player0
+select * from player as p
+where (select count(*) 
+	   from player as p1 
+       where  p1.club_id = p.club_id and p1.overall > p.overall) < 25;
+       
+drop table team;
+CREATE TABLE `fifadata`.`team` (
+  `club_id` INT NOT NULL,
+  `club_name` VARCHAR(45) NOT NULL,
+  `club_logo` VARCHAR(45) NOT NULL,
+  `count` INT NOT NULL,
+  `overall` FLOAT NOT NULL,
+  `potential` FLOAT NOT NULL,
+  `totalvalue` FLOAT NOT NULL,
+  `totalwage` INT NOT NULL,
+  PRIMARY KEY (`club_id`));
+  
+  
+
+select player0.club_id, club.club_name ,club.logo,count(*),avg(player0.overall), avg(player0.potential) ,sum(Value), sum(Wage) 
+from player0, club
+where player0.club_id = club.club_id
+group by club.club_id;
+
+select club.club_id, count(*) 
+from player, club
+where player.club_id = club.club_id
+group by club_id;
+
+INSERT INTO team
+select p1.club_id, p1.club_name, p1.logo, p2.count0, p1.avgO, p1.avgP, p1.sumV, p1.sumW
+from (select player0.club_id, club.club_name ,club.logo,count(*) ,avg(player0.overall) as avgO, avg(player0.potential) as avgP ,sum(Value) as sumV, sum(Wage) as sumW
+	  from player0, club
+	  where player0.club_id = club.club_id
+	  group by club.club_id) as p1, 
+      (select club.club_id, count(*) as count0 
+	   from player, club
+	   where player.club_id = club.club_id
+	   group by club_id) as p2
+where p1.club_id = p2.club_id;
+
+select * from team;
+
+
+
+drop table recommend;
+CREATE TABLE `fifadata`.`recommend` (
+  `ID` INT NOT NULL,
+  `sp1_id` INT NOT NULL,
+  `sp2_id` INT NOT NULL,
+  `sp3_id` INT NOT NULL,
+  `sp4_id` INT NOT NULL,
+  `sp5_id` INT NOT NULL,
+  PRIMARY KEY (`ID`));
+  
+
+LOAD DATA LOCAL INFILE '/home/ubuntu/data/Recommend.csv'
+INTO TABLE recommend character set utf8
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+select * from recommend;

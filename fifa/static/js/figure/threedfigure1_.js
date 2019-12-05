@@ -1,4 +1,4 @@
-var threedfigure1 = {
+var threedfigure1_ = {
     "data": [
         {
             "uid": "af900a07-dab3-4832-ae8f-6a1f3987151b",
@@ -50600,7 +50600,7 @@ var threedfigure1 = {
             }
         },
         "title": {
-            "text": "Top FIFA Players with High Market Values"
+            "text": ""
         },
         "width": 800,
         "height": 800,
