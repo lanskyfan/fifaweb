@@ -17,19 +17,23 @@
                             <thead>
                                 <tr>
                                     <th>Club Name</th>
-                                    <th>Club Logo</th>
+                                    <th class="Club Logo">Club Logo</th>
                                     <th>Count</th>
                                     <th>Overall</th>
                                     <th>Potential</th>
-                                    <th>Total Value</th>
-                                    <th>Total Wage</th>
+                                    <th>Total Value (M€)</th>
+                                    <th>Total Wage (K€)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for team in teams %}
                                 <tr>
                                     <td>{{team.club_name}}</td>
-                                    <td>{{team.club_logo}}</td>
+                                    <td class="Club Logo">
+                                            <div class="round-img">
+                                                <a href="#"><img class="rounded-circle" src="../images/club/club1.jpg" alt=""></a>
+                                            </div>
+                                        </td>
                                     <td>{{team.count}}</td>
                                     <td>{{team.overall}}</td>
                                     <td>{{team.potential}}</td>

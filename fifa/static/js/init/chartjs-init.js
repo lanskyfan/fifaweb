@@ -8,9 +8,9 @@ function radar_charts_update_data(data) {
             "PAS", "DRI", "DEF", "PHY" ],
             datasets: [
                 {
-                    // label: "First player",
+                    label: "Player",
                     data: data,
-                    borderColor: "rgba(0, 194, 146, 0.6)",
+                    borderColor: "rgba(0, 194, 146, 0.7)",
                     borderWidth: "1",
                     backgroundColor: "rgba(0, 194, 146, 0.4)"
                             },
