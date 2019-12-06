@@ -20,8 +20,8 @@ def team_index():
     )
     teams = cursor.fetchall()
     for i in range(650):
-        teams[i]["overall"]='%.1f'%(teams[i]["overall"])
-        teams[i]["potential"]='%.1f'%(teams[i]["potential"])
+        teams[i]["overall"]=int(teams[i]["overall"])
+        teams[i]["potential"]=int(teams[i]["potential"])
         teams[i]["totalvalue"]='%.1f'%(teams[i]["totalvalue"])
         teams[i]["totalwage"]=int(teams[i]["totalwage"])
     return render_template('team_list.html', teams = teams)

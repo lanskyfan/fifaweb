@@ -19,7 +19,7 @@ def player_score():
     cursor.execute(
         "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score"
         " FROM rating"
-        " WHERE ID = 231747"
+        " WHERE ID = 182398"
     )
     player = cursor.fetchone()
     player_score = []
