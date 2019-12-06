@@ -46,7 +46,7 @@ def passing_func():
 
 @bp.route('/player', methods=('GET', 'POST'))
 def index():
-    # g.current = "player"
+    g.current = "player"
     # db = get_db()
     # cursor = db.cursor()
     # cursor.execute(

@@ -71,6 +71,7 @@ It aims at Designing a FIFA website with an integrated data management system. T
 For Linux and Mac:
 
 ```shell
+. venv/bin/activate
 export FLASK_APP=fifa
 export FLASK_ENV=development
 flask run
@@ -79,6 +80,7 @@ flask run
 For Windows cmd, use set instead of export:
 
 ```
+venv\Scripts\activate
 set FLASK_APP=fifa
 set FLASK_ENV=development
 flask run

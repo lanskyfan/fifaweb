@@ -11,7 +11,7 @@ bp = Blueprint('dashboard', __name__)
 @bp.route('/')
 def index():
     # Here we need to implement an algorithm to select the team to display
-    g.current = "index"
+    g.current = "dashboard"
     db = get_db()
     cursor = db.cursor()
     return render_template('index.html')
