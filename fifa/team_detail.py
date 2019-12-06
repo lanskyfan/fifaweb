@@ -7,7 +7,7 @@ from fifa.db import get_db
 
 bp = Blueprint('team_detail', __name__)
 
-@bp.route('/')
+@bp.route('/team_detail')
 def index():
     # Here we need to implement an algorithm to select the team to display
     g.current = "team_detail"
