@@ -7,13 +7,19 @@ from fifa.db import get_db
 
 bp = Blueprint('team_detail', __name__)
 
-@bp.route('/team_detail')
-def index():
+@bp.route('/<int:id>/team_detail')
+def index(id):
     # Here we need to implement an algorithm to select the team to display
     g.current = "team_detail"
     db = get_db()
     cursor = db.cursor()
-    return render_template('team_detail.html')
+    cursor.execute(
+    "SELECT *"
+    " FROM player"
+    " WHERE club_id = %s", id
+)
+    players = cursor.fetchall()
+    return render_template('team_detail.html', players = players)
 
 
     # if (g.user):
