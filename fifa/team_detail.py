@@ -19,7 +19,13 @@ def index(id):
     " WHERE p.nation_id = n.nation_id AND club_id = %s", id
 )
     players = cursor.fetchall()
-    return render_template('team_detail.html', players = players)
+    cursor.execute(
+        "SELECT club_name"
+        " FROM team"
+        " WHERE club_id = ", id
+    )
+    club_name = cursor.fetchone()
+    return render_template('team_detail.html', players = players, club_name = club_name)
 
 
     # if (g.user):
