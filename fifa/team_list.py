@@ -10,7 +10,7 @@ bp = Blueprint('team_list', __name__)
 
 @bp.route('/team_list')
 def team_index():
-    g.current = "team_list.history_index"
+    g.current = "team_list"
     db = get_db()
     cursor = db.cursor()
 

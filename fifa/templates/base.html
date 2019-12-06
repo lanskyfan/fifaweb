@@ -76,6 +76,7 @@
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                {% if g.current == "dashboard" %}
                 <li class="active">
                     <a href="/"><i class="menu-icon fa fa-laptop"></i> Dashboard </a>
                 </li>
@@ -85,6 +86,31 @@
                 <li class="inactive">
                     <a href="player"><i class="menu-icon fa fa-group"></i> Players </a>
                 </li>
+                {% endif %}
+
+                {% if g.current == "team_list" %}
+                <li class="inactive">
+                    <a href="/"><i class="menu-icon fa fa-laptop"></i> Dashboard </a>
+                </li>
+                <li class="active">
+                    <a href="team_list"><i class="menu-icon fa fa-fort-awesome"></i> Teams </a>
+                </li>
+                <li class="inactive">
+                    <a href="player"><i class="menu-icon fa fa-group"></i> Players </a>
+                </li>
+                {% endif %}
+
+                {% if g.current == "player" %}
+                <li class="inactive">
+                    <a href="/"><i class="menu-icon fa fa-laptop"></i> Dashboard </a>
+                </li>
+                <li class="inactive">
+                    <a href="team_list"><i class="menu-icon fa fa-fort-awesome"></i> Teams </a>
+                </li>
+                <li class="active">
+                    <a href="player"><i class="menu-icon fa fa-group"></i> Players </a>
+                </li>
+                {% endif %}
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
