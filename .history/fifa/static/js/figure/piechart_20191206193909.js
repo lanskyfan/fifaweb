@@ -73,13 +73,15 @@ var piechart = {
     }],
     "layout": {
         "title": {
-            "text": "gkugkbhj"
+            "text": ""
         },
         "legend": {
-            "x": 0.9890460437648558,
-            "y": 0.9915501165501166
+            // "x": 0.9890460437648558,
+            // "y": 0.9915501165501166
+            "x": 1,
+            "y": 1
         },
-        "autosize": false,
+        "autosize": true,
         "colorscale": {
             "sequentialminus": [
                 [
