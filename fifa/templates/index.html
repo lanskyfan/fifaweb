@@ -51,7 +51,7 @@
                         <h4> <i class="fa fa-pie-chart"></i> Players Position Percentage</h4>
                     </div>
                     <div class="Vector-map-js">
-                        <div id="3bb35e6e-d39f-4c80-af57-454cab99c787" style="width: 450px; height: 450px;" class="plotly-graph-div"></div>
+                        <div id="77998c0d-6793-4428-a936-54acea53afa6" style="width: 450px; height: 450px;" class="plotly-graph-div"></div>
                     </div>
                 </div>
                 <!-- /# card -->
@@ -125,7 +125,7 @@
 <!-- /.content -->
 {% endblock %} {% block script %}
 <script type="text/javascript" src="../static/js/figure/plotlyjs-bundle.js"></script>
-<script type="text/javascript" src="../static/js/figure/piefigure.js"></script>
+<script type="text/javascript" src="../static/js/figure/piechart2.js"></script>
 <script type="text/javascript" src="../static/js/figure/piechart1.js"></script>
 <script type="text/javascript" src="../static/js/figure/tdfigure1_.js"></script>
 <!-- <script type="text/javascript" src="../static/js/figure/marketvalues.js"></script> -->
@@ -185,7 +185,7 @@
             (function(){
                 window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
 
-                var gd = document.getElementById('3bb35e6e-d39f-4c80-af57-454cab99c787')
+                var gd = document.getElementById('77998c0d-6793-4428-a936-54acea53afa6')
                 var resizeDebounce = null;
 
                 function resizePlot() {
@@ -200,10 +200,10 @@
 
                 
                 Plotly.plot(gd,  {
-                    data: piefigure.data,
-                    layout: piefigure.layout,
-                    frames: piefigure.frames,
-                    config: {"showLink": false,
+                    data: piechart2.data,
+                    layout: piechart2.layout,
+                    frames: piechart2.frames,
+                    config: {"showLink": false, 
                              "displayModeBar": false,
                              "linkText": "Export to plot.ly", 
                              "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}

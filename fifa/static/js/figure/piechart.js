@@ -79,7 +79,7 @@ var piechart = {
             "x": 0.9890460437648558,
             "y": 0.9915501165501166
         },
-        "autosize": false,
+        "autosize": true,
         "colorscale": {
             "sequentialminus": [
                 [
