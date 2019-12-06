@@ -16,7 +16,7 @@ def index(id):
     cursor.execute(
     "SELECT p.photo, p.name, n.flag, n.nationality, p.value, p.wage, p.overall, p.potential"
     " FROM player p, nation n "
-    " WHERE p.nation_id = nation.nation_id AND club_id = %s", id
+    " WHERE p.nation_id = n.nation_id AND club_id = %s", id
 )
     players = cursor.fetchall()
     return render_template('team_detail.html', players = players)
