@@ -1,4 +1,4 @@
-var threedfigure2 = {
+var tdfigure2 = {
     "data": [
         {
             "uid": "963802d5-585b-4112-bbbe-17d394a20837",
@@ -21182,6 +21182,7 @@ var threedfigure2 = {
                 86
             ],
             "marker": {
+                "cmin": null,
                 "meta": {
                     "columnNames": {
                         "color": "color"
@@ -39528,8 +39529,8 @@ var threedfigure2 = {
         "title": {
             "text": ""
         },
-        "width": 800,
-        "height": 800,
+        "width": 500,
+        "height": 500,
         "template": {
             "data": {
                 "bar": [
