@@ -72,7 +72,7 @@ def index(id):
     #             " WHERE pos.id = '%d' AND"
     #             " pos.id = phone.id" % (position, position, id,))
     #     players = cursor.fetchone()
-    return render_template('player.html')
+    return render_template('player.html', id = id)
 
 # def get_player(id, position, check_author=True):   
 #     db = get_db()

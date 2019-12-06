@@ -84,6 +84,9 @@
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
                     </li>
                     <li class="inactive">
+                            <a href="{{ url_for('player_list.team_index') }}"><i class="menu-icon fa fa-child"></i> Players </a>
+                    </li>
+                    <li class="inactive">
                         <a href="{{ url_for('team_detail.index', id = 1944) }}"><i class="menu-icon fa fa-fort-awesome"></i> Team Info </a>
                     </li>
                     <li class="inactive">
@@ -95,6 +98,9 @@
                     </li>
                     <li class="active">
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
+                    </li>
+                    <li class="inactive">
+                            <a href="{{ url_for('player_list.team_index') }}"><i class="menu-icon fa fa-child"></i> Players </a>
                     </li>
                     <li class="inactive">
                         <a href="{{ url_for('team_detail.index', id = 1944) }}"><i class="menu-icon fa fa-fort-awesome"></i> Team Info </a>
@@ -110,6 +116,9 @@
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
                     </li>
                     <li class="inactive">
+                            <a href="{{ url_for('player_list.team_index') }}"><i class="menu-icon fa fa-child"></i> Players </a>
+                    </li>
+                    <li class="inactive">
                         <a href="{{ url_for('team_detail.index', id = 1944) }}"><i class="menu-icon fa fa-fort-awesome"></i> Team Info </a>
                     </li>
                     <li class="active">
@@ -122,7 +131,27 @@
                     <li class="inactive">
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
                     </li>
+                    <li class="inactive">
+                            <a href="{{ url_for('player_list.team_index') }}"><i class="menu-icon fa fa-child"></i> Players </a>
+                    </li>
                     <li class="active">
+                        <a href="{{ url_for('team_detail.index', id = 1944) }}"><i class="menu-icon fa fa-fort-awesome"></i> Team Info </a>
+                    </li>
+                    <li class="inactive">
+                        <a href="{{ url_for('player.index', id = 221445) }}"><i class="menu-icon fa fa-child"></i> Player Info </a>
+                    </li>
+                    {% endif %}
+                    {% if g.current == "player_list" %}
+                    <li class="inactive">
+                        <a href="/"><i class="menu-icon fa fa-dashboard"></i> Dashboard </a>
+                    </li>
+                    <li class="inactive">
+                        <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
+                    </li>
+                    <li class="active">
+                            <a href="{{ url_for('player_list.team_index') }}"><i class="menu-icon fa fa-child"></i> Players </a>
+                    </li>
+                    <li class="inactive">
                         <a href="{{ url_for('team_detail.index', id = 1944) }}"><i class="menu-icon fa fa-fort-awesome"></i> Team Info </a>
                     </li>
                     <li class="inactive">
