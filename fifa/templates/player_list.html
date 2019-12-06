@@ -10,38 +10,45 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Teams</strong>
+                        <strong class="card-title">Players</strong>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="Club Name">Club Name</th>
-                                    <th class="Club Logo">Logo</th>
-                                    <th>Count</th>
+                                    <th class="photo">Photo</th>
+                                    <th class="Name">Name</th>
+                                    <th class="flag">Flag</th>
+                                    <th>Nationality</th>
+                                    <th>Value (M€)</th>
+                                    <th>Wage (K€)</th>
                                     <th>Overall</th>
                                     <th>Potential</th>
-                                    <th>Total Value (M€)</th>
-                                    <th>Total Wage (K€)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for team in teams %}
+                                {% for player in players[0:1000] %}
                                 <tr>
-                                    <td class="Club Name" >
-                                        <a class="btn btn-block " 
-                                            href="{{ url_for('team_detail.index', id = team.club_id) }}" >{{team.club_name}}
-                                        </td>
-                                    <td class="Club Logo">
+                                    <td class="photo">
                                         <div class="round-img">
-                                            <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/club/'+team.club_logo) }}" alt=""></a>
+                                            <a href="#"><img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}"
+                                                    alt=""></a>
                                         </div>
                                     </td>
-                                    <td>{{team.count}}</td>
-                                    <td>{{team.overall}}</td>
-                                    <td>{{team.potential}}</td>
-                                    <td>{{team.totalvalue}}</td>
-                                    <td>{{team.totalwage}}</td>
+                                    <td class="Name">
+                                        <a class="btn btn-block " href="{{ url_for('player.index', id = player.id) }}">{{player.name}}
+                                    </td>
+                                    <td class="Flag">
+                                        <div class="round-img">
+                                            <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player.flag) }}"
+                                                    alt=""></a>
+                                        </div>
+                                    </td>
+                                    <td>{{player.nationality}}</td>
+                                    <td>{{player.value}}</td>
+                                    <td>{{player.wage}}</td>
+                                    <td>{{player.overall}}</td>
+                                    <td>{{player.potential}}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
