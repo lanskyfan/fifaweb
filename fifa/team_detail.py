@@ -14,7 +14,7 @@ def index(id):
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
-    "SELECT p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
+    "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
     " FROM player p, nation n "
     " WHERE p.nation_id = n.nation_id AND club_id = %s", id
 )
@@ -31,8 +31,8 @@ def index(id):
     " FROM player0"
     " WHERE club_id = %s", id
 )
-    players = cursor.fetchall()
-    return render_template('team_detail.html', players = players, club_name = club_name)
+    attributes = cursor.fetchall()
+    return render_template('team_detail.html', players = players, club_name = club_name, attributes = attributes)
 
 
     # if (g.user):

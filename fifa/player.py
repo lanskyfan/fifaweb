@@ -12,7 +12,7 @@ bp = Blueprint('player', __name__)
 
 
 
-@bp.route('/score', methods=('GET', 'POST'))
+@bp.route('/<int:id>/score', methods=('GET', 'POST'))
 def player_score():
     db = get_db()
     cursor = db.cursor()
@@ -72,7 +72,7 @@ def index(id):
     #             " WHERE pos.id = '%d' AND"
     #             " pos.id = phone.id" % (position, position, id,))
     #     players = cursor.fetchone()
-    return render_template('player.html')
+    return render_template('player.html', id = id)
 
 # def get_player(id, position, check_author=True):   
 #     db = get_db()
