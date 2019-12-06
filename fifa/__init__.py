@@ -43,6 +43,9 @@ def create_app(test_config=None):
     from . import player
     app.register_blueprint(player.bp)
 
+    from . import team_detail
+    app.register_blueprint(team_detail.bp)
+
     # from . import order_detail
     # app.register_blueprint(order_detail.bp)
 
