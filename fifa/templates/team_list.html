@@ -29,9 +29,8 @@
                                 {% for team in teams %}
                                 <tr>
                                     <td class="Club Name" >
-                                        <label class="name_url">{{team.club_name}}</label>
-                                        <a class="btn btn-primary btn-block text-uppercase" 
-                                            href="{{ url_for('team_detail.index', id = team.club_id) }}" >
+                                        <a class="btn btn-block " 
+                                            href="{{ url_for('team_detail.index', id = team.club_id) }}" >{{team.club_name}}
                                         </td>
                                     <td class="Club Logo">
                                         <div class="round-img">
