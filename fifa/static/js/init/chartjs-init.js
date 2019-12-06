@@ -72,7 +72,7 @@ function polar_charts_update_data(data) {
 }
 function fetch_data_and_change() {
     // console.log(234)
-    fetch("/score").then(
+    fetch("/<int:id>/score").then(
         function (response) {
             return response.json()
         }

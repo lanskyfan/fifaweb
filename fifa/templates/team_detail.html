@@ -9,7 +9,7 @@
                 <div class="col-xl-8">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="box-title">{{players["club_name"]}} </h4>
+                            <h4 class="box-title"> </h4>
                         </div>
                         <div class="card-body--">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered ">
@@ -17,8 +17,8 @@
                                         <tr>
                                             
                                             <th class="photo">Photo</th>
-                                            <th>Name</th>
-                                            <th class="plag">Flag</th>
+                                            <th class="Name">Name</th>
+                                            <th class="Flag">Flag</th>
                                             <th>Nationality</th>
                                             <th>Value (M€)</th>
                                             <th>Wage (K€)</th>
@@ -34,12 +34,15 @@
                                                     <a href="#"><img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}" alt=""></a>
                                                 </div>
                                             </td>
-                                            <td>{{player.name}}</td>
-                                            <td class="flag">
-                                                    <div class="round-img">
-                                                        <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player.flag) }}" alt=""></a>
-                                                    </div>
+                                            <td class="Name" >
+                                                <a class="btn btn-block " 
+                                                    href="{{ url_for('player.index', id = player.id) }}" >{{player.name}}
                                                 </td>
+                                            <td class="Flag">
+                                                <div class="round-img">
+                                                    <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player.flag) }}" alt=""></a>
+                                                </div>
+                                            </td>
                                             <td>{{player.nationality}}</td>
                                             <td>{{player.value}}</td>
                                             <td>{{player.wage}}</td>
