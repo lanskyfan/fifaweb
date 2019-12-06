@@ -22,7 +22,7 @@ def index(id):
     cursor.execute(
         "SELECT club_name"
         " FROM team"
-        " WHERE club_id = ", id
+        " WHERE club_id = %s", id
     )
     club_name = cursor.fetchone()
     return render_template('team_detail.html', players = players, club_name = club_name)
