@@ -44,8 +44,8 @@ def passing_func():
     return jsonify(passing_list)
     
 
-@bp.route('/player', methods=('GET', 'POST'))
-def index():
+@bp.route('/<int:id>/player', methods=('GET', 'POST'))
+def index(id):
     g.current = "player"
     # db = get_db()
     # cursor = db.cursor()
