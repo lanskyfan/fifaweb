@@ -16,8 +16,8 @@
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Club Name</th>
-                                    <th class="Club Logo">Club Logo</th>
+                                    <th class="Club Name">Club Name</th>
+                                    <th class="Club Logo">Logo</th>
                                     <th>Count</th>
                                     <th>Overall</th>
                                     <th>Potential</th>
@@ -28,11 +28,14 @@
                             <tbody>
                                 {% for team in teams %}
                                 <tr>
-                                    <td>{{team.club_name}}</td>
+                                    <td class="Club Name" >
+                                        <label class="name_url">{{team.club_name}}</label>
+                                        <a class="btn btn-primary btn-block text-uppercase" 
+                                            href="{{ url_for('team_detail.index', id = team.club_id) }}" >
+                                        </td>
                                     <td class="Club Logo">
                                         <div class="round-img">
                                             <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/club/'+team.club_logo) }}" alt=""></a>
-                                            <!-- <a href="#"><img class="rounded-0" src="../images/club/club1.jpg" alt=""></a>  -->
                                         </div>
                                     </td>
                                     <td>{{team.count}}</td>

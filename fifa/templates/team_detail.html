@@ -9,101 +9,46 @@
                 <div class="col-xl-8">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="box-title">Orders </h4>
+                            <h4 class="box-title">{{players["club_name"]}} </h4>
                         </div>
                         <div class="card-body--">
-                            <div class="table-stats order-table ov-h">
-                                <table class="table ">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered ">
                                     <thead>
                                         <tr>
-                                            <th class="serial">#</th>
-                                            <th class="avatar">Avatar</th>
-                                            <th>ID</th>
+                                            
+                                            <th class="photo">Photo</th>
                                             <th>Name</th>
-                                            <th>Product</th>
-                                            <th>Quantity</th>
-                                            <th>Status</th>
+                                            <th class="plag">Flag</th>
+                                            <th>Nationality</th>
+                                            <th>Value</th>
+                                            <th>Wage</th>
+                                            <th>Overall</th>
+                                            <th>Potential</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="serial">1.</td>
-                                            <td class="avatar">
+                                            {% for player in players %}
+                                            <td class="photo">
                                                 <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="../static/images/avatar/1.jpg" alt=""></a>
+                                                    <a href="#"><img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}" alt=""></a>
                                                 </div>
                                             </td>
-                                            <td> #5469 </td>
-                                            <td> <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
+                                            <td>{{player.name}}</td>
+                                            <td class="flag">
+                                                    <div class="round-img">
+                                                        <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player.flag) }}" alt=""></a>
+                                                    </div>
+                                                </td>
+                                            <td>{{player.nationality}}</td>
+                                            <td>{{player.value}}</td>
+                                            <td>{{player.wage}}</td>
+                                            <td>{{player.overall}}</td>
+                                            <td>{{player.potential}}</td>
                                         </tr>
-                                        <tr>
-                                            <td class="serial">2.</td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="../static/images/avatar/2.jpg" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td> #5468 </td>
-                                            <td> <span class="name">Gregory Dixon</span> </td>
-                                            <td> <span class="product">iPad</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">3.</td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="../static/images/avatar/3.jpg" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td> #5467 </td>
-                                            <td> <span class="name">Catherine Dixon</span> </td>
-                                            <td> <span class="product">SSD</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="../static/images/avatar/4.jpg" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td> #5466 </td>
-                                            <td> <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr class=" pb-0">
-                                            <td class="serial">5.</td>
-                                            <td class="avatar pb-0">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="../static/images/avatar/6.jpg" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td> #5465 </td>
-                                            <td> <span class="name">Johnny Stephens</span> </td>
-                                            <td> <span class="product">Monitor</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
-                            </div>
                             <!-- /.table-stats -->
                         </div>
                     </div>
@@ -162,6 +107,16 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <script src="../static/js/init/fullcalendar-init.js"></script>
+<script src="../static/js/lib/data-table/datatables.min.js"></script>
+<script src="../static/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+<script src="../static/js/lib/data-table/dataTables.buttons.min.js"></script>
+<script src="../static/js/lib/data-table/buttons.bootstrap.min.js"></script>
+<script src="../static/js/lib/data-table/jszip.min.js"></script>
+<script src="../static/js/lib/data-table/vfs_fonts.js"></script>
+<script src="../static/js/lib/data-table/buttons.html5.min.js"></script>
+<script src="../static/js/lib/data-table/buttons.print.min.js"></script>
+<script src="../static/js/lib/data-table/buttons.colVis.min.js"></script>
+<script src="../static/js/init/datatables-init.js"></script>
 
 <!--Local Stuff-->
 <script>
