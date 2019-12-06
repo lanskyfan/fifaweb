@@ -14,9 +14,9 @@ def index(id):
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
-    "SELECT *"
-    " FROM player"
-    " WHERE club_id = %s", id
+    "SELECT p.photo, p.name, n.flag, n.nationality, p.value, p.wage, p.overall, p.potential"
+    " FROM player p, nation n "
+    " WHERE p.nation_id = nation.nation_id AND club_id = %s", id
 )
     players = cursor.fetchall()
     return render_template('team_detail.html', players = players)
