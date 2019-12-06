@@ -12,7 +12,7 @@ bp = Blueprint('player', __name__)
 
 
 
-@bp.route('/score', methods=('GET', 'POST'))
+@bp.route('/<int:id>/score', methods=('GET', 'POST'))
 def player_score():
     db = get_db()
     cursor = db.cursor()

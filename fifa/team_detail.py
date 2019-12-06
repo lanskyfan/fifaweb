@@ -31,8 +31,8 @@ def index(id):
     " FROM player0"
     " WHERE club_id = %s", id
 )
-    players = cursor.fetchall()
-    return render_template('team_detail.html', players = players, club_name = club_name)
+    attributes = cursor.fetchall()
+    return render_template('team_detail.html', players = players, club_name = club_name, attributes = attributes)
 
 
     # if (g.user):
