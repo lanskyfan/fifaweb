@@ -14,8 +14,9 @@ def team_index():
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT *"
-        " FROM player"
+    "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
+    " FROM player p, nation n "
+    " WHERE p.nation_id = n.nation_id"
     )
     players = cursor.fetchall()
     return render_template('player_list.html', players = players)
