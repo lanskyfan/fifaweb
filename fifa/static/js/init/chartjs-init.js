@@ -70,9 +70,9 @@ function polar_charts_update_data(data) {
         }
     } );
 }
-function fetch_data_and_change() {
+function fetch_data_and_change(id) {
     // console.log(234)
-    fetch("/<int:id>/score").then(
+    fetch("/" + id + "/score").then(
         function (response) {
             return response.json()
         }
@@ -84,9 +84,9 @@ function fetch_data_and_change() {
     )
 }
 
-function fetch_passing_and_change() {
+function fetch_passing_and_change(id) {
     // console.log(234)
-    fetch("/passing").then(
+    fetch("/" + id + "/passing").then(
         function (response) {
             return response.json()
         }
@@ -100,8 +100,9 @@ function fetch_passing_and_change() {
 
 (function ($) {
     "use strict";
-
+    var id_value = parseInt(document.getElementById('empty').name)
     //Team chart
+    console.log(id_value)
     var ctx = document.getElementById( "team-chart" );
     ctx.height = 150;
     var myChart = new Chart( ctx, {
@@ -345,7 +346,7 @@ function fetch_passing_and_change() {
         }
     } );
 
-    fetch_data_and_change()
+    fetch_data_and_change(id_value)
     // function fetch_data_and_change() {
     //     var ctx = document.getElementById( "radarChart" );
     //     // console.log(234)
@@ -477,7 +478,7 @@ function fetch_passing_and_change() {
     } );
 
     //polar chart
-    fetch_passing_and_change()
+    fetch_passing_and_change(id_value)
 
     // single bar chart
     var ctx = document.getElementById( "singelBarChart" );
