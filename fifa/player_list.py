@@ -19,6 +19,9 @@ def team_index():
     " WHERE p.nation_id = n.nation_id"
     )
     players = cursor.fetchall()
+    for player in players:
+        player["value"] = '%.1f' % (player["value"])
+        
     return render_template('player_list.html', players = players)
 
 

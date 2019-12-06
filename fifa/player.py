@@ -12,14 +12,14 @@ bp = Blueprint('player', __name__)
 
 
 
-@bp.route('/<int:id>/score', methods=('GET', 'POST'))
-def player_score():
+@bp.route('/<int:id>/score')
+def player_score(id):
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
         "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score"
         " FROM rating"
-        " WHERE ID = 182398"
+        " WHERE ID = %s",id
     )
     player = cursor.fetchone()
     player_score = []
@@ -27,14 +27,14 @@ def player_score():
         player_score.append(player[key])
     return  jsonify(player_score)
 
-@bp.route('/passing', methods=('GET', 'POST'))
-def passing_func():
+@bp.route('/<int:id>/passing')
+def passing_func(id):
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
         "SELECT vision, crossing, FK_accuracy, short_passing, long_passing, curve"
         " FROM passing"
-        " WHERE ID = 231747"
+        " WHERE ID = %s", id
     )
     passing = cursor.fetchone()
     print(passing)
@@ -47,8 +47,14 @@ def passing_func():
 @bp.route('/<int:id>/player', methods=('GET', 'POST'))
 def index(id):
     g.current = "player"
-    # db = get_db()
-    # cursor = db.cursor()
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute(
+    "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
+    " FROM player p, nation n "
+    " WHERE p.nation_id = n.nation_id AND p.id = %s", id
+    )
+    player_detail = cursor.fetchone()
     # cursor.execute(
     #     "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score"
     #     " FROM rating"
@@ -72,7 +78,8 @@ def index(id):
     #             " WHERE pos.id = '%d' AND"
     #             " pos.id = phone.id" % (position, position, id,))
     #     players = cursor.fetchone()
-    return render_template('player.html', id = id)
+
+    return render_template('player.html', id = id, player_detail = player_detail)
 
 # def get_player(id, position, check_author=True):   
 #     db = get_db()
