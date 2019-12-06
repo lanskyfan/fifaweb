@@ -84,6 +84,9 @@
                     <a href="team_list"><i class="menu-icon fa fa-fort-awesome"></i> Teams </a>
                 </li>
                 <li class="inactive">
+                        <a href="team_detail"><i class="menu-icon fa fa-group"></i> Team Detail </a>
+                    </li>
+                <li class="inactive">
                     <a href="player"><i class="menu-icon fa fa-group"></i> Players </a>
                 </li>
                 {% endif %}
@@ -96,6 +99,9 @@
                     <a href="team_list"><i class="menu-icon fa fa-fort-awesome"></i> Teams </a>
                 </li>
                 <li class="inactive">
+                        <a href="team_detail"><i class="menu-icon fa fa-group"></i> Team Detail </a>
+                    </li>
+                <li class="inactive">
                     <a href="player"><i class="menu-icon fa fa-group"></i> Players </a>
                 </li>
                 {% endif %}
@@ -107,7 +113,25 @@
                 <li class="inactive">
                     <a href="team_list"><i class="menu-icon fa fa-fort-awesome"></i> Teams </a>
                 </li>
+                <li class="inactive">
+                        <a href="team_detail"><i class="menu-icon fa fa-group"></i> Team Detail </a>
+                    </li>
                 <li class="active">
+                    <a href="player"><i class="menu-icon fa fa-group"></i> Players </a>
+                </li>
+                {% endif %}
+
+                {% if g.current == "team_detail" %}
+                <li class="inactive">
+                    <a href="/"><i class="menu-icon fa fa-laptop"></i> Dashboard </a>
+                </li>
+                <li class="inactive">
+                    <a href="team_list"><i class="menu-icon fa fa-fort-awesome"></i> Teams </a>
+                </li>
+                <li class="active">
+                        <a href="team_detail"><i class="menu-icon fa fa-group"></i> Team Detail </a>
+                    </li>
+                <li class="inactive">
                     <a href="player"><i class="menu-icon fa fa-group"></i> Players </a>
                 </li>
                 {% endif %}
