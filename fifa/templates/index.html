@@ -5,17 +5,17 @@
         <div class="row">
 
             <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Player by Location</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="a783eead-85e3-4b59-997f-032282ab881b" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
-                        </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Player by Location</h4>
                     </div>
-                    <!-- /# card -->
+                    <div class="Vector-map-js">
+                        <div id="a783eead-85e3-4b59-997f-032282ab881b" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                    </div>
                 </div>
-                <!-- /# column -->
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
 
             <div class="col-lg-12">
                 <div class="card">
@@ -30,33 +30,33 @@
             </div>
             <!-- /# column -->
 
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
                         <h4>Top Players with High Market Values</h4>
                     </div>
                     <div class="Vector-map-js">
-                        <div id="9a36cdf3-f2b4-4ee5-b109-0db21437df20" style="width: 800px; height: 800px;" class="plotly-graph-div"></div>
+                        <div id="9a36cdf3-f2b4-4ee5-b109-0db21437df20" style="width: 60%; height: 60%;" class="plotly-graph-div"></div>
                     </div>
                 </div>
                 <!-- /# card -->
             </div>
             <!-- /# column -->
 
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
                         <h4>Top Players Market Value due to their Finishing</h4>
                     </div>
                     <div class="Vector-map-js">
-                        <div id="6ddf6428-5152-4c86-ac64-434f0e1ea16d" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                        <div id="6ddf6428-5152-4c86-ac64-434f0e1ea16d" style="width: 60%; height: 60%;" class="plotly-graph-div"></div>
                     </div>
                 </div>
                 <!-- /# card -->
             </div>
             <!-- /# column -->
 
-            
+
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
@@ -96,10 +96,10 @@
                 <!-- /# card -->
             </div>
             <!-- /# column -->
-        
 
 
-            
+
+
 
         </div>
     </div>
@@ -123,39 +123,45 @@
 <script type="text/javascript" src="../static/js/figure/ground_figure3.js"></script>
 
 <script type="text/javascript">
-            (function(){
-                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
-                var gd = document.getElementById('a783eead-85e3-4b59-997f-032282ab881b')
-                var resizeDebounce = null;
+        var gd = document.getElementById('a783eead-85e3-4b59-997f-032282ab881b')
+        var resizeDebounce = null;
 
-                function resizePlot() {
-                    var bb = gd.getBoundingClientRect();
-                    Plotly.relayout(gd, {
-                        width: bb.width,
-                        height: bb.height
-                    });
-                }
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
 
-                
-                window.addEventListener('resize', function() {
-                    if (resizeDebounce) {
-                        window.clearTimeout(resizeDebounce);
-                    }
-                    resizeDebounce = window.setTimeout(resizePlot, 100);
-                });
-                
 
-                
-                Plotly.plot(gd,  {
-                    data: mapfigure1.data,
-                    layout: mapfigure1.layout,
-                    frames: mapfigure1.frames,
-                    config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
-                });
-                
-           }());
-        </script>
+        window.addEventListener('resize', function() {
+            if (resizeDebounce) {
+                window.clearTimeout(resizeDebounce);
+            }
+            resizeDebounce = window.setTimeout(resizePlot, 100);
+        });
+
+
+
+        Plotly.plot(gd, {
+            data: mapfigure1.data,
+            layout: mapfigure1.layout,
+            frames: mapfigure1.frames,
+            config: {
+                "showLink": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
 
 
 <script type="text/javascript">
@@ -197,8 +203,10 @@
 </script>
 
 <script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
         var gd = document.getElementById('9a36cdf3-f2b4-4ee5-b109-0db21437df20')
         var resizeDebounce = null;
@@ -211,22 +219,28 @@
             });
         }
 
-        
-        
-        Plotly.plot(gd,  {
+
+
+        Plotly.plot(gd, {
             data: threedfigure1_.data,
             layout: threedfigure1_.layout,
             frames: threedfigure1_.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {
+                "showLink": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
         });
-        
-   }());
+
+    }());
 </script>
 
 
 <script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
         var gd = document.getElementById('6ddf6428-5152-4c86-ac64-434f0e1ea16d')
         var resizeDebounce = null;
@@ -239,23 +253,29 @@
             });
         }
 
-        
 
-        
-        Plotly.plot(gd,  {
+
+
+        Plotly.plot(gd, {
             data: threedfigure2.data,
             layout: threedfigure2.layout,
             frames: threedfigure2.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {
+                "showLink": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
         });
-        
-   }());
+
+    }());
 </script>
 
 
 <script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
         var gd = document.getElementById('46ee16bb-91ab-4bcf-ab8e-399a63b7f31d')
         var resizeDebounce = null;
@@ -268,30 +288,36 @@
             });
         }
 
-        
+
         window.addEventListener('resize', function() {
             if (resizeDebounce) {
                 window.clearTimeout(resizeDebounce);
             }
             resizeDebounce = window.setTimeout(resizePlot, 100);
         });
-        
 
-        
-        Plotly.plot(gd,  {
+
+
+        Plotly.plot(gd, {
             data: ground_figure1.data,
             layout: ground_figure1.layout,
             frames: ground_figure1.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {
+                "showLink": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
         });
-        
-   }());
+
+    }());
 </script>
 
 
 <script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
         var gd = document.getElementById('53b32a5e-bea7-4dca-b3bf-c8e1c73efdc5')
         var resizeDebounce = null;
@@ -304,30 +330,36 @@
             });
         }
 
-        
+
         window.addEventListener('resize', function() {
             if (resizeDebounce) {
                 window.clearTimeout(resizeDebounce);
             }
             resizeDebounce = window.setTimeout(resizePlot, 100);
         });
-        
 
-        
-        Plotly.plot(gd,  {
+
+
+        Plotly.plot(gd, {
             data: ground_figure2.data,
             layout: ground_figure2.layout,
             frames: ground_figure2.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {
+                "showLink": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
         });
-        
-   }());
+
+    }());
 </script>
 
 
 <script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
         var gd = document.getElementById('f8025ae2-8478-45ed-a7b4-aa24d86ac3e4')
         var resizeDebounce = null;
@@ -340,24 +372,28 @@
             });
         }
 
-        
+
         window.addEventListener('resize', function() {
             if (resizeDebounce) {
                 window.clearTimeout(resizeDebounce);
             }
             resizeDebounce = window.setTimeout(resizePlot, 100);
         });
-        
 
-        
-        Plotly.plot(gd,  {
+
+
+        Plotly.plot(gd, {
             data: ground_figure3.data,
             layout: ground_figure3.layout,
             frames: ground_figure3.frames,
-            config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {
+                "showLink": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
         });
-        
-   }());
+
+    }());
 </script>
 
 {% endblock %}
