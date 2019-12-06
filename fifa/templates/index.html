@@ -51,7 +51,7 @@
                         <h4> <i class="fa fa-pie-chart"></i> Players Position Percentage</h4>
                     </div>
                     <div class="Vector-map-js">
-                        <div id="763ada94-f2a6-48ef-884e-804febf28624" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                        <div id="3bb35e6e-d39f-4c80-af57-454cab99c787" style="width: 450px; height: 450px;" class="plotly-graph-div"></div>
                     </div>
                 </div>
                 <!-- /# card -->
@@ -64,7 +64,7 @@
                         <h4> <i class="fa fa-pie-chart"></i> Players Preferred Foot Percentage</h4>
                     </div>
                     <div class="Vector-map-js">
-                        <div id="384b5183-d9ba-4ea8-9dd1-373207510a0f" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                        <div id="384b5183-d9ba-4ea8-9dd1-373207510a0f" style="width: 450px; height: 450px;" class="plotly-graph-div"></div>
                     </div>
                 </div>
                 <!-- /# card -->
@@ -125,7 +125,7 @@
 <!-- /.content -->
 {% endblock %} {% block script %}
 <script type="text/javascript" src="../static/js/figure/plotlyjs-bundle.js"></script>
-<script type="text/javascript" src="../static/js/figure/piechart.js"></script>
+<script type="text/javascript" src="../static/js/figure/piefigure.js"></script>
 <script type="text/javascript" src="../static/js/figure/piechart1.js"></script>
 <script type="text/javascript" src="../static/js/figure/tdfigure1_.js"></script>
 <!-- <script type="text/javascript" src="../static/js/figure/marketvalues.js"></script> -->
@@ -182,43 +182,35 @@
 
 
 <script type="text/javascript">
-    (function() {
-        window.PLOTLYENV = {
-            'BASE_URL': 'https://plot.ly'
-        };
+            (function(){
+                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
 
-        var gd = document.getElementById('763ada94-f2a6-48ef-884e-804febf28624')
-        var resizeDebounce = null;
+                var gd = document.getElementById('3bb35e6e-d39f-4c80-af57-454cab99c787')
+                var resizeDebounce = null;
 
-        function resizePlot() {
-            var bb = gd.getBoundingClientRect();
-            Plotly.relayout(gd, {
-                width: bb.width,
-                height: bb.height
-            });
-        }
+                function resizePlot() {
+                    var bb = gd.getBoundingClientRect();
+                    Plotly.relayout(gd, {
+                        width: bb.width,
+                        height: bb.height
+                    });
+                }
 
-        window.addEventListener('resize', function() {
-            if (resizeDebounce) {
-                window.clearTimeout(resizeDebounce);
-            }
-            resizeDebounce = window.setTimeout(resizePlot, 100);
-        });
+                
 
-        Plotly.plot(gd, {
-            data: piechart.data,
-            layout: piechart.layout,
-            frames: piechart.frames,
-            config: {
-                "showLink": false,
-                "displayModeBar": false,
-                "linkText": "Export to plot.ly",
-                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
-            }
-        });
-
-    }());
-</script>
+                
+                Plotly.plot(gd,  {
+                    data: piefigure.data,
+                    layout: piefigure.layout,
+                    frames: piefigure.frames,
+                    config: {"showLink": false,
+                             "displayModeBar": false,
+                             "linkText": "Export to plot.ly", 
+                             "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+                });
+                
+           }());
+        </script>
 
 <script type="text/javascript">
     (function(){
@@ -432,7 +424,10 @@
                     data: piechart1.data,
                     layout: piechart1.layout,
                     frames: piechart1.frames,
-                    config: {"showLink": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+                    config: {"showLink": false, 
+                             "displayModeBar": false,
+                             "linkText": "Export to plot.ly", 
+                             "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
                 });
                 
            }());
