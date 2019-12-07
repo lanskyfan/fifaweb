@@ -228,7 +228,7 @@ function polar_charts3_update_data(data) {
                             ["The higher your Jumping the more likely you'll", "be to beat opposition players to aerial balls."],
                             ["A good Stamina rating will increase the amount of time your", "player can spend sprinting during a game as well as improve recovery time."],
                             ["Strength will increase your chances of winning", "physical challenges with opposition players."],
-                            ["Aggression will increase your chances of coming", "out on top in a 50/50 challenge with the opposition."],
+                            ["A good Standing Tackle rating will mean you are more", "likely to come out with the ball when putting your foot in."],
                             ];
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
