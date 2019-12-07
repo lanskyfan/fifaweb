@@ -15,10 +15,14 @@
                                         <div class="media-body">
                                             <h2 class="text-dark display-6">{{player_detail["name"]}}</h2>
                                             <p>{{player_detail["nationality"]}}</p>
-                                            <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=16% height=16%>
+                                            <a href="#">
+                                                <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=17% height=17%></a>
+                                            </a>
                                             </div>
                                         <div class="h1 text-muted text-right mb-4">
-                                            <a href="{{ url_for('similar_player', id = id) }}"><i class="menu-icon fa fa-fort-awesome"></i> Similar Player </a>
+                                            <a href="#">
+                                                <a href="{{ url_for('team_detail.index', id = 1944) }}"><i class="menu-icon fa fa-fort-awesome"></i> Similar Player </a>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

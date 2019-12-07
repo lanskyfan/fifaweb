@@ -15,10 +15,11 @@
                                         <div class="media-body">
                                             <h2 class="text-dark display-6">{{player_detail["name"]}}</h2>
                                             <p>{{player_detail["nationality"]}}</p>
-                                            <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=16% height=16%>
-                                            </div>
+                                        </div>
                                         <div class="h1 text-muted text-right mb-4">
-                                            <a href="{{ url_for('similar_player', id = id) }}"><i class="menu-icon fa fa-fort-awesome"></i> Similar Player </a>
+                                            <a href="#">
+                                                    <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt=""></a>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +55,7 @@
                     <div class="card">
                         <div class="card-body">
                             <!-- <button onclick="fetch_data_and_change()">Fetch Data and Change</button> -->
-                            <h4 class="mb-3" style="vertical-align:middle; text-align: center">Overall Ability </h4>
+                            <h4 class="mb-3">Overall Ability </h4>
                             <canvas id="radarChart"></canvas>
                 
                     </div>
