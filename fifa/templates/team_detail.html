@@ -39,111 +39,113 @@
                                             <td class="Flag">
                                                 <div class="round-img">
                                                     <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player.flag) }}" alt=""></a>
-                                                </div>
                     </div>
-                    </td>
-                    <td>{{player.nationality}}</td>
-                    <td>{{player.position}}</td>
-                    <td>{{player.value}}</td>
-                    <td>{{player.wage}}</td>
-                    <td>{{player.overall}}</td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                    </table>
-                
                 </div>
-            </div>
-        
-        </div>
-        <!-- /.col-lg-8 -->
+                </td>
+                <td>{{player.nationality}}</td>
+                <td>{{player.position}}</td>
+                <td>{{player.value}}</td>
+                <td>{{player.wage}}</td>
+                <td>{{player.overall}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                </table>
 
-        <div class="col-lg-4">
-            <!-- <div class="col-sm-12 mb-4"> -->
-            <!-- <div class="card-group"> -->
-            <div class="card col-lg-12 no-padding ">
-                <div class="card-body">
-                    <!-- <div class="card-right float-right text-right">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.col-lg-8 -->
+
+    <div class="col-lg-4">
+        <!-- <div class="col-sm-12 mb-4"> -->
+        <!-- <div class="card-group"> -->
+        <div class="card col-lg-12 no-padding ">
+            <div class="card-body">
+                <!-- <div class="card-right float-right text-right">
                         <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="../static/images/admin.jpg">
                     </div> -->
-                    <div class="h1 text-muted text-center mb-4">
-                            <a href="#">
-                                    <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+club_name.club_logo) }}" alt=""></a>
-                                </a>
-                    </div>
+                <div class="h1 text-muted text-center mb-4">
+                    <a href="#">
+                        <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+team_attribute.club_logo) }}" alt=""></a>
+                    </a>
+                </div>
 
-                    <div class="h3 mb-0 fw-r">
-                        <!-- <span class="count">87500</span> -->
-                        <span class="text-dark"> {{club_name["club_name"]}} </span>
-                    </div>
+                <div class="h3 mb-0 fw-r">
+                    <!-- <span class="count">87500</span> -->
+                    <span class="text-dark"> {{team_attribute.club_name}} </span>
+                </div>
 
-                    <!-- <small class="text-muted text-uppercase font-weight-bold">Visitors</small>
+                <!-- <small class="text-muted text-uppercase font-weight-bold">Visitors</small>
                         <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div> -->
-                </div>
-            </div>
-            <div class="card col-lg-12 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-user-plus"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">385</span>
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">New Clients</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 40%; height: 5px;"></div>
-                </div>
-            </div>
-
-            <div class="card col-lg-12 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-cart-plus"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">1238</span>
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">Products sold</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-3" style="width: 40%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-lg-12 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-pie-chart"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">28</span>%
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">Returning Visitors</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-4" style="width: 40%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-lg-12 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-clock-o"></i>
-                    </div>
-                    <div class="h4 mb-0">5:34:11</div>
-                    <small class="text-muted text-uppercase font-weight-bold">Avg. Time</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-5" style="width: 40%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-lg-12 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-comments-o"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">972</span>
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">COMMENTS</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
-                </div>
-                <!-- </div> -->
-                <!-- </div> -->
             </div>
         </div>
+        <div class="card col-lg-12 no-padding ">
+            <div class="card-body">
+                <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-user-plus"></i>
+                </div>
+                <div class="h4 mb-0">
+                    <span class="count"> {{team_attribute.count}} </span>
+                </div>
+                <small class="text-muted text-uppercase font-weight-bold"> # Players</small>
+                <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 40%; height: 5px;"></div>
+            </div>
+        </div>
+
+        <div class="card col-lg-12 no-padding ">
+            <div class="card-body">
+                <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-cart-plus"></i>
+                </div>
+                <div class="h4 mb-0">
+                    <span class="count"> {{team_attribute.overall}} </span>
+                </div>
+                <small class="text-muted text-uppercase font-weight-bold"> Overall </small>
+                <div class="progress progress-xs mt-3 mb-0 bg-flat-color-3" style="width: 40%; height: 5px;"></div>
+            </div>
+        </div>
+        <div class="card col-lg-12 no-padding ">
+            <div class="card-body">
+                <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-pie-chart"></i>
+                </div>
+                <div class="h4 mb-0">
+                    <span class="count">{{team_attribute.potential}}</span>
+                </div>
+                <small class="text-muted text-uppercase font-weight-bold">Potential</small>
+                <div class="progress progress-xs mt-3 mb-0 bg-flat-color-4" style="width: 40%; height: 5px;"></div>
+            </div>
+        </div>
+        <div class="card col-lg-12 no-padding ">
+            <div class="card-body">
+                <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="h4 mb-0">
+                    <span class="count">{{team_attribute.totalvalue}}</span>
+                </div>
+                <small class="text-muted text-uppercase font-weight-bold">Total Value</small>
+                <div class="progress progress-xs mt-3 mb-0 bg-flat-color-5" style="width: 40%; height: 5px;"></div>
+            </div>
+        </div>
+        <div class="card col-lg-12 no-padding ">
+            <div class="card-body">
+                <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-comments-o"></i>
+                </div>
+                <div class="h4 mb-0">
+                    <span class="count">{{team_attribute.totalwage}}</span>
+                </div>
+                <small class="text-muted text-uppercase font-weight-bold">Total Wage</small>
+                <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
+        </div>
     </div>
+</div>
 </div>
 <!-- .animated -->
 </div>
