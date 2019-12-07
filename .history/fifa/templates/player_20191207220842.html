@@ -13,13 +13,11 @@
                                             <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player_detail.photo) }}" alt=""></a>
                                         </a>
                                         <div class="media-body">
-                                            <h2 class="text-dark display-6">{{player_detail["name"]}}</h2>
-                                            <p>{{player_detail["nationality"]}}</p>
-                                        </div>
-                                        <div class="h1 text-muted text-right mb-4">
                                             <a href="#">
                                                     <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt=""></a>
                                             </a>
+                                            <h2 class="text-dark display-6">{{player_detail["name"]}}</h2>
+                                            <p>{{player_detail["nationality"]}}</p>
                                         </div>
                                     </div>
                                 </div>
