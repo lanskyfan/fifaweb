@@ -10,6 +10,8 @@ function radar_charts_update_data(data) {
                 {
                     label: "Player",
                     data: data,
+                    fill:true,
+                    pointBackgroundColor:"rgba(0, 139, 69, 0.7)",
                     borderColor: "rgba(0, 194, 146, 0.7)",
                     borderWidth: "1",
                     backgroundColor: "rgba(0, 194, 146, 0.4)"
@@ -25,13 +27,18 @@ function radar_charts_update_data(data) {
         },
         options: {
             legend: {
-                position: 'top'
+                display:false,
             },
             scale: {
+                angleLines: {
+                    display: true,
+                },
                 ticks: {
-                    beginAtZero: true
+                    suggestedMin: 25,
+                    suggestedMax: 100
                 }
             }
+
         }
     });
 }
@@ -46,13 +53,12 @@ function polar_charts_update_data(data) {
             datasets: [ {
                 data: data,
                 backgroundColor: [
-                    "rgba(0, 194, 146,0.9)",
-                    "rgba(50, 150, 120,0.8)",
-                    "rgba(100, 194, 146,0.7)",
-                    "rgba(0,50,50,0.2)",
-                    "rgba(0, 150, 146,0.5)",
-                    "rgba(0,100,150,0.2)",
-                    "rgba(0, 50, 146,0.5)"
+                    "rgba(84, 255, 159, 0.4)",
+                    "rgba(0, 70, 50, 0.3)",
+                    "rgba(46, 139, 87, 0.4)",
+                    "rgba(100, 255, 0, 0.5)",
+                    "rgba(0, 150, 146, 0.5)",
+                    "rgba(0, 100, 150, 0.2)",
                                 ]
 
                             } ],
