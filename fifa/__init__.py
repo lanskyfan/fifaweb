@@ -52,4 +52,7 @@ def create_app(test_config=None):
     from . import team_list
     app.register_blueprint(team_list.bp)
     
+    from . import similar_player
+    app.register_blueprint(similar_player.bp)
+
     return app
