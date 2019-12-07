@@ -10,8 +10,6 @@ function radar_charts_update_data(data) {
                 {
                     label: "Player",
                     data: data,
-                    fill:true,
-                    pointBackgroundColor:"rgba(0, 139, 69, 0.7)",
                     borderColor: "rgba(0, 194, 146, 0.7)",
                     borderWidth: "1",
                     backgroundColor: "rgba(0, 194, 146, 0.4)"
@@ -27,18 +25,13 @@ function radar_charts_update_data(data) {
         },
         options: {
             legend: {
-                display:false,
+                position: 'top'
             },
             scale: {
-                angleLines: {
-                    display: true,
-                },
                 ticks: {
-                    suggestedMin: 25,
-                    suggestedMax: 100
+                    beginAtZero: true
                 }
             }
-
         }
     });
 }
@@ -53,12 +46,13 @@ function polar_charts_update_data(data) {
             datasets: [ {
                 data: data,
                 backgroundColor: [
-                    "rgba(84, 255, 159, 0.4)",
-                    "rgba(0, 70, 50, 0.3)",
-                    "rgba(46, 139, 87, 0.4)",
-                    "rgba(100, 255, 0, 0.5)",
-                    "rgba(0, 150, 146, 0.5)",
-                    "rgba(0, 100, 150, 0.2)",
+                    "rgba(0, 194, 146,0.9)",
+                    "rgba(50, 150, 120,0.8)",
+                    "rgba(100, 194, 146,0.7)",
+                    "rgba(0,50,50,0.2)",
+                    "rgba(0, 150, 146,0.5)",
+                    "rgba(0,100,150,0.2)",
+                    "rgba(0, 50, 146,0.5)"
                                 ]
 
                             } ],
@@ -100,44 +94,6 @@ function polar_charts_update_data(data) {
         }
     } );
 }
-
-function bar_charts_update_data(data){
-    // single bar chart
-    var ctx = document.getElementById( "singelBarChart" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'bar',
-        data: {
-            labels: [ "Positioning", 
-            "Finishing", 
-            "Shot Power", 
-            "Long Shots", 
-            "Volleys", 
-            "Penalties", 
-            ],
-            datasets: [
-                {
-                    label: "Shooting",
-                    data: data,
-                    borderColor: "rgba(0, 194, 146, 0.9)",
-                    borderWidth: "0",
-                    backgroundColor: "rgba(0, 194, 146, 0.5)"
-                            }
-                        ]
-        },
-        options: {
-            scales: {
-                yAxes: [ {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                                } ]
-            }
-        }
-    } );
-}
-
-
 function fetch_data_and_change(id) {
     // console.log(234)
     fetch("/" + id + "/score").then(
@@ -161,19 +117,6 @@ function fetch_passing_and_change(id) {
     ).then(
         function (data) {
             polar_charts_update_data(data);
-            console.log(data);
-        }
-    )
-}
-
-function fetch_shooting_and_change(id){
-    fetch("/" + id + "/shooting").then(
-        function (response) {
-            return response.json()
-        }
-    ).then(
-        function (data) {
-            bar_charts_update_data(data);
             console.log(data);
         }
     )
@@ -561,33 +504,33 @@ function fetch_shooting_and_change(id){
     //polar chart
     fetch_passing_and_change(id_value)
 
-    // // single bar chart
-    // var ctx = document.getElementById( "singelBarChart" );
-    // ctx.height = 150;
-    // var myChart = new Chart( ctx, {
-    //     type: 'bar',
-    //     data: {
-    //         labels: [ "Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat" ],
-    //         datasets: [
-    //             {
-    //                 label: "My First dataset",
-    //                 data: [ 55, 50, 75, 80, 56, 55, 60 ],
-    //                 borderColor: "rgba(0, 194, 146, 0.9)",
-    //                 borderWidth: "0",
-    //                 backgroundColor: "rgba(0, 194, 146, 0.5)"
-    //                         }
-    //                     ]
-    //     },
-    //     options: {
-    //         scales: {
-    //             yAxes: [ {
-    //                 ticks: {
-    //                     beginAtZero: true
-    //                 }
-    //                             } ]
-    //         }
-    //     }
-    // } );
+    // single bar chart
+    var ctx = document.getElementById( "singelBarChart" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'bar',
+        data: {
+            labels: [ "Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat" ],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    data: [ 55, 50, 75, 80, 56, 55, 60 ],
+                    borderColor: "rgba(0, 194, 146, 0.9)",
+                    borderWidth: "0",
+                    backgroundColor: "rgba(0, 194, 146, 0.5)"
+                            }
+                        ]
+        },
+        options: {
+            scales: {
+                yAxes: [ {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                                } ]
+            }
+        }
+    } );
 
 
 

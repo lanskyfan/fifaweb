@@ -37,11 +37,25 @@ def passing_func(id):
         " WHERE ID = %s", id
     )
     passing = cursor.fetchone()
-    print(passing)
     passing_list = []
     for key in passing:
         passing_list.append(passing[key])
     return jsonify(passing_list)
+
+@bp.route('/<int:id>/shooting')
+def shooting_func(id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute(
+        "SELECT positioning, finishing, shot_power, long_shots, volleys, penalties"
+        " FROM shooting"
+        " WHERE ID = %s", id
+    )
+    shooting = cursor.fetchone()
+    shooting_list = []
+    for key in shooting:
+        shooting_list.append(shooting[key])
+    return jsonify(shooting_list)
     
 
 @bp.route('/<int:id>/player', methods=('GET', 'POST'))
