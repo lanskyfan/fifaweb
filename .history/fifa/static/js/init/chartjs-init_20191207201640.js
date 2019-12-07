@@ -113,7 +113,7 @@ function polar_charts_update_data(data) {
                         // label +=  data.labels[tooltipItem.index]+": ";
                         // label += Math.round(tooltipItem.yLabel * 100) / 100;
                         // label += labels[tooltipItem.index]
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
+                        return [labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
                     }
                 }
             }

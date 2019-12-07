@@ -100,7 +100,7 @@ function polar_charts_update_data(data) {
                     footer: function(tooltipItem, data) {
                         // var label = data.datasets[tooltipItem.datasetIndex].label || '';
                         // var label = tooltipItem.datasetIndex;
-                        // var label = "";
+                        var label = "";
                         var labels =  [
                             ["Vision will increase your ability to play accurate & intricate", "through balls to set up your team mates with scoring chances."],
                             ["A good Crossing attribute will increase the chances of finding", "your team mates & avoiding the opposition."],
@@ -113,7 +113,7 @@ function polar_charts_update_data(data) {
                         // label +=  data.labels[tooltipItem.index]+": ";
                         // label += Math.round(tooltipItem.yLabel * 100) / 100;
                         // label += labels[tooltipItem.index]
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
+                        return [label, labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
                     }
                 }
             }

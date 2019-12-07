@@ -97,7 +97,7 @@ function polar_charts_update_data(data) {
                         return label;
                     },
 
-                    footer: function(tooltipItem, data) {
+                    footer: function(tooltipItems, data) {
                         // var label = data.datasets[tooltipItem.datasetIndex].label || '';
                         // var label = tooltipItem.datasetIndex;
                         // var label = "";
@@ -113,7 +113,7 @@ function polar_charts_update_data(data) {
                         // label +=  data.labels[tooltipItem.index]+": ";
                         // label += Math.round(tooltipItem.yLabel * 100) / 100;
                         // label += labels[tooltipItem.index]
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
+                        return [labels[tooltipItems.index][0], labels[tooltipItems.index][1]];
                     }
                 }
             }
