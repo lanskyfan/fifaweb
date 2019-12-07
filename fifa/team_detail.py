@@ -19,6 +19,8 @@ def index(id):
     " WHERE p.nation_id = n.nation_id AND club_id = %s", id
 )
     players = cursor.fetchall()
+    for player in players:
+        player["value"] = '%.1f' % (player["value"])
     cursor.execute(
         "SELECT club_name"
         " FROM team"
