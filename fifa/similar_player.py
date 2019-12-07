@@ -54,18 +54,20 @@ def index(id):
 
     players = []
     for key in data:
-        if key.lower() != "id"
-            players.append(player[key])
+        if key.lower() != "id":
+            players.append(data[key])
             
     similar_players = []
     for player in players:
         cursor.execute(
-        "SELECT p.id id, p.photo photo, p.name name, p.value value, p.wage wage, p.overall overall, p.potential potential"
+        # "SELECT p.id id, p.photo photo, p.name name, p.value value, p.wage wage, p.overall overall, p.potential potential"
+        "SELECT p.id id"
         " FROM player p"
         " WHERE p.id = %s", player
         )
         similar_player = cursor.fetchone()
         similar_players.append(similar_player)
+        print(similar_players)
     # cursor.execute(
     # "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
     # " FROM player p, nation n, recommend re"

@@ -43,7 +43,7 @@ def player_index():
         "SELECT p.id id, p.photo photo, p.name name, p.position position, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
         " FROM player p, nation n "
         " WHERE p.nation_id = n.nation_id"
-        " ORDER BY p.overall desc LIMIT 50"
+        " ORDER BY rand() LIMIT 50"
         )
         players = cursor.fetchall()
         for player in players:

@@ -51,7 +51,7 @@ def team_index():
         cursor.execute(
             "SELECT *"
             " FROM team"
-            " ORDER BY team.overall desc LIMIT 50"
+            " ORDER BY rand() LIMIT 50"
         )
         teams = cursor.fetchall()
         for i in range(len(teams)):
