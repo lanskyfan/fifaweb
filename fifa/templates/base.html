@@ -81,7 +81,7 @@
                 <ul class="nav navbar-nav">
                     {% if g.current == "dashboard" %}
                     <li class="active">
-                        <a href="/"><i class="menu-icon fa fa-dashboard"></i> Dashboard </a>
+                        <a href="/"><i class="menu-icon fa fa-futbol-o"></i> Overall </a>
                     </li>
                     <li class="inactive">
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
@@ -97,7 +97,7 @@
                     </li>
                     {% endif %} {% if g.current == "team_list" %}
                     <li class="inactive">
-                        <a href="/"><i class="menu-icon fa fa-dashboard"></i> Dashboard </a>
+                        <a href="/"><i class="menu-icon fa fa-futbol-o"></i> Overall </a>
                     </li>
                     <li class="active">
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
@@ -113,7 +113,7 @@
                     </li>
                     {% endif %} {% if g.current == "player" %}
                     <li class="inactive">
-                        <a href="/"><i class="menu-icon fa fa-dashboard"></i> Dashboard </a>
+                        <a href="/"><i class="menu-icon fa fa-futbol-o"></i> Overall </a>
                     </li>
                     <li class="inactive">
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
@@ -129,7 +129,7 @@
                     </li>
                     {% endif %} {% if g.current == "team_detail" %}
                     <li class="inactive">
-                        <a href="/"><i class="menu-icon fa fa-dashboard"></i> Dashboard </a>
+                        <a href="/"><i class="menu-icon fa fa-futbol-o"></i> Overall </a>
                     </li>
                     <li class="inactive">
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
@@ -145,7 +145,7 @@
                     </li>
                     {% endif %} {% if g.current == "player_list" %}
                     <li class="inactive">
-                        <a href="/"><i class="menu-icon fa fa-dashboard"></i> Dashboard </a>
+                        <a href="/"><i class="menu-icon fa fa-futbol-o"></i> Overall </a>
                     </li>
                     <li class="inactive">
                         <a href="{{ url_for('team_list.team_index') }}"><i class="menu-icon fa fa-trophy"></i> Teams </a>
