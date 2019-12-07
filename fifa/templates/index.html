@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %}Player Page{% endblock %} {% block content %}
+{% extends 'base.html' %} {% block title %}Overall Page{% endblock %} {% block content %}
 <!-- Content -->
 <div class="content">
     <div class="animated fadeIn">
@@ -21,7 +21,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 > <i class="fa fa-cubes"></i> Top Players with High Market Values</h4>
+                        <h4> <i class="fa fa-cubes"></i> Top Players with High Market Values</h4>
                     </div>
                     <div class="Vector-map-js">
                         <div id="1894a932-11f5-43ce-bdd0-41d6816a4b3d" style="width: 500px; height: 500px;" class="plotly-graph-div"></div>
@@ -182,39 +182,45 @@
 
 
 <script type="text/javascript">
-            (function(){
-                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
-                var gd = document.getElementById('77998c0d-6793-4428-a936-54acea53afa6')
-                var resizeDebounce = null;
+        var gd = document.getElementById('77998c0d-6793-4428-a936-54acea53afa6')
+        var resizeDebounce = null;
 
-                function resizePlot() {
-                    var bb = gd.getBoundingClientRect();
-                    Plotly.relayout(gd, {
-                        width: bb.width,
-                        height: bb.height
-                    });
-                }
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
 
-                
 
-                
-                Plotly.plot(gd,  {
-                    data: piechart2.data,
-                    layout: piechart2.layout,
-                    frames: piechart2.frames,
-                    config: {"showLink": false, 
-                             "displayModeBar": false,
-                             "linkText": "Export to plot.ly", 
-                             "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
-                });
-                
-           }());
-        </script>
+
+
+        Plotly.plot(gd, {
+            data: piechart2.data,
+            layout: piechart2.layout,
+            frames: piechart2.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
 
 <script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
         var gd = document.getElementById('1894a932-11f5-43ce-bdd0-41d6816a4b3d')
         var resizeDebounce = null;
@@ -227,24 +233,28 @@
             });
         }
 
-        
-        Plotly.plot(gd,  {
+
+        Plotly.plot(gd, {
             data: tdfigure1_.data,
             layout: tdfigure1_.layout,
             frames: tdfigure1_.frames,
-            config: {"showLink": false,
-                     "displayModeBar": false,
-                     "linkText": "Export to plot.ly", 
-                     "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
         });
-        
-   }());
+
+    }());
 </script>
 
 
 <script type="text/javascript">
-    (function(){
-        window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
         var gd = document.getElementById('7ea83951-fd06-4237-88f8-8cad9f75197d')
         var resizeDebounce = null;
@@ -257,20 +267,22 @@
             });
         }
 
-        
 
-        
-        Plotly.plot(gd,  {
+
+
+        Plotly.plot(gd, {
             data: tdfigure2.data,
             layout: tdfigure2.layout,
             frames: tdfigure2.frames,
-            config: {"showLink": false, 
-                     "displayModeBar": false,
-                     "linkText": "Export to plot.ly", 
-                     "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
         });
-        
-   }());
+
+    }());
 </script>
 
 
@@ -404,33 +416,37 @@
 
 
 <script type="text/javascript">
-            (function(){
-                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
 
-                var gd = document.getElementById('384b5183-d9ba-4ea8-9dd1-373207510a0f')
-                var resizeDebounce = null;
+        var gd = document.getElementById('384b5183-d9ba-4ea8-9dd1-373207510a0f')
+        var resizeDebounce = null;
 
-                function resizePlot() {
-                    var bb = gd.getBoundingClientRect();
-                    Plotly.relayout(gd, {
-                        width: bb.width,
-                        height: bb.height
-                    });
-                }
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
 
-            
-                
-                Plotly.plot(gd,  {
-                    data: piechart1.data,
-                    layout: piechart1.layout,
-                    frames: piechart1.frames,
-                    config: {"showLink": false, 
-                             "displayModeBar": false,
-                             "linkText": "Export to plot.ly", 
-                             "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
-                });
-                
-           }());
-        </script>
+
+
+        Plotly.plot(gd, {
+            data: piechart1.data,
+            layout: piechart1.layout,
+            frames: piechart1.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
 
 {% endblock %}
