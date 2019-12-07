@@ -121,7 +121,10 @@ function polar_charts_update_data(data) {
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
                     }
-                }
+                },
+            legend:{
+                position:'bottom'
+            }
             }
         }
     } );
@@ -180,7 +183,10 @@ function polar_charts2_update_data(data) {
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
                     }
-                }
+                },
+            legend:{
+                position:'bottom'
+            }
             }
         }
     } );
@@ -233,7 +239,10 @@ function polar_charts3_update_data(data) {
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
                     }
-                }
+                },
+            legend:{
+                position:'bottom'
+            }
             }
         }
     } );
@@ -270,6 +279,9 @@ function bar_charts_update_data(data){
                         beginAtZero: true
                     }
                                 } ]
+            },
+            legend:{
+                display:false
             },
             tooltips: {
                 mode: 'label',
@@ -331,6 +343,9 @@ function bar_charts2_update_data(data){
                     }
                                 } ]
             },
+            legend:{
+                display:false
+            },
             tooltips: {
                 mode: 'label',
                 enabled: true,
@@ -383,6 +398,9 @@ function bar_charts3_update_data(data){
                         ]
         },
         options: {
+            legend:{
+                display:false
+            },
             scales: {
                 yAxes: [ {
                     ticks: {
