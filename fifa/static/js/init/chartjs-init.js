@@ -79,6 +79,44 @@ function polar_charts_update_data(data) {
         }
     } );
 }
+
+function bar_charts_update_data(data){
+    // single bar chart
+    var ctx = document.getElementById( "singelBarChart" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'bar',
+        data: {
+            labels: [ "Positioning", 
+            "Finishing", 
+            "Shot Power", 
+            "Long Shots", 
+            "Volleys", 
+            "Penalties", 
+            ],
+            datasets: [
+                {
+                    label: "Shooting",
+                    data: data,
+                    borderColor: "rgba(0, 194, 146, 0.9)",
+                    borderWidth: "0",
+                    backgroundColor: "rgba(0, 194, 146, 0.5)"
+                            }
+                        ]
+        },
+        options: {
+            scales: {
+                yAxes: [ {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                                } ]
+            }
+        }
+    } );
+}
+
+
 function fetch_data_and_change(id) {
     // console.log(234)
     fetch("/" + id + "/score").then(
@@ -102,6 +140,19 @@ function fetch_passing_and_change(id) {
     ).then(
         function (data) {
             polar_charts_update_data(data);
+            console.log(data);
+        }
+    )
+}
+
+function fetch_shooting_and_change(id){
+    fetch("/" + id + "/shooting").then(
+        function (response) {
+            return response.json()
+        }
+    ).then(
+        function (data) {
+            bar_charts_update_data(data);
             console.log(data);
         }
     )
@@ -489,33 +540,33 @@ function fetch_passing_and_change(id) {
     //polar chart
     fetch_passing_and_change(id_value)
 
-    // single bar chart
-    var ctx = document.getElementById( "singelBarChart" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'bar',
-        data: {
-            labels: [ "Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat" ],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    data: [ 55, 50, 75, 80, 56, 55, 60 ],
-                    borderColor: "rgba(0, 194, 146, 0.9)",
-                    borderWidth: "0",
-                    backgroundColor: "rgba(0, 194, 146, 0.5)"
-                            }
-                        ]
-        },
-        options: {
-            scales: {
-                yAxes: [ {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                                } ]
-            }
-        }
-    } );
+    // // single bar chart
+    // var ctx = document.getElementById( "singelBarChart" );
+    // ctx.height = 150;
+    // var myChart = new Chart( ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: [ "Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat" ],
+    //         datasets: [
+    //             {
+    //                 label: "My First dataset",
+    //                 data: [ 55, 50, 75, 80, 56, 55, 60 ],
+    //                 borderColor: "rgba(0, 194, 146, 0.9)",
+    //                 borderWidth: "0",
+    //                 backgroundColor: "rgba(0, 194, 146, 0.5)"
+    //                         }
+    //                     ]
+    //     },
+    //     options: {
+    //         scales: {
+    //             yAxes: [ {
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //                             } ]
+    //         }
+    //     }
+    // } );
 
 
 
