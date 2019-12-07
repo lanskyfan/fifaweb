@@ -121,10 +121,7 @@ function polar_charts_update_data(data) {
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
                     }
-                },
-            legend:{
-                position:'bottom'
-            }
+                }
             }
         }
     } );
@@ -183,10 +180,7 @@ function polar_charts2_update_data(data) {
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
                     }
-                },
-            legend:{
-                position:'bottom'
-            }
+                }
             }
         }
     } );
@@ -239,10 +233,7 @@ function polar_charts3_update_data(data) {
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
                     }
-                },
-            legend:{
-                position:'bottom'
-            }
+                }
             }
         }
     } );
@@ -279,9 +270,6 @@ function bar_charts_update_data(data){
                         beginAtZero: true
                     }
                                 } ]
-            },
-            legend:{
-                display:false
             },
             tooltips: {
                 mode: 'label',
@@ -343,9 +331,6 @@ function bar_charts2_update_data(data){
                     }
                                 } ]
             },
-            legend:{
-                display:false
-            },
             tooltips: {
                 mode: 'label',
                 enabled: true,
@@ -391,16 +376,13 @@ function bar_charts3_update_data(data){
                 {
                     label: "Goalkeeping",
                     data: data,
-                    borderColor: "rgba(238,238,0, 0.9)",
+                    borderColor: "rgba(255,255,0, 0.9)",
                     borderWidth: "0",
-                    backgroundColor: "rgba(238,238,0, 0.5)"
+                    backgroundColor: "rgba(255,255,0, 0.5)"
                             }
                         ]
         },
         options: {
-            legend:{
-                display:false
-            },
             scales: {
                 yAxes: [ {
                     ticks: {
