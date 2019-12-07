@@ -32,21 +32,22 @@ def team_index():
         if not team_name:
             error = 'Basic information is not complete.'
 
-        val = (team_name,)
-        cursor.execute("SELECT * FROM team WHERE LOWER(club_name) LIKE \%%s\%" , val)
-        teams = cursor.fetall()
+        # val = (team_name,)
+        cursor.execute("SELECT * FROM team WHERE LOWER(club_name) LIKE %s" , ("%"+team_name+"%",))
+        teams = cursor.fetchall()
 
         if teams is None:
             error = 'Team not found'
-            
-        if error is not None:
+            return render_template('team_list.html', teams = teams)
+
+        else:
             flash(error)
             for i in range(len(teams)):
                 teams[i]["overall"]=int(teams[i]["overall"])
                 teams[i]["potential"]=int(teams[i]["potential"])
                 teams[i]["totalvalue"]='%.1f'%(teams[i]["totalvalue"])
                 teams[i]["totalwage"]=int(teams[i]["totalwage"])
-            return redirect(url_for('team_list', teams = teams))
+            return render_template('team_list.html', teams = teams)
     
     else:
         cursor.execute(
