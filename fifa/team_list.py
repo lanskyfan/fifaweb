@@ -17,9 +17,10 @@ def team_index():
     cursor.execute(
         "SELECT *"
         " FROM team"
+        " ORDER BY rand() LIMIT 50"
     )
     teams = cursor.fetchall()
-    for i in range(650):
+    for i in range(len(teams)):
         teams[i]["overall"]=int(teams[i]["overall"])
         teams[i]["potential"]=int(teams[i]["potential"])
         teams[i]["totalvalue"]='%.1f'%(teams[i]["totalvalue"])
