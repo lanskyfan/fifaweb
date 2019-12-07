@@ -42,10 +42,10 @@
                             <tbody>
                                 {% for team in teams %}
                                 <tr>
-                                    <td class="Club Name" style="vertical-align:middle; text-align: center">
+                                    <td class="Club Name">
                                         <a class="btn btn-block " href="{{ url_for('team_detail.index', id = team.club_id) }}">{{team.club_name}}
                                         </td>
-                                    <td class="Club Logo" style="vertical-align:middle; text-align: center">
+                                    <td class="Club Logo">
                                         <div class="round-img">
                                             <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/club/'+team.club_logo) }}" alt=""></a>
                     </div>
