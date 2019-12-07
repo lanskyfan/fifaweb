@@ -22,7 +22,7 @@ def index(id):
     for player in players:
         player["value"] = '%.1f' % (player["value"])
     cursor.execute(
-        "SELECT club_name"
+        "SELECT club_name, club_logo"
         " FROM team"
         " WHERE club_id = %s", id
     )

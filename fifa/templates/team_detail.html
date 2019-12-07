@@ -65,15 +65,15 @@
                     <!-- <div class="card-right float-right text-right">
                         <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="../static/images/admin.jpg">
                     </div> -->
-                    <div class="h1 text-muted text-right mb-4">
-                        <a href="#">
-                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="../static/images/admin.jpg">
-                        </a>
+                    <div class="h1 text-muted text-center mb-4">
+                            <a href="#">
+                                    <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+club_name.club_logo) }}" alt=""></a>
+                                </a>
                     </div>
 
                     <div class="h3 mb-0 fw-r">
                         <!-- <span class="count">87500</span> -->
-                        <span class="text-dark"> Manchester United </span>
+                        <span class="text-dark"> {{club_name["club_name"]}} </span>
                     </div>
 
                     <!-- <small class="text-muted text-uppercase font-weight-bold">Visitors</small>
