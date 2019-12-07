@@ -25,37 +25,37 @@
                         <table id="bootstrap-data-table" class="table table-striped table-bordered ">
                             <thead>
                                 <tr>
-                                    <th class="photo" style="vertical-align:middle; text-align: center">Photo</th>
-                                    <th class="Name" style="vertical-align:middle; text-align: center">Name</th>
-                                    <th class="Flag" style="vertical-align:middle; text-align: center">Flag</th>
-                                    <th style="vertical-align:middle; text-align: center">Nationality</th>
-                                    <th style="vertical-align:middle; text-align: center">Position</th>
-                                    <th style="vertical-align:middle; text-align: center">Value (M€)</th>
-                                    <th style="vertical-align:middle; text-align: center">Wage (K€)</th>
-                                    <th style="vertical-align:middle; text-align: center">Overall</th>
+                                    <th class="photo">Photo</th>
+                                    <th class="Name">Name</th>
+                                    <th class="Flag">Flag</th>
+                                    <th>Nationality</th>
+                                    <th>Position</th>
+                                    <th>Value (M€)</th>
+                                    <th>Wage (K€)</th>
+                                    <th>Overall</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     {% for player in players %}
-                                    <td class="photo" style="vertical-align:middle; text-align: center">
+                                    <td class="photo">
                                         <div class="round-img">
                                             <a href="#"><img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}" alt=""></a>
                                         </div>
                                     </td>
-                                    <td class="Name" style="vertical-align:middle; text-align: center">
+                                    <td class="Name">
                                         <a class="btn btn-block " href="{{ url_for('player.index', id = player.id) }}">{{player.name}}
                                     </td>
-                                    <td class="Flag" style="vertical-align:middle; text-align: center">
+                                    <td class="Flag">
                                         <div class="round-img">
                                             <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player.flag) }}" alt=""></a>
                     </div>
                     </td>
-                    <td style="vertical-align:middle; text-align: center">{{player.nationality}}</td>
-                    <td style="vertical-align:middle; text-align: center">{{player.position}}</td>
-                    <td style="vertical-align:middle; text-align: center">{{player.value}}</td>
-                    <td style="vertical-align:middle; text-align: center">{{player.wage}}</td>
-                    <td style="vertical-align:middle; text-align: center">{{player.overall}}</td>
+                    <td>{{player.nationality}}</td>
+                    <td>{{player.position}}</td>
+                    <td>{{player.value}}</td>
+                    <td>{{player.wage}}</td>
+                    <td>{{player.overall}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
