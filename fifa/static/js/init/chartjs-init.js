@@ -178,6 +178,58 @@ function polar_charts2_update_data(data) {
     } );
 }
 
+function polar_charts3_update_data(data) {
+    //polar chart
+    var ctx = document.getElementById( "polarChart3" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'polarArea',
+        data: {
+            datasets: [ {
+                data: data,
+                backgroundColor: [
+                    "rgba(139, 69, 19, 0.4)",
+                    "rgba(160, 82, 45, 0.3)",
+                    "rgba(205, 133, 63, 0.4)",
+                    "rgba(222, 184,135, 0.5)",  
+                                ]
+
+                            } ],
+            labels: [
+                "Jumping",
+                "Stamina",
+                "Strength",
+                "Aggression",
+                ]
+        },
+        options: {
+            responsive: true,
+            tooltips: {
+                mode: 'label',
+                enabled: true,
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        // var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                        // var label = tooltipItem.datasetIndex;
+                        var label = "";
+                        var labels =  [
+                            ["1"],
+                            ["1"],
+                            ["1"],
+                            ["1"],
+                            ];
+
+                        label +=  data.labels[tooltipItem.index]+": ";
+                        label += Math.round(tooltipItem.yLabel * 100) / 100;
+                        // label += labels[tooltipItem.index]
+                        return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
+                    }
+                }
+            }
+        }
+    } );
+}
+
 function bar_charts_update_data(data){
     // single bar chart
     var ctx = document.getElementById( "singelBarChart" );
@@ -234,6 +286,41 @@ function bar_charts2_update_data(data){
                     borderColor: "rgba(99,184,255, 0.9)",
                     borderWidth: "0",
                     backgroundColor: "rgba(99,184,255, 0.5)"
+                            }
+                        ]
+        },
+        options: {
+            scales: {
+                yAxes: [ {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                                } ]
+            }
+        }
+    } );
+}
+
+function bar_charts3_update_data(data){
+    // single bar chart
+    var ctx = document.getElementById( "singelBarChart3" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'bar',
+        data: {
+            labels: [  
+            "GK Handling", 
+            "GK Kicking", 
+            "GK Positioning", 
+            "GK Reflexes",  
+            ],
+            datasets: [
+                {
+                    label: "Goalkeeping",
+                    data: data,
+                    borderColor: "rgba(255,255,0, 0.9)",
+                    borderWidth: "0",
+                    backgroundColor: "rgba(255,255,0, 0.5)"
                             }
                         ]
         },
@@ -314,56 +401,48 @@ function fetch_dribbling2_and_change(id){
     )
 }
 
+function fetch_physical_and_change(id){
+    fetch("/" + id + "/physical").then(
+        function (response) {
+            return response.json()
+        }
+    ).then(
+        function (data) {
+            polar_charts3_update_data(data);
+        }
+    )
+}
+
+function fetch_gk_and_change(id){
+    fetch("/" + id + "/gk").then(
+        function (response) {
+            return response.json()
+        }
+    ).then(
+        function (data) {
+            bar_charts3_update_data(data);
+            console.log(data)
+        }
+    )
+}
+
 
 (function ($) {
     "use strict";
     var id_value = parseInt(document.getElementById('empty').name)
     console.log(id_value)
 
+    //radar chart
     fetch_data_and_change(id_value)
-    fetch_shooting_and_change(id_value)
-    fetch_defending_and_change(id_value)
-    fetch_dribbling2_and_change(id_value)
-
-
-    //pie chart
-    var ctx = document.getElementById( "pieChart" );
-    ctx.height = 300;
-    var myChart = new Chart( ctx, {
-        type: 'pie',
-        data: {
-            datasets: [ {
-                data: [ 45, 25, 20, 10 ],
-                backgroundColor: [
-                                    "rgba(0, 194, 146,0.9)",
-                                    "rgba(0, 194, 146,0.7)",
-                                    "rgba(0, 194, 146,0.5)",
-                                    "rgba(0,0,0,0.07)"
-                                ],
-                hoverBackgroundColor: [
-                                    "rgba(0, 194, 146,0.9)",
-                                    "rgba(0, 194, 146,0.7)",
-                                    "rgba(0, 194, 146,0.5)",
-                                    "rgba(0,0,0,0.07)"
-                                ]
-
-                            } ],
-            labels: [
-                            "green",
-                            "green",
-                            "green"
-                        ]
-        },
-        options: {
-            responsive: true
-        }
-    } );
-
-    
 
     //polar chart
     fetch_passing_and_change(id_value)
+    fetch_dribbling2_and_change(id_value)
+    fetch_physical_and_change(id_value)
 
-
+    //bar chart
+    fetch_shooting_and_change(id_value)
+    fetch_defending_and_change(id_value)
+    fetch_gk_and_change(id_value)
 
 } )( jQuery );
