@@ -77,6 +77,7 @@ function polar_charts_update_data(data) {
         data: {
             datasets: [ {
                 data: data,
+                borderWidth: 5,
                 backgroundColor: [
                     "rgba(84, 255, 159, 0.4)",
                     "rgba(0, 70, 50, 0.3)",
@@ -99,7 +100,7 @@ function polar_charts_update_data(data) {
         options: {
             legend: {
                 display:true,
-                position:"top",
+                position:"left",
             },
             responsive: true,
             tooltips: {
