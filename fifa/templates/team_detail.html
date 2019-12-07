@@ -66,7 +66,7 @@
                     </div> -->
                     <div class="card-center text-center float-center mb-4">
                         <!-- <a href="#"> -->
-                        <img class="rounded-0" style="width:80px; height:80px;" src="{{ url_for('static', filename='images/club/'+team_attribute.club_logo) }}" alt="">
+                        <img class="rounded-0" style="width:75px; height:75px;" src="{{ url_for('static', filename='images/club/'+team_attribute.club_logo) }}" alt="">
                         <!-- </a> -->
                     </div>
 
@@ -118,7 +118,7 @@
                         <i class="fa fa-lightbulb-o"></i>
                     </div>
                     <div class="h3 mb-0">
-                        <span class="count">{{team_attribute.totalvalue}}</span>
+                        <i class="fa fa-eur"></i> <span class="count">{{team_attribute.totalvalue}}</span> M
                     </div>
                     <small class="text-muted text-uppercase font-weight-bold">Total Value</small>
                     <div class="progress progress-xs mt-3 mb-0 bg-flat-color-5" style="width: 40%; height: 5px;"></div>
@@ -130,7 +130,7 @@
                         <i class="fa fa-money"></i>
                     </div>
                     <div class="h3 mb-0">
-                        <span class="count">{{team_attribute.totalwage}}</span>
+                        <i class="fa fa-eur"></i> <span class="count">{{team_attribute.totalwage}}</span> K
                     </div>
                     <small class="text-muted text-uppercase font-weight-bold">Total Wage</small>
                     <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
