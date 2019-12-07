@@ -56,6 +56,37 @@ def shooting_func(id):
     for key in shooting:
         shooting_list.append(shooting[key])
     return jsonify(shooting_list)
+
+@bp.route('/<int:id>/defending')
+def defending_func(id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute(
+        "SELECT interceptions, headingaccuracy, marking, standing_tackle, sliding_tackle"
+        " FROM defending"
+        " WHERE ID = %s", id
+    )
+    defending = cursor.fetchone()
+    defending_list = []
+    for key in defending:
+        defending_list.append(defending[key])
+    return jsonify(defending_list)
+
+
+@bp.route('/<int:id>/dribbling2')
+def dribbling2_func(id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute(
+        "SELECT agility, balance, reactions, ball_control, dribbling,composure"
+        " FROM dribbling2"
+        " WHERE ID = %s", id
+    )
+    dribbling2 = cursor.fetchone()
+    dribbling2_list = []
+    for key in dribbling2:
+        dribbling2_list.append(dribbling2[key])
+    return jsonify(dribbling2_list)
     
 
 @bp.route('/<int:id>/player', methods=('GET', 'POST'))
