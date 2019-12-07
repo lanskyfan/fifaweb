@@ -45,7 +45,7 @@ function radar_charts_update_data(data) {
                     label: function(tooltipItem, data) {
                         // var label = data.datasets[tooltipItem.datasetIndex].label || '';
                         // var label = tooltipItem.datasetIndex;
-                        var label;
+                        var label = "";
                         var labels =  [
                         "Pace",
                         "Shooting",
@@ -54,8 +54,8 @@ function radar_charts_update_data(data) {
                         "Defending",
                         "Physical"
                         ];
-                        
-                        label = labels[tooltipItem.index] + ": ";
+
+                        label +=  data.labels[tooltipItem.index]+": ";
                         label += Math.round(tooltipItem.yLabel * 100) / 100;
                         
                         // return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];

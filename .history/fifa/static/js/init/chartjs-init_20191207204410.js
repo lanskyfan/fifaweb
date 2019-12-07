@@ -55,7 +55,8 @@ function radar_charts_update_data(data) {
                         "Physical"
                         ];
                         
-                        label = labels[tooltipItem.index] + ": ";
+                        label = labels[tooltipItem.index]
+                        label +=  data.labels[tooltipItem.index]+": ";
                         label += Math.round(tooltipItem.yLabel * 100) / 100;
                         
                         // return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
