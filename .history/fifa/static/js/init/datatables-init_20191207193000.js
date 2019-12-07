@@ -4,16 +4,18 @@
 
     /*  Data Table
 	-------------*/
-
-
-
-
-    $('#bootstrap-data-table').DataTable({
-		lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
+	
+	$('#dataTable').DataTable( {      
 		"searching": false,
 		"paging": true, 
 		"info": false,         
 		"lengthChange":false 
+   } );
+
+
+
+    $('#bootstrap-data-table').DataTable({
+        lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
     });
 
 
