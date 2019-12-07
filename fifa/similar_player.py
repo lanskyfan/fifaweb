@@ -60,8 +60,8 @@ def index(id):
     similar_players = []
     for player in players:
         cursor.execute(
-        # "SELECT p.id id, p.photo photo, p.name name, p.value value, p.wage wage, p.overall overall, p.potential potential"
-        "SELECT p.id id"
+        "SELECT p.id id, p.photo photo, p.name name, p.value value, p.wage wage, p.overall overall, p.potential potential"
+        # "SELECT p.id id"
         " FROM player p"
         " WHERE p.id = %s", player
         )

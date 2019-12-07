@@ -20,7 +20,16 @@
                 <aside class="profile-nav alt">
                     <section class="card">
                         <div class="card-header user-header alt bg-light">
-
+                            <div class="media">
+                                <a href="#">
+                                    <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_players[0]['photo'])}}"alt=""></a>
+                                </a>
+                                <div class="media-body">
+                                    <h2 class="text-dark display-6">{{similar_players[0]["name"]}}</h2>
+                                    <span>{{similar_players[0]["nationality"]}}</span>
+                                    
+                                </div>
+                            </div>
                         </div>
 
 
