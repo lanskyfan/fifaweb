@@ -84,7 +84,7 @@ CREATE TABLE `fifadata`.`fulldata` (
   PRIMARY KEY (`ID`));
 
 LOAD DATA LOCAL INFILE '/home/ubuntu/data/fifa19data444.csv'
-INTO TABLE fulldata character set latin1
+INTO TABLE fulldata character set utf8
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
@@ -390,3 +390,18 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
 select * from recommend;
+ 
+select nation.nation_id, nation.nationality ,count(*) as c
+from player, nation
+where player.nation_id = nation.nation_id
+group by player.nation_id;
+
+select name 
+from fulldata
+where club_id = 241;
+
+ALTER DATABASE fifadata CHARACTER SET = latin1 COLLATE = utf8;
+;
+update player set name=convert(convert(convert(name using binary) using utf8) using utf8mb4);
+
+update team set club_name=convert(convert(convert(club_name using binary) using latin1) using  utf8mb4);

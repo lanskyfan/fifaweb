@@ -28,7 +28,7 @@ function radar_charts_update_data(data) {
         options: {
             legend: {
                 display:false,
-                position:"bottom",
+                position:"button",
             },
             scale: {
                 angleLines: {
@@ -97,10 +97,6 @@ function polar_charts_update_data(data) {
                 ]
         },
         options: {
-            legend: {
-                display:true,
-                position:"top",
-            },
             responsive: true,
             tooltips: {
                 mode: 'label',
