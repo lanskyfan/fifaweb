@@ -57,8 +57,8 @@ def index(id):
     cursor.execute(
     "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
     " FROM player p, nation n, recommend re"
-    " WHERE p.nation_id = n.nation_id AND p.id = re.id AND (p.ID = re.sp1_id OR p.ID = re.sp2_id, OR p.ID = re.sp3_id, OR p.ID = re.sp4_id, OR p.ID = re.sp5_id)"
+    " WHERE p.id= %s and p.nation_id = n.nation_id AND p.id = re.id AND (p.ID = re.sp1_id OR p.ID = re.sp2_id OR p.ID = re.sp3_id OR p.ID = re.sp4_id OR p.ID = re.sp5_id)", id
     )
-
     similar_players = cursor.fetchall()
+    print(similar_players)
     return render_template('similar_player.html', id = id, similar_players = similar_players)
