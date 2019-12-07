@@ -186,59 +186,6 @@ function polar_charts2_update_data(data) {
     } );
 }
 
-function polar_charts3_update_data(data) {
-    //polar chart
-    var ctx = document.getElementById( "polarChart3" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'polarArea',
-        data: {
-            datasets: [ {
-                data: data,
-                backgroundColor: [
-                    "rgba(139, 69, 19, 0.4)",
-                    "rgba(160, 82, 45, 0.3)",
-                    "rgba(205, 133, 63, 0.4)",
-                    "rgba(222, 184,135, 0.5)",  
-                                ]
-
-                            } ],
-            labels: [
-                "Jumping",
-                "Stamina",
-                "Strength",
-                "Aggression",
-                ]
-        },
-        options: {
-            responsive: true,
-            tooltips: {
-                mode: 'label',
-                enabled: true,
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        var label = "";
-                        label +=  data.labels[tooltipItem.index]+": ";
-                        label += Math.round(tooltipItem.yLabel * 100) / 100;
-                        return label;
-                    },
-
-                    footer: function(tooltipItem, data) {
-                        var labels =  [
-                            ["The higher your Jumping the more likely you'll", "be to beat opposition players to aerial balls."],
-                            ["A good Stamina rating will increase the amount of time your", "player can spend sprinting during a game as well as improve recovery time."],
-                            ["Strength will increase your chances of winning", "physical challenges with opposition players."],
-                            ["Aggression will increase your chances of coming", "out on top in a 50/50 challenge with the opposition."],
-                            ];
-
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
-                    }
-                }
-            }
-        }
-    } );
-}
-
 function bar_charts_update_data(data){
     // single bar chart
     var ctx = document.getElementById( "singelBarChart" );
@@ -270,31 +217,6 @@ function bar_charts_update_data(data){
                         beginAtZero: true
                     }
                                 } ]
-            },
-            tooltips: {
-                mode: 'label',
-                enabled: true,
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        var label = "";
-                        label +=  data.labels[tooltipItem.index]+": ";
-                        label += Math.round(tooltipItem.yLabel * 100) / 100;
-                        return label;
-                    },
-
-                    footer: function(tooltipItem, data) {
-                        var labels =  [
-                            ["The higher the rating the better your player will position", "themselves by default following the ball going out of play."],
-                            ["A good Finishing attribute will increase your chances", "of beating the keeper with shots inside the box."],
-                            ["The higher your Shot Power the more venom you'll", "get on shots of any type & from any distance."],
-                            ["The better your Long Shots the more likely you'll", "be to beat the keeper with shots from outside the box."],
-                            ["A good rating will increase your chances of connecting & scoring", "with a Volley to leave the keeper helpless."],
-                            ["A good rating will increase your chances of tucking", "away Penalties & give the keeper no chance."]
-                            ];
-
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
-                    }
-                }
             }
         }
     } );
@@ -348,47 +270,12 @@ function bar_charts2_update_data(data){
                             ["A good Heading Accuracy will increase your", "timing & improve your accuracy when heading at goal."],
                             ["Increasing your Marking attribute will improve the default", "position your player takes up when your team is not in possession of the ball."],
                             ["A good Standing Tackle rating will mean you are more", "likely to come out with the ball when putting your foot in."],
-                            ["The higher the value the greater your", "chance of being successful with Sliding Tackles."],
+                            ["A good Dribbling rating will mean your player will", "keep tighter control of the ball when running at speed."],
                             ];
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
                     }
                 }
-            }
-        }
-    } );
-}
-
-function bar_charts3_update_data(data){
-    // single bar chart
-    var ctx = document.getElementById( "singelBarChart3" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'bar',
-        data: {
-            labels: [  
-            "GK Handling", 
-            "GK Kicking", 
-            "GK Positioning", 
-            "GK Reflexes",  
-            ],
-            datasets: [
-                {
-                    label: "Goalkeeping",
-                    data: data,
-                    borderColor: "rgba(238,238,0, 0.9)",
-                    borderWidth: "0",
-                    backgroundColor: "rgba(238,238,0, 0.5)"
-                            }
-                        ]
-        },
-        options: {
-            scales: {
-                yAxes: [ {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                                } ]
             }
         }
     } );
@@ -459,48 +346,56 @@ function fetch_dribbling2_and_change(id){
     )
 }
 
-function fetch_physical_and_change(id){
-    fetch("/" + id + "/physical").then(
-        function (response) {
-            return response.json()
-        }
-    ).then(
-        function (data) {
-            polar_charts3_update_data(data);
-        }
-    )
-}
-
-function fetch_gk_and_change(id){
-    fetch("/" + id + "/gk").then(
-        function (response) {
-            return response.json()
-        }
-    ).then(
-        function (data) {
-            bar_charts3_update_data(data);
-            console.log(data)
-        }
-    )
-}
-
 
 (function ($) {
     "use strict";
     var id_value = parseInt(document.getElementById('empty').name)
     console.log(id_value)
 
-    //radar chart
     fetch_data_and_change(id_value)
+    fetch_shooting_and_change(id_value)
+    fetch_defending_and_change(id_value)
+    fetch_dribbling2_and_change(id_value)
+
+
+    //pie chart
+    var ctx = document.getElementById( "pieChart" );
+    ctx.height = 300;
+    var myChart = new Chart( ctx, {
+        type: 'pie',
+        data: {
+            datasets: [ {
+                data: [ 45, 25, 20, 10 ],
+                backgroundColor: [
+                                    "rgba(0, 194, 146,0.9)",
+                                    "rgba(0, 194, 146,0.7)",
+                                    "rgba(0, 194, 146,0.5)",
+                                    "rgba(0,0,0,0.07)"
+                                ],
+                hoverBackgroundColor: [
+                                    "rgba(0, 194, 146,0.9)",
+                                    "rgba(0, 194, 146,0.7)",
+                                    "rgba(0, 194, 146,0.5)",
+                                    "rgba(0,0,0,0.07)"
+                                ]
+
+                            } ],
+            labels: [
+                            "green",
+                            "green",
+                            "green"
+                        ]
+        },
+        options: {
+            responsive: true
+        }
+    } );
+
+    
 
     //polar chart
     fetch_passing_and_change(id_value)
-    fetch_dribbling2_and_change(id_value)
-    fetch_physical_and_change(id_value)
 
-    //bar chart
-    fetch_shooting_and_change(id_value)
-    fetch_defending_and_change(id_value)
-    fetch_gk_and_change(id_value)
+
 
 } )( jQuery );
