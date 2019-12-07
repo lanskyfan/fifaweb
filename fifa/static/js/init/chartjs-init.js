@@ -69,7 +69,7 @@ function radar_charts_update_data(data) {
 }
 
 function radar_charts2_update_data(data) {
-    var ctx = document.getElementById( "radarChart" );
+    var ctx = document.getElementById( "radarChart2" );
     ctx.height = 160;
     var myChart = new Chart( ctx, {
         type: 'radar',
@@ -79,7 +79,7 @@ function radar_charts2_update_data(data) {
             datasets: [
                 {
                     label: "Player 1",
-                    data: null,
+                    data: data[0],
                     fill:true,
                     pointBackgroundColor:"rgba(0, 139, 69, 0.7)",
                     borderColor: "rgba(0, 194, 146, 0.7)",
@@ -88,10 +88,10 @@ function radar_charts2_update_data(data) {
                             },
                  {
                      label: "Player 2",
-                     data: null,
-                     borderColor: "rgba(0, 194, 146, 0.7",
+                     data: data[1],
+                     borderColor: "rgba(255, 0, 0, 0.7)",
                      borderWidth: "1",
-                     backgroundColor: "rgba(0, 194, 146, 0.5)"
+                     backgroundColor: "rgba(255, 0, 0, 0.4)"
                              }
                          ]
         },
@@ -602,10 +602,11 @@ function fetch_similar_and_change(id1,id2) {
     var id_value1 = parseInt(document.getElementById('empty1').name)
 
     console.log(id_value)
+    console.log(id_value1)
 
     //radar chart
     fetch_data_and_change(id_value)
-
+    fetch_similar_and_change(id_value,id_value1)
     //polar chart
     fetch_passing_and_change(id_value)
     fetch_dribbling2_and_change(id_value)
