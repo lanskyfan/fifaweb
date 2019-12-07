@@ -376,9 +376,9 @@ function bar_charts3_update_data(data){
                 {
                     label: "Goalkeeping",
                     data: data,
-                    borderColor: "rgba(255,255,0, 0.9)",
+                    borderColor: "rgba(238,238,0, 0.9)",
                     borderWidth: "0",
-                    backgroundColor: "rgba(255,255,0, 0.5)"
+                    backgroundColor: "rgba(238,238,0, 0.5)"
                             }
                         ]
         },
