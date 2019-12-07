@@ -236,7 +236,7 @@ function bar_charts_update_data(data){
                             ["The higher your Shot Power the more venom you'll", "get on shots of any type & from any distance."],
                             ["The better your Long Shots the more likely you'll", "be to beat the keeper with shots from outside the box."],
                             ["A good rating will increase your chances of connecting & scoring", "with a Volley to leave the keeper helpless."],
-                            ["A good rating will increase your chances of tucking", "away Penalties & give the keeper no chance."]
+                            ["", ""]
                             ];
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];

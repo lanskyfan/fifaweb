@@ -170,12 +170,12 @@ function polar_charts2_update_data(data) {
 
                     footer: function(tooltipItem, data) {
                         var labels =  [
-                            ["Agile players can turn quicker & are more likely to attempt", "spectacular headers volleys & bicycle kicks."],
-                            ["A good Balance rating will reduce your chances", "of stumbling & falling when challenged by an opponent."],
-                            ["Good reactions will allow you to latch onto", "loose balls & rebounds quicker than other players."],
-                            ["The better your Ball Control the more likely your", "player will be to take a good first touch when receiving the ball."],
-                            ["A good Dribbling rating will mean your player will", "keep tighter control of the ball when running at speed."],
-                            ["", ""]
+                            ["Vision will increase your ability to play accurate & intricate", "through balls to set up your team mates with scoring chances."],
+                            ["A good Crossing attribute will increase the chances of finding", "your team mates & avoiding the opposition."],
+                            ["A high Free Kick Accuracy increases your chances of avoiding", "the wall & beating the keeper from dead ball situations."],
+                            ["The better your Short Passing the less likely it will be that", "your player misplaces passes."],
+                            ["Increase your Long Passing to turn defence into attack with", "improved accuracy & more powerful lobbed passes."],
+                            ["The higher your Curve rating the more bend & swerve you'll", "get on the ball when shooting & crossing."]
                             ];
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
@@ -217,31 +217,6 @@ function bar_charts_update_data(data){
                         beginAtZero: true
                     }
                                 } ]
-            },
-            tooltips: {
-                mode: 'label',
-                enabled: true,
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        var label = "";
-                        label +=  data.labels[tooltipItem.index]+": ";
-                        label += Math.round(tooltipItem.yLabel * 100) / 100;
-                        return label;
-                    },
-
-                    footer: function(tooltipItem, data) {
-                        var labels =  [
-                            ["The higher the rating the better your player will position", "themselves by default following the ball going out of play."],
-                            ["A good Finishing attribute will increase your chances", "of beating the keeper with shots inside the box."],
-                            ["The higher your Shot Power the more venom you'll", "get on shots of any type & from any distance."],
-                            ["The better your Long Shots the more likely you'll", "be to beat the keeper with shots from outside the box."],
-                            ["A good rating will increase your chances of connecting & scoring", "with a Volley to leave the keeper helpless."],
-                            ["A good rating will increase your chances of tucking", "away Penalties & give the keeper no chance."]
-                            ];
-
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
-                    }
-                }
             }
         }
     } );
@@ -277,30 +252,6 @@ function bar_charts2_update_data(data){
                         beginAtZero: true
                     }
                                 } ]
-            },
-            tooltips: {
-                mode: 'label',
-                enabled: true,
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        var label = "";
-                        label +=  data.labels[tooltipItem.index]+": ";
-                        label += Math.round(tooltipItem.yLabel * 100) / 100;
-                        return label;
-                    },
-
-                    footer: function(tooltipItem, data) {
-                        var labels =  [
-                            ["", ""],
-                            ["A good Heading Accuracy will increase your", "timing & improve your accuracy when heading at goal."],
-                            ["Increasing your Marking attribute will improve the default", "position your player takes up when your team is not in possession of the ball."],
-                            ["A good Standing Tackle rating will mean you are more", "likely to come out with the ball when putting your foot in."],
-                            ["The higher the value the greater your", "chance of being successful with Sliding Tackles."],
-                            ];
-
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
-                    }
-                }
             }
         }
     } );
