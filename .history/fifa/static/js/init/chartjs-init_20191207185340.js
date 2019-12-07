@@ -76,18 +76,18 @@ function polar_charts_update_data(data) {
                         // var label = tooltipItem.datasetIndex;
                         var label = "";
                         var labels =  [
-                            ["Vision will increase your ability to play accurate & intricate", "through balls to set up your team mates with scoring chances."],
-                            ["A good Crossing attribute will increase the chances of finding", "your team mates & avoiding the opposition."],
-                            ["A high Free Kick Accuracy increases your chances of avoiding", "the wall & beating the keeper from dead ball situations."],
-                            ["The better your Short Passing the less likely it will be that", "your player misplaces passes."],
-                            ["Increase your Long Passing to turn defence into attack with", "improved accuracy & more powerful lobbed passes."],
-                            ["The higher your Curve rating the more bend & swerve you'll", "get on the ball when shooting & crossing."]
+                            "\n Vision will increase your ability to play accurate & intricate through balls to set up your team mates with scoring chances.",
+                            "Crossing 111 ",
+                            "FK accuracy 111",
+                            "Short passing 111",
+                            "Long passing 111",
+                            "Curve 111"
                             ];
 
                         label +=  data.labels[tooltipItem.index]+": ";
                         label += Math.round(tooltipItem.yLabel * 100) / 100;
-                        // label += labels[tooltipItem.index]
-                        return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
+                        label += labels[tooltipItem.index]
+                        return label;
                     }
                 }
             }
