@@ -99,7 +99,7 @@ function polar_charts_update_data(data) {
         options: {
             legend: {
                 display:true,
-                position:"top",
+                position:"right",
             },
             responsive: true,
             tooltips: {
