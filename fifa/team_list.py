@@ -15,7 +15,6 @@ def team_index():
     cursor = db.cursor()
     teams = None
     error = None
-    flag = False
     if request.method == 'POST':
         team_name = request.form['team_name']
         team_name = str(team_name)
@@ -28,7 +27,6 @@ def team_index():
         # description = str(description)
         # ordertype = ordertype.lower()
         error = None
-        flag = True
         if not team_name:
             error = 'Basic information is not complete.'
 

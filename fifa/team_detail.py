@@ -34,7 +34,14 @@ def index(id):
     " WHERE club_id = %s", id
 )
     attributes = cursor.fetchall()
-    return render_template('team_detail.html', players = players, club_name = club_name, attributes = attributes)
+
+    cursor.execute(
+        "SELECT *"
+        " FROM team"
+        " WHERE club_id = %s", id
+    )
+    team_attribute = cursor.fetchone()
+    return render_template('team_detail.html', players = players, club_name = club_name, attributes = attributes, team_attribute = team_attribute)
 
 
     # if (g.user):
