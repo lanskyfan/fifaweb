@@ -11,20 +11,32 @@ bp = Blueprint('similar_player', __name__)
 
 
 
-@bp.route('/<int:id>/similar_player_score')
-def player_score(id):
+@bp.route('/<int:id_old>/<int:id_new>/similar_player_score')
+def player_score(id_old, id_new):
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
         "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score"
         " FROM rating"
-        " WHERE ID = %s",id
+        " WHERE ID = %s",id_old
     )
-    player = cursor.fetchone()
-    player_score = []
-    for key in player:
-        player_score.append(player[key])
-    return  jsonify(player_score)
+    old_player = cursor.fetchone()
+    player_score_old = []
+    for key in old_player:
+        player_score_old.append(old_player[key])
+
+    cursor.execute(
+        "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score"
+        " FROM rating"
+        " WHERE ID = %s",id_new
+    )
+    new_player = cursor.fetchone()
+    player_score_new = []
+    for key in new_player:
+        player_score_new.append(new_player[key])
+
+    player_score_all = [player_score_old, player_score_new]
+    return  jsonify(player_score_all)
 
 
 @bp.route('/<int:id>/similar_player', methods=('GET', 'POST'))
