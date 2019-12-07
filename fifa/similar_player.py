@@ -44,21 +44,33 @@ def index(id):
     g.current = "player"
     db = get_db()
     cursor = db.cursor()
-    # cursor.execute(
-    # "SELECT *"
-    # " FROM recommend "
-    # " WHERE recommend.ID = %s", id
-    # )
-    # data = cursor.fetchone()
 
-    # for key in data:
-    #     if key.lower() != "id"
-    #     player_score.append(player[key])  
     cursor.execute(
-    "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
-    " FROM player p, nation n, recommend re"
-    " WHERE p.nation_id = n.nation_id AND p.id = re.id AND (p.ID = re.sp1_id OR p.ID = re.sp2_id, OR p.ID = re.sp3_id, OR p.ID = re.sp4_id, OR p.ID = re.sp5_id)"
+    "SELECT *"
+    " FROM recommend "
+    " WHERE recommend.ID = %s", id
     )
+    data = cursor.fetchone()
 
-    similar_players = cursor.fetchall()
+    players = []
+    for key in data:
+        if key.lower() != "id"
+            players.append(player[key])
+            
+    similar_players = []
+    for player in players:
+        cursor.execute(
+        "SELECT p.id id, p.photo photo, p.name name, p.value value, p.wage wage, p.overall overall, p.potential potential"
+        " FROM player p"
+        " WHERE p.id = %s", player
+        )
+        similar_player = cursor.fetchone()
+        similar_players.append(similar_player)
+    # cursor.execute(
+    # "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
+    # " FROM player p, nation n, recommend re"
+    # " WHERE p.nation_id = n.nation_id AND p.id = re.id AND (p.ID = re.sp1_id OR p.ID = re.sp2_id, OR p.ID = re.sp3_id, OR p.ID = re.sp4_id, OR p.ID = re.sp5_id)"
+    # )
+
+    # similar_players = cursor.fetchall()
     return render_template('similar_player.html', id = id, similar_players = similar_players)
