@@ -79,7 +79,7 @@ function radar_charts2_update_data(data) {
             datasets: [
                 {
                     label: "Player 1",
-                    data: data,
+                    data: null,
                     fill:true,
                     pointBackgroundColor:"rgba(0, 139, 69, 0.7)",
                     borderColor: "rgba(0, 194, 146, 0.7)",
@@ -88,7 +88,7 @@ function radar_charts2_update_data(data) {
                             },
                  {
                      label: "Player 2",
-                     data: data,
+                     data: null,
                      borderColor: "rgba(0, 194, 146, 0.7",
                      borderWidth: "1",
                      backgroundColor: "rgba(0, 194, 146, 0.5)"
@@ -97,7 +97,6 @@ function radar_charts2_update_data(data) {
         },
         options: {
             legend: {
-                display:false,
                 position:"bottom",
             },
             scale: {
