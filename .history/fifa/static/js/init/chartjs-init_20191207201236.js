@@ -34,7 +34,8 @@ function radar_charts_update_data(data) {
                     display: true,
                 },
                 ticks: {
-                    beginAtZero: true
+                    suggestedMin: 25,
+                    suggestedMax: 100
                 }
             }
 
@@ -112,65 +113,8 @@ function polar_charts_update_data(data) {
                         // label +=  data.labels[tooltipItem.index]+": ";
                         // label += Math.round(tooltipItem.yLabel * 100) / 100;
                         // label += labels[tooltipItem.index]
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
-                    }
-                }
-            }
-        }
-    } );
-}
-
-function polar_charts2_update_data(data) {
-    //polar chart
-    var ctx = document.getElementById( "polarChart2" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'polarArea',
-        data: {
-            datasets: [ {
-                data: data,
-                backgroundColor: [
-                    "rgba(255, 105, 180, 0.4)",
-                    "rgba(255, 20, 147, 0.3)",
-                    "rgba(255, 192, 203, 0.4)",
-                    "rgba(219, 112,147, 0.5)",  
-                    "rgba(176, 48, 96, 0.5)",
-                    "rgba(186, 85, 211, 0.3)",
-                                ]
-
-                            } ],
-            labels: [
-                "Agility",
-                "Balance",
-                "Reactions",
-                "Ball Control",
-                "Dribbling",
-                "Composure"
-                ]
-        },
-        options: {
-            responsive: true,
-            tooltips: {
-                mode: 'label',
-                enabled: true,
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        // var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                        // var label = tooltipItem.datasetIndex;
-                        var label = "";
-                        var labels =  [
-                            ["1"],
-                            ["1"],
-                            ["1"],
-                            ["1"],
-                            ["1"],
-                            ["1"]
-                            ];
-
-                        label +=  data.labels[tooltipItem.index]+": ";
-                        label += Math.round(tooltipItem.yLabel * 100) / 100;
-                        // label += labels[tooltipItem.index]
-                        return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
+                        // return [labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
+                        return ["Vision will increase your ability to play accurate & intricate", "through balls to set up your team mates with scoring chances."];
                     }
                 }
             }
@@ -196,9 +140,9 @@ function bar_charts_update_data(data){
                 {
                     label: "Shooting",
                     data: data,
-                    borderColor: "rgba(255, 0, 0, 0.9)",
+                    borderColor: "rgba(0, 194, 146, 0.9)",
                     borderWidth: "0",
-                    backgroundColor: "rgba(255, 0, 0, 0.5)"
+                    backgroundColor: "rgba(0, 194, 146, 0.5)"
                             }
                         ]
         },
@@ -214,40 +158,6 @@ function bar_charts_update_data(data){
     } );
 }
 
-function bar_charts2_update_data(data){
-    // single bar chart
-    var ctx = document.getElementById( "singelBarChart2" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'bar',
-        data: {
-            labels: [ "Interceptions", 
-            "Heading Accuracy", 
-            "Marking", 
-            "Standing Tackle", 
-            "Sliding Tackle",  
-            ],
-            datasets: [
-                {
-                    label: "Defending",
-                    data: data,
-                    borderColor: "rgba(99,184,255, 0.9)",
-                    borderWidth: "0",
-                    backgroundColor: "rgba(99,184,255, 0.5)"
-                            }
-                        ]
-        },
-        options: {
-            scales: {
-                yAxes: [ {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                                } ]
-            }
-        }
-    } );
-}
 
 function fetch_data_and_change(id) {
     // console.log(234)
@@ -258,7 +168,7 @@ function fetch_data_and_change(id) {
     ).then(
         function (data) {
             radar_charts_update_data(data);
-            // console.log(data);
+            console.log(data);
         }
     )
 }
@@ -272,7 +182,7 @@ function fetch_passing_and_change(id) {
     ).then(
         function (data) {
             polar_charts_update_data(data);
-            // console.log(data);
+            console.log(data);
         }
     )
 }
@@ -285,42 +195,100 @@ function fetch_shooting_and_change(id){
     ).then(
         function (data) {
             bar_charts_update_data(data);
+            console.log(data);
         }
     )
 }
-
-function fetch_defending_and_change(id){
-    fetch("/" + id + "/defending").then(
-        function (response) {
-            return response.json()
-        }
-    ).then(
-        function (data) {
-            bar_charts2_update_data(data);
-            console.log(data)
-        }
-    )
-}
-
-function fetch_dribbling2_and_change(id){
-    fetch("/" + id + "/dribbling2").then(
-        function (response) {
-            return response.json()
-        }
-    ).then(
-        function (data) {
-            polar_charts2_update_data(data);
-        }
-    )
-}
-
 
 (function ($) {
     "use strict";
     var id_value = parseInt(document.getElementById('empty').name)
-    
     //Team chart
     console.log(id_value)
+    var ctx = document.getElementById( "team-chart" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'line',
+        data: {
+            labels: [ "2012", "2013", "2014", "2015", "2016", "2017", "2018" ],
+            type: 'line',
+            defaultFontFamily: 'Montserrat',
+            datasets: [ {
+                data: [ 0, 7, 3, 5, 2, 8, 6 ],
+                label: "Expense",
+                backgroundColor: 'rgba(0,200,155,.35)',
+                borderColor: 'rgba(0,200,155,0.60)',
+                borderWidth: 3.5,
+                pointStyle: 'circle',
+                pointRadius: 5,
+                pointBorderColor: 'transparent',
+                pointBackgroundColor: 'rgba(0,200,155,0.60)',
+                    },
+                    {
+                data: [ 0, 6, 3, 4, 3, 7, 10 ],
+                label: "Profit",
+                backgroundColor: 'rgba(0,194,146,.25)',
+                borderColor: 'rgba(0,194,146,0.5)',
+                borderWidth: 3.5,
+                pointStyle: 'circle',
+                pointRadius: 5,
+                pointBorderColor: 'transparent',
+                pointBackgroundColor: 'rgba(0,194,146,0.5)',
+                    }, ]
+        },
+        options: {
+            responsive: true,
+            tooltips: {
+                mode: 'index',
+                titleFontSize: 12,
+                titleFontColor: '#000',
+                bodyFontColor: '#000',
+                backgroundColor: '#fff',
+                titleFontFamily: 'Montserrat',
+                bodyFontFamily: 'Montserrat',
+                cornerRadius: 3,
+                intersect: false,
+            },
+            legend: {
+                display: false,
+                position: 'top',
+                labels: {
+                    usePointStyle: true,
+                    fontFamily: 'Montserrat',
+                },
+
+
+            },
+            scales: {
+                xAxes: [ {
+                    display: true,
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    scaleLabel: {
+                        display: false,
+                        labelString: 'Month'
+                    }
+                        } ],
+                yAxes: [ {
+                    display: true,
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Value'
+                    }
+                        } ]
+            },
+            title: {
+                display: false,
+            }
+        }
+    } );
+
 
     //Sales chart
     var ctx = document.getElementById( "sales-chart" );
@@ -481,9 +449,6 @@ function fetch_dribbling2_and_change(id){
     } );
 
     fetch_data_and_change(id_value)
-    fetch_shooting_and_change(id_value)
-    fetch_defending_and_change(id_value)
-    fetch_dribbling2_and_change(id_value)
     // function fetch_data_and_change() {
     //     var ctx = document.getElementById( "radarChart" );
     //     // console.log(234)
