@@ -1,1 +1,0 @@
-# EP-sales-rental-platform
