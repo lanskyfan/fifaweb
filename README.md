@@ -93,11 +93,6 @@ flask init-db
 flask run
 ```
 
- The log in page should be on
-
-```http
-http://127.0.0.1:5000/auth/login
-```
 
 
 
@@ -109,4 +104,14 @@ http://127.0.0.1:5000/auth/login
 
 ## Website demo 
 
-[Website page](http://http://127.0.0.1:5000/)
+[Website page](http://127.0.0.1:5000/)
+http://127.0.0.1:5000
+
+## MySQL Connection 
+(For Prof. and TAs)
+```
+Hostname: 127.0.0.1
+Port: 3306
+Username: erg2
+Password: 12345678
+```
