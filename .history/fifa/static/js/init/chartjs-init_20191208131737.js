@@ -1,7 +1,7 @@
 function radar_charts_update_data(data) {
     var ctx = document.getElementById( "radarChart" );
     ctx.height = 160;
-    var myChart = new Chart( ctx, {
+    var radarChart = new Chart( ctx, {
         type: 'radar',
         data: {
             labels: [ "PAC",  "SHO", 
@@ -580,34 +580,33 @@ function fetch_gk_and_change(id){
     )
 }
 
-// function fetch_similar_and_change(id1,id2) {
-//     // console.log(234)
-//     fetch("/" + id1 + "/" + id2 + "/similar_player_score").then(
-//         function (response) {
-//             return response.json()
-//         }
-//     ).then(
-//         function (data) {
-//             radar_charts2_update_data(data);
-//             // console.log(data);
-//         }
-//     )
-// }
+function fetch_similar_and_change(id1,id2) {
+    // console.log(234)
+    fetch("/" + id1 + "/" + id2 + "/similar_player_score").then(
+        function (response) {
+            return response.json()
+        }
+    ).then(
+        function (data) {
+            radar_charts2_update_data(data);
+            // console.log(data);
+        }
+    )
+}
 
 
 
 (function ($) {
     "use strict";
     var id_value = parseInt(document.getElementById('empty').name)
-    // var id_value1= parseInt(document.getElementById('empty1').name)
+    var id_value1 = parseInt(document.getElementById('empty1').name)
 
     console.log(id_value)
-
-
+    console.log(id_value1)
 
     //radar chart
     fetch_data_and_change(id_value)
-    // fetch_similar_and_change(id_value,id_value1)
+    fetch_similar_and_change(id_value,id_value1)
     //polar chart
     fetch_passing_and_change(id_value)
     fetch_dribbling2_and_change(id_value)
