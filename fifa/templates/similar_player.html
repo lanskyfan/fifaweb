@@ -31,8 +31,8 @@
                                 </a>
                                 <div class="media-body">
                                     <h2 class="text-dark display-6">{{similar_player.name}}</h2>
-                                    <h2 class="text-dark display-6">{{similar_player.nationality}}</h2>
-                                    
+                                    <span>{{similar_player["nationality"]}}</span>
+                                        <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_player.flag) }}" alt="" width=12% height=12%>
                                 </div>
                             </div>
                         </div>
