@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block title %}Player Page{% endblock %} {% block content %}
 
-<input id="empty" name = {{id}} hidden> </label>
-<input id="empty1" name = {{similar_players[1].id}} hidden> </label>
-<input id="empty2" name = {{similar_players[2].id}} hidden> </label>
-<input id="empty3" name = {{similar_players[3].id}} hidden> </label>
-<input id="empty4" name = {{similar_players[4].id}} hidden> </label>
-<input id="empty5" name = {{similar_players[5].id}} hidden> </label>
+<input id="empty" name={ {id}} hidden> </label>
+<input id="empty1" name={ {similar_players[1].id}} hidden> </label>
+<input id="empty2" name={ {similar_players[2].id}} hidden> </label>
+<input id="empty3" name={ {similar_players[3].id}} hidden> </label>
+<input id="empty4" name={ {similar_players[4].id}} hidden> </label>
+<input id="empty5" name={ {similar_players[5].id}} hidden> </label>
 
 <div class="content">
     <div class="animated fadeIn">
@@ -19,14 +19,14 @@
                 </div>
             </div>
             <!-- /# column -->
-            
+
             <div class="col-lg-6 col-md-6">
                 <aside class="profile-nav alt">
                     <section class="card">
                         <div class="card-header user-header alt bg-light">
                             <div class="media">
                                 <a href="#">
-                                        <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_players[0].photo)}}"alt=""></a>
+                                    <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_players[0].photo)}}" alt=""></a>
                                 </a>
                                 <div class="media-body">
                                     <a href="{{ url_for('player.index', id = similar_players[0].id) }}">
@@ -63,15 +63,7 @@
             </div>
         </div>
 
-    </div>
-    <!-- .animated -->
-</div>
-
-
-
-{% for similar_player in similar_players[1:] %}
-<div class="content">
-    <div class="animated fadeIn">
+        {% for similar_player in similar_players[1:] %}
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="card">
@@ -82,14 +74,14 @@
                 </div>
             </div>
             <!-- /# column -->
-            
+
             <div class="col-lg-6 col-md-6">
                 <aside class="profile-nav alt">
                     <section class="card">
                         <div class="card-header user-header alt bg-light">
                             <div class="media">
                                 <a href="#">
-                                        <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_player.photo)}}"alt=""></a>
+                                    <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_player.photo)}}" alt=""></a>
                                 </a>
                                 <div class="media-body">
                                     <a href="{{ url_for('player.index', id = similar_player.id) }}">
