@@ -124,6 +124,7 @@ http://127.0.0.1:5000/
 
 <br>
 
+
 ## MySQL Connection 
 (For Prof. and TAs)
 ```
@@ -132,7 +133,3 @@ Port: 3306
 Username: erg2
 Password: 12345678
 ```
-
-
-
-
