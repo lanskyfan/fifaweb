@@ -11,8 +11,8 @@ function radar_charts2_update_data(data,chart_id) {
                     label: data[0][0],
                     data: [data[0][1],data[0][2],data[0][3],data[0][4],data[0][5],data[0][6]],
                     fill:true,
-                    pointBackgroundColor:"rgba(180,180,180, 0.8)",
-                    borderColor: "rgba(160,160,160, 0.8)",
+                    pointBackgroundColor:"rgba(99,184,255, 0.9)",
+                    borderColor: "rgba(99,184,255, 0.9)",
                     borderWidth: "1",
                     backgroundColor: "rgba(160,160,160, 0.4)"
                             },

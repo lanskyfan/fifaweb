@@ -9,7 +9,7 @@ function radar_charts2_update_data(data,chart_id) {
             datasets: [
                 {
                     label: data[0][0],
-                    data: [data[0][1],data[0][2],data[0][3],data[0][4],data[0][5],data[0][6]],
+                    data: [data[0][1],data[0][2],data[0][3],data[0][4],data[0][5]],
                     fill:true,
                     pointBackgroundColor:"rgba(180,180,180, 0.8)",
                     borderColor: "rgba(160,160,160, 0.8)",
@@ -18,7 +18,7 @@ function radar_charts2_update_data(data,chart_id) {
                             },
                  {
                      label: data[1][0],
-                     data: [data[1][1],data[1][2],data[1][3],data[1][4],data[1][5],data[1][6]],
+                     data: [data[1][1],data[1][2],data[1][3],data[1][4],data[1][5]],
                      pointBackgroundColor:"rgba(255, 0, 0, 0.8)",
                      borderColor: "rgba(255, 0, 0, 0.7)",
                      borderWidth: "1",
@@ -55,8 +55,9 @@ function radar_charts2_update_data(data,chart_id) {
                         "Physical"
                         ];
                         
-                        label = data.datasets[tooltipItem.datasetIndex].label + ": ";
+                        label = labels[tooltipItem.index] + ": ";
                         label += Math.round(tooltipItem.yLabel * 100) / 100;
+                        label += tooltipItem.datasetIndex;
                         
                         // return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
                         return label;

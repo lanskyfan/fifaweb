@@ -14,15 +14,15 @@ function radar_charts2_update_data(data,chart_id) {
                     pointBackgroundColor:"rgba(180,180,180, 0.8)",
                     borderColor: "rgba(160,160,160, 0.8)",
                     borderWidth: "1",
-                    backgroundColor: "rgba(160,160,160, 0.4)"
+                    backgroundColor: "rgba(160,160,160, 0.1)"
                             },
                  {
                      label: data[1][0],
                      data: [data[1][1],data[1][2],data[1][3],data[1][4],data[1][5],data[1][6]],
-                     pointBackgroundColor:"rgba(255, 0, 0, 0.8)",
-                     borderColor: "rgba(255, 0, 0, 0.7)",
+                     pointBackgroundColor:"rgba(99,184,255, 0.8)",
+                     borderColor: "rgba(99,184,255, 0.7)",
                      borderWidth: "1",
-                     backgroundColor: "rgba(255, 0, 0, 0.2)"
+                     backgroundColor: "rgba(99,184,255, 0.2)"
                              }
                          ]
         },

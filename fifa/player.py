@@ -124,9 +124,9 @@ def index(id):
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
-    "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
-    " FROM player p, nation n "
-    " WHERE p.nation_id = n.nation_id AND p.id = %s", id
+    "SELECT p.id id, p.club_id club_id, p.photo photo, p.name name, p.position position, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential, c.club_name club_name, c.logo logo"
+    " FROM player p, nation n, club c "
+    " WHERE p.nation_id = n.nation_id AND p.club_id=c.club_id AND p.id = %s", id
     )
     player_detail = cursor.fetchone()
     # cursor.execute(

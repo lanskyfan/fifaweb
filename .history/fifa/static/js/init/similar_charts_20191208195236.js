@@ -55,7 +55,7 @@ function radar_charts2_update_data(data,chart_id) {
                         "Physical"
                         ];
                         
-                        label = data.datasets[tooltipItem.datasetIndex].label + ": ";
+                        label = data.datasets.data[tooltipItem.datasetIndex][0] + ": ";
                         label += Math.round(tooltipItem.yLabel * 100) / 100;
                         
                         // return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
