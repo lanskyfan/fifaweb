@@ -8,8 +8,8 @@ function radar_charts2_update_data(data,chart_id) {
             "PAS", "DRI", "DEF", "PHY" ],
             datasets: [
                 {
-                    label: "Original Player",
-                    data: data[0],
+                    label: data[0][0],
+                    data: [data[0][1],data[0][2],data[0][3],data[0][4],data[0][5]],
                     fill:true,
                     pointBackgroundColor:"rgba(180,180,180, 0.8)",
                     borderColor: "rgba(160,160,160, 0.8)",
@@ -17,8 +17,8 @@ function radar_charts2_update_data(data,chart_id) {
                     backgroundColor: "rgba(160,160,160, 0.4)"
                             },
                  {
-                     label: "Similar Player",
-                     data: data[1],
+                     label: data[1][0],
+                     data: [data[1][1],data[1][2],data[1][3],data[1][4],data[1][5]],
                      pointBackgroundColor:"rgba(255, 0, 0, 0.8)",
                      borderColor: "rgba(255, 0, 0, 0.7)",
                      borderWidth: "1",
@@ -162,7 +162,7 @@ function fetch_similar_and_change(id1,id2) {
     ).then(
         function (data) {
             radar_charts2_update_data(data,id2);
-            // console.log(data);
+            console.log(data);
         }
     )
 }

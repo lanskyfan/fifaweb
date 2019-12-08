@@ -16,9 +16,9 @@ def player_score(id_old, id_new):
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
-        "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score"
-        " FROM rating"
-        " WHERE ID = %s",id_old
+        "SELECT p.name name, r.pace_score pace_score,r.shooting_score shooting_score, r.passing_score passing_score, r.dribbling_score dribbling_score, r.defending_score defending_score, r.physical_score physical_score"
+        " FROM player p, rating r"
+        " WHERE p.ID = r.ID AND r.ID = %s",id_old
     )
     old_player = cursor.fetchone()
     player_score_old = []
@@ -26,9 +26,9 @@ def player_score(id_old, id_new):
         player_score_old.append(old_player[key])
 
     cursor.execute(
-        "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score"
-        " FROM rating"
-        " WHERE ID = %s",id_new
+        "SELECT p.name name, r.pace_score pace_score,r.shooting_score shooting_score,r.passing_score passing_score, r.dribbling_score dribbling_score, r.defending_score defending_score, r.physical_score physical_score"
+        " FROM player p, rating r"
+        " WHERE p.ID = r.ID AND r.ID = %s",id_new
     )
     new_player = cursor.fetchone()
     player_score_new = []
@@ -36,6 +36,7 @@ def player_score(id_old, id_new):
         player_score_new.append(new_player[key])
 
     player_score_all = [player_score_old, player_score_new]
+    print(player_score_all)
     return  jsonify(player_score_all)
 
 
@@ -65,7 +66,6 @@ def index(id):
         )
         similar_player = cursor.fetchone()
         similar_players.append(similar_player)
-        print(similar_players)
     # cursor.execute(
     # "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"
     # " FROM player p, nation n, recommend re"
