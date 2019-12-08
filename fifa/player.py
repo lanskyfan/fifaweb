@@ -129,6 +129,7 @@ def index(id):
     " WHERE p.nation_id = n.nation_id AND p.club_id=c.club_id AND p.id = %s", id
     )
     player_detail = cursor.fetchone()
+    player_detail["value"] = '%.1f' % (player_detail["value"])
     # cursor.execute(
     #     "SELECT pace_score,shooting_score,passing_score,dribbling_score,defending_score,physical_score,GK_score"
     #     " FROM rating"
