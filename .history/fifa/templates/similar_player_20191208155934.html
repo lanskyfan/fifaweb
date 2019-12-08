@@ -30,7 +30,7 @@
                                         <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_player.photo)}}"alt=""></a>
                                 </a>
                                 <div class="media-body">
-                                    <a href="{{ url_for('player.index', id = similar_player.id) }}">
+                                    <a href="{{ url_for('similar_player.index', id = id) }}">
                                         <h2 class="text-dark display-6">{{similar_player.name}}</h2>
                                     </a>
                                     <span>{{similar_player["nationality"]}}</span>

@@ -27,18 +27,16 @@
                         <div class="card-header user-header alt bg-light">
                             <div class="media">
                                 <a href="#">
-                                        <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_player.photo)}}"alt=""></a>
+                                    <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_player.photo)}}"alt="">
                                 </a>
                                 <div class="media-body">
-                                    <a href="{{ url_for('player.index', id = similar_player.id) }}">
-                                        <h2 class="text-dark display-6">{{similar_player.name}}</h2>
-                                    </a>
+                                    <h2 class="text-dark display-6">{{similar_player["name"]}}</h2>
                                     <span>{{similar_player["nationality"]}}</span>
-                                    <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_player.flag) }}" alt="" width=12% height=12%>
+                                    <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=16% height=16%>
                                 </div>
-                                <!-- <div class="h1 text-muted text-right mb-4">
+                                <div class="h1 text-muted text-right mb-4">
                                     <a href="{{ url_for('similar_player.index', id = id) }}"><i class="menu-icon fa fa-fort-awesome"></i> Similar Player </a>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
 
