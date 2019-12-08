@@ -8,20 +8,21 @@ function radar_charts2_update_data(data) {
             "PAS", "DRI", "DEF", "PHY" ],
             datasets: [
                 {
-                    label: "Player 1",
+                    label: "Original Player",
                     data: data[0],
                     fill:true,
-                    pointBackgroundColor:"rgba(0, 139, 69, 0.7)",
-                    borderColor: "rgba(0, 194, 146, 0.7)",
+                    pointBackgroundColor:"rgba(180,180,180, 0.8)",
+                    borderColor: "rgba(160,160,160, 0.8)",
                     borderWidth: "1",
-                    backgroundColor: "rgba(0, 194, 146, 0.4)"
+                    backgroundColor: "rgba(160,160,160, 0.4)"
                             },
                  {
-                     label: "Player 2",
+                     label: "Similar Player",
                      data: data[1],
+                     pointBackgroundColor:"rgba(255, 0, 0, 0.8)",
                      borderColor: "rgba(255, 0, 0, 0.7)",
                      borderWidth: "1",
-                     backgroundColor: "rgba(255, 0, 0, 0.4)"
+                     backgroundColor: "rgba(255, 0, 0, 0.2)"
                              }
                          ]
         },
