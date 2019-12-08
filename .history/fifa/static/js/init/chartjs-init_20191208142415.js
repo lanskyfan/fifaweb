@@ -351,7 +351,7 @@ function bar_charts_update_data(data){
         },
         options: {
             scales: {
-                xAxes: [ {
+                yAxes: [ {
                     ticks: {
                         beginAtZero: true
                     }
@@ -414,7 +414,7 @@ function bar_charts2_update_data(data){
         },
         options: {
             scales: {
-                xAxes: [ {
+                yAxes: [ {
                     ticks: {
                         beginAtZero: true
                     }
@@ -479,7 +479,7 @@ function bar_charts3_update_data(data){
                 display:false
             },
             scales: {
-                xAxes: [ {
+                yAxes: [ {
                     ticks: {
                         beginAtZero: true
                     }
