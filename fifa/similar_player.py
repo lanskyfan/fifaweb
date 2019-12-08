@@ -54,8 +54,7 @@ def index(id):
 
     players = []
     for key in data:
-        if key.lower() != "id":
-            players.append(data[key])
+        players.append(data[key])
             
     similar_players = []
     for player in players:
