@@ -109,43 +109,4 @@ http://127.0.0.1:5000/auth/login
 
 ## Website demo 
 
-[Website page](http://129.204.216.8:5000)
-
-**<u>(For TA) How to test our website</u>**
-
-We have four views:
-
-1. Login & Initialize page
-2. Dashboard page (charts are specific for different positions)
-3. Order pages (create order/ order details/ completed order)
-4. Profile page
-
-<br>
-
-> **Note**: Since the photographer website is designed for internal members, users can <u>only login using the existing accounts</u>. That's the reason why we set the "**Initialize**" page, rather than a "**register**" page.
-
-We provide several accounts for you to test our website:
-
-All passwords are preset to 123456. You can initialize the password through **Initialize** page for the first time. Later if you want to change the password again, please visit the **profile** page.
-
-**Project Manager:**
-
-| Account   | Password |
-| --------- | -------- |
-| yifanlan  | 123456   |
-| Mary Chen | 123456   |
-
-**Photographer:**
-
-| Account      | Password |
-| ------------ | -------- |
-| wenjingcai   | 123456   |
-| Barbara Yang | 123456   |
-
-**After Effect:**
-
-| Account    | Password |
-| ---------- | -------- |
-| Charles An | 123456   |
-| Susan Bao  | 123456   |
-
+[Website page](http://http://127.0.0.1:5000/)
