@@ -16,17 +16,12 @@
                                         <h2 class="text-dark display-6">{{player_detail["name"]}}</h2>
                                         <span>{{player_detail["nationality"]}}</span>
                                         <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=16% height=16%>
-                                        <br>
-                                        <a href="{{ url_for('team_detail.index', id = player_detail.club_id) }}">
-                                            <span>{{player_detail.club_name}}</span>
-                                        </a>
-
-                                        <a href="{{ url_for('team_detail.index', id = player_detail.club_id) }}">
-                                            <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+player_detail.logo) }}" alt="" width=14% height=14%>
-                                        </a>
+                                        
+                                        <span>{{player_detail["nationality"]}}</span>
+                                        <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=16% height=16%>
                                     </div>
                                     <div class="h1 text-muted text-right mb-4">
-                                        <a href="{{ url_for('similar_player.index', id = id) }}"><i class="fa fa-bookmark" aria-hidden="true"></i> Similar Player </a>
+                                        <a href="{{ url_for('similar_player.index', id = id) }}"><i class="menu-icon fa fa-fort-awesome"></i> Similar Player </a>
                                     </div>
                                 </div>
                             </div>
