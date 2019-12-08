@@ -57,7 +57,6 @@ function radar_charts2_update_data(data,chart_id) {
                         
                         label = labels[tooltipItem.index] + ": ";
                         label += Math.round(tooltipItem.yLabel * 100) / 100;
-                        label += tooltipItem.datasetIndex;
                         
                         // return [label , labels[tooltipItem.index][0], labels[tooltipItem.index][1]];
                         return label;
