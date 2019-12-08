@@ -405,3 +405,14 @@ ALTER DATABASE fifadata CHARACTER SET = latin1 COLLATE = utf8;
 update player set name=convert(convert(convert(name using binary) using utf8) using utf8mb4);
 
 update team set club_name=convert(convert(convert(club_name using binary) using latin1) using  utf8mb4);
+
+SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential, c.club_name club_name, c.logo logo
+FROM player p, nation n, club c
+WHERE p.nation_id = n.nation_id AND p.club_id=c.club_id AND p.id = 20801;
+
+
+
+
+
+
+
