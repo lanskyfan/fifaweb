@@ -255,7 +255,7 @@ function polar_charts2_update_data(data) {
                             ["Good reactions will allow you to latch onto", "loose balls & rebounds quicker than other players."],
                             ["The better your Ball Control the more likely your", "player will be to take a good first touch when receiving the ball."],
                             ["A good Dribbling rating will mean your player will", "keep tighter control of the ball when running at speed."],
-                            ["This attribute determines at what distance the player", "with the ball starts feeling the pressure from the opponent."]
+                            ["", ""]
                             ];
 
                         return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
@@ -351,7 +351,7 @@ function bar_charts_update_data(data){
         },
         options: {
             scales: {
-                xAxes: [ {
+                yAxes: [ {
                     ticks: {
                         beginAtZero: true
                     }
@@ -414,7 +414,7 @@ function bar_charts2_update_data(data){
         },
         options: {
             scales: {
-                xAxes: [ {
+                yAxes: [ {
                     ticks: {
                         beginAtZero: true
                     }
@@ -430,13 +430,13 @@ function bar_charts2_update_data(data){
                     label: function(tooltipItem, data) {
                         var label = "";
                         label +=  data.labels[tooltipItem.index]+": ";
-                        label += tooltipItem.xLabel;
+                        label += Math.round(tooltipItem.yLabel * 100) / 100;
                         return label;
                     },
 
                     footer: function(tooltipItem, data) {
                         var labels =  [
-                            ["Interception determines the ability to read", "the game and intercept passes."],
+                            ["", ""],
                             ["A good Heading Accuracy will increase your", "timing & improve your accuracy when heading at goal."],
                             ["Increasing your Marking attribute will improve the default", "position your player takes up when your team is not in possession of the ball."],
                             ["A good Standing Tackle rating will mean you are more", "likely to come out with the ball when putting your foot in."],
@@ -479,34 +479,11 @@ function bar_charts3_update_data(data){
                 display:false
             },
             scales: {
-                xAxes: [ {
+                yAxes: [ {
                     ticks: {
                         beginAtZero: true
                     }
                                 } ]
-            },
-            tooltips: {
-                mode: 'label',
-                enabled: true,
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        var label = "";
-                        label +=  data.labels[tooltipItem.index]+": ";
-                        label += tooltipItem.xLabel;
-                        return label;
-                    },
-
-                    footer: function(tooltipItem, data) {
-                        var labels =  [
-                            ["Handling is an exclusive goalkeeper attribute used to measures", "how cleanly he catches the ball and does he hold on to it."],
-                            ["Kicking is used to measures the length and accuracy of goal", "kicks, from out of the hands or on the ground."],
-                            ["It is the GK’s ability to position himself correctly when saving shots.", "It also affects the way how a goalkeeper reacts to crosses."],
-                            ["Reflexes stat is the agility of the goalkeeper when making a save.", "It determines how quickly the goalkeeper reacts to a shot on goal."],
-                            ];
-
-                        return [labels[tooltipItem[0].index][0], labels[tooltipItem[0].index][1]];
-                    }
-                }
             }
         }
     } );
