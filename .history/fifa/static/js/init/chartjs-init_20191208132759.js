@@ -606,7 +606,7 @@ function fetch_similar_and_change(id1,id2) {
 
     //radar chart
     fetch_data_and_change(id_value)
-    // fetch_similar_and_change(id_value,id_value1)
+    fetch_similar_and_change(id_value,id_value1)
     //polar chart
     fetch_passing_and_change(id_value)
     fetch_dribbling2_and_change(id_value)

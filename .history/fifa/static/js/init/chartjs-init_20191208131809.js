@@ -599,14 +599,14 @@ function fetch_similar_and_change(id1,id2) {
 (function ($) {
     "use strict";
     var id_value = parseInt(document.getElementById('empty').name)
-    // var id_value1 = parseInt(document.getElementById('empty1').name)
+    var id_value1 = parseInt(document.getElementById('empty1').name)
 
     console.log(id_value)
-    // console.log(id_value1)
+    console.log(id_value1)
 
     //radar chart
     fetch_data_and_change(id_value)
-    // fetch_similar_and_change(id_value,id_value1)
+    fetch_similar_and_change(id_value,id_value1)
     //polar chart
     fetch_passing_and_change(id_value)
     fetch_dribbling2_and_change(id_value)
