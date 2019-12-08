@@ -38,8 +38,8 @@
                                     <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}">
                                         <span>{{similar_players[0].club_name}}</span>
                                     </a>
-                                    <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}"></a>
-                                    <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_players[0].logo) }}" alt="" width=10% height=10%>
+                                    <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}">
+                                        <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_players[0].logo) }}" alt="" width=10% height=10%>
                                     </a>
                                 </div>
                                 <!-- <div class="h1 text-muted text-right mb-4">
@@ -100,7 +100,7 @@
                                     <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}">
                                         <span>{{similar_player.club_name}}</span>
                                     </a>
-                                    <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}"></a>
+                                    <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}">
                                     <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_player.logo) }}" alt="" width=10% height=10%>
                                     </a>
                                 </div>
