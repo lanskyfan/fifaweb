@@ -2,8 +2,11 @@
 
 ## Catalog
 
-* [Setting up environment](#setting-up-the-environment)
-* [Website Demo](#website-demo)
+- [FIFA website](#fifa-website)
+  - [Catalog](#catalog)
+  - [Introduction](#introduction)
+  - [Setting up the environment](#setting-up-the-environment)
+  - [Website demo](#website-demo)
 
 <br>
 
@@ -16,13 +19,16 @@ This is the course project for ERG3010 (Data and Knowledge Management) . Contrib
 - 116010004: Wenjing, Cai
 - 116010103: Yifan, Lan
 - 117010066: Erdi, Gao
-- 
+- 117010330: Zhihao Xu
+- 117010251: Yilei, Tu
 
 It aims at Designing a FIFA website with an integrated data management system. Tools we use to implement this system include Python3, Flask,  Jinja, MySQL, Bootstrap, jQuery, HTML, JS and CSS. You can follow this document to set up the environment by yourself. You can also go to the website demo to directly access our project. If you have any problem, feel free to raise issue.
 
 ## Setting up the environment
 
 1. Setting up the virtual environment. The system is currently developed with Python3. Please make sure that the Flask, Pymysql is properly installed in the `virtual environment`. Refer to <http://flask.pocoo.org/docs/1.0/installation/#virtual-environments>
+
+   **Under the path: xxx/GitHub/fifaweb** 
 
    - For Linux and Mac:
 
@@ -48,13 +54,13 @@ It aims at Designing a FIFA website with an integrated data management system. T
    pip install cryptography
    ```
 
-3. To simplify development, create a mysql database called 'photo'. 
+3. To simplify development, create a mysql database called 'photo'. **[for now: skip the step]**
 
    ```
    CREATE DATABASE photo;
    ```
 
-4. When log in mysql as root, create a  user 'photodev' and grant privilege.
+4. When log in mysql as root, create a  user 'photodev' and grant privilege.**[for now: skip the step]**
 
    ```
    CREATE USER 'photodev'@'localhost' IDENTIFIED BY '123456';
@@ -65,7 +71,8 @@ It aims at Designing a FIFA website with an integrated data management system. T
 For Linux and Mac:
 
 ```shell
-export FLASK_APP=photo
+. venv/bin/activate
+export FLASK_APP=fifa
 export FLASK_ENV=development
 flask run
 ```
@@ -73,7 +80,8 @@ flask run
 For Windows cmd, use set instead of export:
 
 ```
-set FLASK_APP=photo
+venv\Scripts\activate
+set FLASK_APP=fifa
 set FLASK_ENV=development
 flask run
 ```
@@ -81,7 +89,7 @@ flask run
 For Windows PowerShell, use $env: instead of export:
 
 ```powershell
-$env:FLASK_APP = "photo"
+$env:FLASK_APP = "fifa"
 $env:FLASK_ENV = "development"
 flask run
 ```
@@ -93,6 +101,11 @@ flask init-db
 flask run
 ```
 
+ The main page should be on
+
+```http
+http://127.0.0.1:5000/
+```
 
 
 
@@ -110,6 +123,7 @@ flask run
 <br>
 
 <br>
+
 
 ## MySQL Connection 
 (For Prof. and TAs)

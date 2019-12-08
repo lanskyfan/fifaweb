@@ -1,0 +1,507 @@
+{% extends 'base.html' %} {% block title %}Overview {% endblock %} {% block content %}
+<!-- Content -->
+<div class="content">
+    <div class="animated fadeIn">
+        <!-- <div class="row">
+            <div>&nbsp&nbsp&nbsp&nbsp</div>
+            <div class="col-lg-4">
+                <section class="card">
+                    <form method="post" action="" class="tm-signup-form row">
+                        <div class="input-group">
+                            <input type="text" id="team_name" name="team_name" placeholder="Team Name" class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-info">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div>&nbsp&nbsp&nbsp</div>
+
+            <div class="col-lg-4">
+                <section class="card">
+                    <form method="post" action="" class="tm-signup-form row">
+                        <div class="input-group">
+                            <input type="text" id="player_name" name="player_name" placeholder="Player Name" class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div> -->
+
+        <!-- <div class="row">
+            <div>&nbsp&nbsp&nbsp&nbsp</div>
+            <div class="col-lg-4">
+                <section class="card">
+                    <form method="post" action="" class="tm-signup-form row">
+                        <div class="input-group">
+                            <input type="text" id="team_name" name="team_name" placeholder="Team Name" class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-info">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="player_name" name="player_name" placeholder="Player Name" class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4> <i class="fa fa-globe"></i> Players by Location</h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="224945b9-3a7a-481e-8413-003e43b638cd" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4> <i class="fa fa-cubes"></i> Top Players with High Market Values</h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="1894a932-11f5-43ce-bdd0-41d6816a4b3d" style="width: 500px; height: 500px;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4> <i class="fa fa-cubes"></i> Top Players Market Value due to Their Finishing</h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="7ea83951-fd06-4237-88f8-8cad9f75197d" style="width: 500px; height: 500px;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4> <i class="fa fa-pie-chart"></i> Players Position Percentage</h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="77998c0d-6793-4428-a936-54acea53afa6" style="width: 450px; height: 450px;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4> <i class="fa fa-pie-chart"></i> Players Preferred Foot Percentage</h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="384b5183-d9ba-4ea8-9dd1-373207510a0f" style="width: 450px; height: 450px;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>3-4-3 Inverted Fullback Formation </h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="46ee16bb-91ab-4bcf-ab8e-399a63b7f31d" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>4-3-3 Cruyff Formation</h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="53b32a5e-bea7-4dca-b3bf-c8e1c73efdc5" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>3-5-2 Attacking formation</h4>
+                    </div>
+                    <div class="Vector-map-js">
+                        <div id="f8025ae2-8478-45ed-a7b4-aa24d86ac3e4" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+
+        </div>
+
+    </div>
+    <!-- .animated -->
+</div>
+<!-- /.content -->
+{% endblock %} {% block script %}
+<script type="text/javascript" src="../static/js/figure/plotlyjs-bundle.js"></script>
+<script type="text/javascript" src="../static/js/figure/piechart2.js"></script>
+<script type="text/javascript" src="../static/js/figure/piechart1.js"></script>
+<script type="text/javascript" src="../static/js/figure/tdfigure1_.js"></script>
+<!-- <script type="text/javascript" src="../static/js/figure/marketvalues.js"></script> -->
+<script type="text/javascript" src="../static/js/figure/tdfigure2.js"></script>
+
+<script type="text/javascript" src="../static/js/figure/plotly-geo-assets.js"></script>
+<script type="text/javascript" src="../static/js/figure/mapfigure111.js"></script>
+
+<script type="text/javascript" src="../static/js/figure/ground_figure1.js"></script>
+<script type="text/javascript" src="../static/js/figure/ground_figure2.js"></script>
+<script type="text/javascript" src="../static/js/figure/ground_figure3.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('224945b9-3a7a-481e-8413-003e43b638cd')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+        window.addEventListener('resize', function() {
+            if (resizeDebounce) {
+                window.clearTimeout(resizeDebounce);
+            }
+            resizeDebounce = window.setTimeout(resizePlot, 100);
+        });
+
+
+
+        Plotly.plot(gd, {
+            data: mapfigure111.data,
+            layout: mapfigure111.layout,
+            frames: mapfigure111.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('77998c0d-6793-4428-a936-54acea53afa6')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+
+
+        Plotly.plot(gd, {
+            data: piechart2.data,
+            layout: piechart2.layout,
+            frames: piechart2.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('1894a932-11f5-43ce-bdd0-41d6816a4b3d')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+        Plotly.plot(gd, {
+            data: tdfigure1_.data,
+            layout: tdfigure1_.layout,
+            frames: tdfigure1_.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('7ea83951-fd06-4237-88f8-8cad9f75197d')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+
+
+        Plotly.plot(gd, {
+            data: tdfigure2.data,
+            layout: tdfigure2.layout,
+            frames: tdfigure2.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('46ee16bb-91ab-4bcf-ab8e-399a63b7f31d')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+        window.addEventListener('resize', function() {
+            if (resizeDebounce) {
+                window.clearTimeout(resizeDebounce);
+            }
+            resizeDebounce = window.setTimeout(resizePlot, 100);
+        });
+
+
+
+        Plotly.plot(gd, {
+            data: ground_figure1.data,
+            layout: ground_figure1.layout,
+            frames: ground_figure1.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('53b32a5e-bea7-4dca-b3bf-c8e1c73efdc5')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+        window.addEventListener('resize', function() {
+            if (resizeDebounce) {
+                window.clearTimeout(resizeDebounce);
+            }
+            resizeDebounce = window.setTimeout(resizePlot, 100);
+        });
+
+
+
+        Plotly.plot(gd, {
+            data: ground_figure2.data,
+            layout: ground_figure2.layout,
+            frames: ground_figure2.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('f8025ae2-8478-45ed-a7b4-aa24d86ac3e4')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+        window.addEventListener('resize', function() {
+            if (resizeDebounce) {
+                window.clearTimeout(resizeDebounce);
+            }
+            resizeDebounce = window.setTimeout(resizePlot, 100);
+        });
+
+
+
+        Plotly.plot(gd, {
+            data: ground_figure3.data,
+            layout: ground_figure3.layout,
+            frames: ground_figure3.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+
+<script type="text/javascript">
+    (function() {
+        window.PLOTLYENV = {
+            'BASE_URL': 'https://plot.ly'
+        };
+
+        var gd = document.getElementById('384b5183-d9ba-4ea8-9dd1-373207510a0f')
+        var resizeDebounce = null;
+
+        function resizePlot() {
+            var bb = gd.getBoundingClientRect();
+            Plotly.relayout(gd, {
+                width: bb.width,
+                height: bb.height
+            });
+        }
+
+
+
+        Plotly.plot(gd, {
+            data: piechart1.data,
+            layout: piechart1.layout,
+            frames: piechart1.frames,
+            config: {
+                "showLink": false,
+                "displayModeBar": false,
+                "linkText": "Export to plot.ly",
+                "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"
+            }
+        });
+
+    }());
+</script>
+
+{% endblock %}
