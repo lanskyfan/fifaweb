@@ -34,6 +34,12 @@
                                     </a>
                                     <span>{{similar_players[0]["nationality"]}}</span>
                                     <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_players[0].flag) }}" alt="" width=12% height=12%>
+                                    <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}">
+                                        <h2 class="text-dark display-6">{{similar_players[0].club_name}}</h2>
+                                    </a>
+                                    <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}"></a>
+                                        <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_players[0].logo) }}" alt="" width=12% height=12%>
+                                    </a>
                                 </div>
                                 <!-- <div class="h1 text-muted text-right mb-4">
                                     <a href="{{ url_for('similar_player.index', id = id) }}"><i class="menu-icon fa fa-fort-awesome"></i> Similar Player </a>
@@ -93,10 +99,16 @@
                                 </a>
                                 <div class="media-body">
                                     <a href="{{ url_for('player.index', id = similar_player.id) }}">
-                                        <h2 class="text-dark display-6">{{similar_player.name}}</h2>
+                                        <h2 class="text-dark display-6">{{similar_player.name}}</h2> 
                                     </a>
                                     <span>{{similar_player["nationality"]}}</span>
                                     <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_player.flag) }}" alt="" width=12% height=12%>
+                                    <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}">
+                                        <h2 class="text-dark display-6">{{similar_player.club_name}}</h2> 
+                                    </a>
+                                    <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}"></a>
+                                    <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_player.logo) }}" alt="" width=12% height=12%>
+                                    </a>
                                 </div>
                                 <!-- <div class="h1 text-muted text-right mb-4">
                                     <a href="{{ url_for('similar_player.index', id = id) }}"><i class="menu-icon fa fa-fort-awesome"></i> Similar Player </a>
