@@ -117,15 +117,19 @@ http://127.0.0.1:5000/
 
 ## Website demo 
 
-[Website page](http://129.204.216.8:5000)
+[Website page](http://127.0.0.1:5000/)
+`http://127.0.0.1:5000`
 
-**<u>(For TA) How to test our website</u>**
-
-We have four views:
-
+<br>
 
 <br>
 
 
-
-
+## MySQL Connection 
+(For Prof. and TAs)
+```
+Hostname: 127.0.0.1
+Port: 3306
+Username: erg2
+Password: 12345678
+```
