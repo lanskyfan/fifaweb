@@ -132,7 +132,7 @@ http://127.0.0.1:5000/
 
 
 ## MySQL Connection 
-(For Prof. and TAs)
+(For Prof. Lee and TAs)
 ```
 Hostname: 106.54.207.45
 Port: 3306
