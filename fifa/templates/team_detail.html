@@ -20,32 +20,34 @@
                                     <th style="vertical-align:middle; text-align: center">Nationality</th>
                                     <th style="vertical-align:middle; text-align: center">Position</th>
                                     <th style="vertical-align:middle; text-align: center">Value</th>
-                                    <th style="vertical-align:middle; text-align: center">Wage</th>
+                                    <!-- <th style="vertical-align:middle; text-align: center">Wage</th> -->
                                     <th style="vertical-align:middle; text-align: center">Overall</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     {% for player in players %}
-                                    <td class="photo" style="vertical-align:middle; text-align: center">
+                                    <td class="photo" style="vertical-align:middle; text-align: center; word-break:break-all;">
                                         <div class="round-img">
-                                            <a href="#"><img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}" alt=""></a>
+                                            <a href="{{ url_for('player.index', id = player.id) }}">
+                                                <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}" alt=""></a>
+                                            </a>      
                                         </div>
                                     </td>
-                                    <td class="Name" style="vertical-align:middle; text-align: center">
+                                    <td class="Name" style="vertical-align:middle; text-align: center; word-break:break-all;">
                                         <a class="btn btn-block " href="{{ url_for('player.index', id = player.id) }}">{{player.name}}
                                     </td>
-                                    <td class="Flag" style="vertical-align:middle; text-align: center">
+                                    <td class="Flag" style="vertical-align:middle; text-align: center; word-break:break-all;">
                                         <div class="round-img">
                                             <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player.flag) }}" alt=""></a>
-                    </div>
-                    </td>
-                    <td style="vertical-align:middle; text-align: center">{{player.nationality}}</td>
-                    <td style="vertical-align:middle; text-align: center">{{player.position}}</td>
-                    <td style="vertical-align:middle; text-align: center">€{{player.value}}M</td>
-                    <td style="vertical-align:middle; text-align: center">€{{player.wage}}K</td>
-                    <td style="vertical-align:middle; text-align: center">{{player.overall}}</td>
-                    </tr>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align:middle; text-align: center; word-break:break-all;">{{player.nationality}}</td>
+                                    <td style="vertical-align:middle; text-align: center; word-break:break-all;">{{player.position}}</td>
+                                    <td style="vertical-align:middle; text-align: center; word-break:break-all;white-space:nowrap;">€{{player.value}}M</td>
+                                    <!-- <td style="vertical-align:middle; text-align: center; word-break:break-all;">€{{player.wage}}K</td> -->
+                                    <td style="vertical-align:middle; text-align: center; word-break:break-all;">{{player.overall}}</td>
+                                </tr>
                     {% endfor %}
                     </tbody>
                     </table>
@@ -159,6 +161,16 @@
 
 <script src="../static/js/widgets.js"></script>
 
+<script src="../static/js/lib/data-table/datatables.min.js"></script>
+<script src="../static/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+<script src="../static/js/lib/data-table/dataTables.buttons.min.js"></script>
+<script src="../static/js/lib/data-table/buttons.bootstrap.min.js"></script>
+<script src="../static/js/lib/data-table/jszip.min.js"></script>
+<script src="../static/js/lib/data-table/vfs_fonts.js"></script>
+<script src="../static/js/lib/data-table/buttons.html5.min.js"></script>
+<script src="../static/js/lib/data-table/buttons.print.min.js"></script>
+<script src="../static/js/lib/data-table/buttons.colVis.min.js"></script>
+<script src="../static/js/init/datatables-init.js"></script>
 
 
 <script type="text/javascript">

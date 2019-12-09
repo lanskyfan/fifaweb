@@ -9,7 +9,8 @@
 
 
     $('#bootstrap-data-table').DataTable({
-		lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
+		lengthMenu: [[15, 30, 50, -1], [15, 30, 50, "All"]],
+		// margin: auto,
 		"searching": false,
 		"paging": true, 
 		"info": false,         

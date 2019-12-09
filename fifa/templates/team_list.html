@@ -47,8 +47,10 @@
                                         </td>
                                     <td class="Club Logo" style="vertical-align:middle; text-align: center">
                                         <div class="round-img">
-                                            <a href="#"><img class="rounded-0" src="{{ url_for('static', filename='images/club/'+team.club_logo) }}" alt=""></a>
-                    </div>
+                                            <a href="{{ url_for('team_detail.index', id = team.club_id) }}">
+                                                <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+team.club_logo) }}" alt=""></a>
+                                            </a>
+                                            </div>
                     </td>
                     <td style="vertical-align:middle; text-align: center">{{team.count}}</td>
                     <td style="vertical-align:middle; text-align: center">{{team.overall}}</td>

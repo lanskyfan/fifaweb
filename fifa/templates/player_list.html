@@ -45,9 +45,9 @@
                                 {% for player in players %}
                                 <tr>
                                     <td class="photo">
-                                        <div class="round-img">
-                                            <a href="#"><img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}" alt=""></a>
-                                        </div>
+                                        <a href="{{ url_for('player.index', id = player.id) }}">
+                                            <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player.photo) }}" alt="">
+                                        </a>
                                     </td>
                                     <td class="Name" style="vertical-align:middle; text-align: center">
                                         <a class="btn btn-block " href="{{ url_for('player.index', id = player.id) }}">{{player.name}}
