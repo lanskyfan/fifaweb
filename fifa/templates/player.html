@@ -13,20 +13,21 @@
                                         <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+player_detail.photo) }}" alt=""></a>
                                     </a>
                                     <div class="media-body">
-                                        <h2 class="text-dark display-6">{{player_detail["name"]}}</h2>
+                                        <h3 class="text-dark display-6">{{player_detail["name"]}}</h3>
+                                        <span>Position: {{player_detail["position"]}}</span>
+                                        <br>
                                         <span>{{player_detail["nationality"]}}</span>
-                                        <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=16% height=16%>
+                                        <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=12% height=12%>
                                         <br>
                                         <a href="{{ url_for('team_detail.index', id = player_detail.club_id) }}">
                                             <span>{{player_detail.club_name}}</span>
                                         </a>
-
                                         <a href="{{ url_for('team_detail.index', id = player_detail.club_id) }}">
-                                            <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+player_detail.logo) }}" alt="" width=14% height=14%>
+                                            <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+player_detail.logo) }}" alt="" width=12% height=12%>
                                         </a>
                                     </div>
                                     <button type="button" class="btn btn-outline-primary btn-sm">
-                                        <a href="{{ url_for('similar_player.index', id = id) }}"><i class="fa fa-bookmark" aria-hidden="true"></i> Similar Player </a>
+                                        <a href="{{ url_for('similar_player.index', id = id) }}"><i class="fa fa-bookmark" aria-hidden="true"></i> Similar Players</a>
                                     </button>
                                 </div>
                             </div>
