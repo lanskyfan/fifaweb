@@ -25,21 +25,26 @@
                     <section class="card">
                         <div class="card-header user-header alt bg-light">
                             <div class="media">
-                                <a href="#">
+                                <a href="{{ url_for('player.index', id = similar_players[0].id) }}">
                                     <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_players[0].photo)}}" alt=""></a>
                                 </a>
                                 <div class="media-body">
                                     <a href="{{ url_for('player.index', id = similar_players[0].id) }}">
-                                        <h2 class="text-dark display-6">{{similar_players[0].name}}</h2>
+                                        <h3 class="text-dark display-6">{{similar_players[0].name}}</h3>
                                     </a>
+                                    <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                                    <span>Position: {{similar_players[0]["position"]}}</span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>Age: {{similar_players[0]["age"]}}</span>
+                                    <br>
                                     <span>{{similar_players[0]["nationality"]}}</span>
-                                    <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_players[0].flag) }}" alt="" width=10% height=10%>
+                                    <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_players[0].flag) }}" alt="" width=8% height=8%>
                                     <br>
                                     <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}">
                                         <span>{{similar_players[0].club_name}}</span>
                                     </a>
-                                    <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}"></a>
-                                    <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_players[0].logo) }}" alt="" width=10% height=10%>
+                                    <a href="{{ url_for('team_detail.index', id = similar_players[0].club_id) }}">
+                                        <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_players[0].logo) }}" alt="" width=8% height=8%>
                                     </a>
                                 </div>
                                 <!-- <div class="h1 text-muted text-right mb-4">
@@ -87,21 +92,26 @@
                     <section class="card">
                         <div class="card-header user-header alt bg-light">
                             <div class="media">
-                                <a href="#">
+                                <a href="{{ url_for('player.index', id = similar_player.id) }}">
                                     <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_player.photo)}}" alt=""></a>
                                 </a>
                                 <div class="media-body">
                                     <a href="{{ url_for('player.index', id = similar_player.id) }}">
-                                        <h2 class="text-dark display-6">{{similar_player.name}}</h2>
+                                        <h3 class="text-dark display-6">{{similar_player.name}}</h3>
                                     </a>
+                                    <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                                    <span>Position: {{similar_player["position"]}}</span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>Age: {{similar_player["age"]}}</span>
+                                    <br>
                                     <span>{{similar_player["nationality"]}}</span>
-                                    <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_player.flag) }}" alt="" width=10% height=10%>
+                                    <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_player.flag) }}" alt="" width=8% height=8%>
                                     <br>
                                     <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}">
                                         <span>{{similar_player.club_name}}</span>
                                     </a>
-                                    <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}"></a>
-                                    <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_player.logo) }}" alt="" width=10% height=10%>
+                                    <a href="{{ url_for('team_detail.index', id = similar_player.club_id) }}">
+                                    <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+similar_player.logo) }}" alt="" width=8% height=8%>
                                     </a>
                                 </div>
                                 <!-- <div class="h1 text-muted text-right mb-4">
