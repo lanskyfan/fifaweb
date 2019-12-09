@@ -41,6 +41,10 @@ def index(id):
         " WHERE club_id = %s", id
     )
     team_attribute = cursor.fetchone()
+    team_attribute["overall"]=int(team_attribute["overall"])
+    team_attribute["potential"]=int(team_attribute["potential"])
+    team_attribute["totalvalue"]='%.1f'%(team_attribute["totalvalue"])
+    team_attribute["totalwage"]=int(team_attribute["totalwage"])
     return render_template('team_detail.html', players = players, club_name = club_name, attributes = attributes, team_attribute = team_attribute)
 
 
