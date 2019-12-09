@@ -101,8 +101,13 @@ To initialize the database, the following command should be executed. This comma
 flask init-db
 flask run
 ```
+If you want to use your computer as a local server, you need to run flask using this command:
 
- The main page should be on
+```shell
+flask run --host=0.0.0.0 --with-threads
+```
+Then you need to check your IP address in LAN
+The main page should be on
 
 ```http
 http://127.0.0.1:5000/
