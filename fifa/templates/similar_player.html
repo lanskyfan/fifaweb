@@ -32,7 +32,10 @@
                                     <a href="{{ url_for('player.index', id = similar_players[0].id) }}">
                                         <h3 class="text-dark display-6">{{similar_players[0].name}}</h3>
                                     </a>
+                                    <i class="fa fa-futbol-o" aria-hidden="true"></i>
                                     <span>Position: {{similar_players[0]["position"]}}</span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>Age: {{similar_players[0]["age"]}}</span>
                                     <br>
                                     <span>{{similar_players[0]["nationality"]}}</span>
                                     <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_players[0].flag) }}" alt="" width=8% height=8%>
@@ -89,14 +92,17 @@
                     <section class="card">
                         <div class="card-header user-header alt bg-light">
                             <div class="media">
-                                <a href="{{ url_for('player.index', id = similar_players[0].id) }}">
+                                <a href="{{ url_for('player.index', id = similar_player.id) }}">
                                     <img class="rounded-circle" src="{{ url_for('static', filename='images/player/'+similar_player.photo)}}" alt=""></a>
                                 </a>
                                 <div class="media-body">
                                     <a href="{{ url_for('player.index', id = similar_player.id) }}">
                                         <h3 class="text-dark display-6">{{similar_player.name}}</h3>
                                     </a>
+                                    <i class="fa fa-futbol-o" aria-hidden="true"></i>
                                     <span>Position: {{similar_player["position"]}}</span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>Age: {{similar_player["age"]}}</span>
                                     <br>
                                     <span>{{similar_player["nationality"]}}</span>
                                     <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+similar_player.flag) }}" alt="" width=8% height=8%>
