@@ -14,7 +14,10 @@
                                     </a>
                                     <div class="media-body">
                                         <h3 class="text-dark display-6">{{player_detail["name"]}}</h3>
-                                        <span>Position: {{player_detail["position"]}}</span>
+                                        <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                                        <span>Position: {{player_detail["position"]+"  "}}</span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <span>Age: {{player_detail["age"]}}</span>
                                         <br>
                                         <span>{{player_detail["nationality"]}}</span>
                                         <img class="rounded-0" src="{{ url_for('static', filename='images/flag/'+player_detail.flag) }}" alt="" width=12% height=12%>
