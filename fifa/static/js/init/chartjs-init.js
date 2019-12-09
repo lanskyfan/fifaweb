@@ -490,7 +490,7 @@ function fetch_defending_and_change(id){
     ).then(
         function (data) {
             bar_charts2_update_data(data);
-            console.log(data)
+            // console.log(data)
         }
     )
 }
@@ -527,7 +527,7 @@ function fetch_gk_and_change(id){
     ).then(
         function (data) {
             bar_charts3_update_data(data);
-            console.log(data)
+            // console.log(data)
         }
     )
 }
@@ -553,7 +553,7 @@ function fetch_gk_and_change(id){
     var id_value = parseInt(document.getElementById('empty').name)
     // var id_value1= parseInt(document.getElementById('empty1').name)
 
-    console.log(id_value)
+    // console.log(id_value)
 
 
 

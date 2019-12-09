@@ -36,7 +36,6 @@ def player_score(id_old, id_new):
         player_score_new.append(new_player[key])
 
     player_score_all = [player_score_old, player_score_new]
-    print(player_score_all)
     return  jsonify(player_score_all)
 
 
