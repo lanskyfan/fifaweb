@@ -59,9 +59,9 @@ def index(id):
     similar_players = []
     for player in players:
         cursor.execute(
-        "SELECT p.id id, p.club_id club_id, p.photo photo, p.name name, p.position position, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential, c.club_name club_name, c.logo logo"
-        " FROM player p, nation n , club c"
-        " WHERE p.nation_id = n.nation_id AND p.club_id=c.club_id AND p.id = %s", player
+        "SELECT p.id id, p.club_id club_id, p.photo photo, p.name name, p.position position, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential, t.club_name club_name, t.club_logo logo"
+        " FROM player p, nation n , team t"
+        " WHERE p.nation_id = n.nation_id AND p.club_id=t.club_id AND p.id = %s", player
         )
         similar_player = cursor.fetchone()
         similar_player["value"] = '%.1f' % (similar_player["value"])

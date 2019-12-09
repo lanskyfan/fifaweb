@@ -20,9 +20,9 @@
                                         <a href="{{ url_for('team_detail.index', id = player_detail.club_id) }}">
                                             <span>{{player_detail.club_name}}</span>
                                         </a>
-
+                                        <span>{{player_detail.position}}</span>
                                         <a href="{{ url_for('team_detail.index', id = player_detail.club_id) }}">
-                                            <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+player_detail.logo) }}" alt="" width=14% height=14%>
+                                            <img class="rounded-0" src="{{ url_for('static', filename='images/club/'+player_detail.club_logo) }}" alt="" width=14% height=14%>
                                         </a>
                                     </div>
                                     <button type="button" class="btn btn-outline-primary btn-sm">
