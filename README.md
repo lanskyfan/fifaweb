@@ -7,6 +7,7 @@
   - [Introduction](#introduction)
   - [Setting up the environment](#setting-up-the-environment)
   - [Website demo](#website-demo)
+  - [MySQL Connection](#mysql-connection)
 
 <br>
 
@@ -128,7 +129,7 @@ http://127.0.0.1:5000/
 ## MySQL Connection 
 (For Prof. and TAs)
 ```
-Hostname: 127.0.0.1
+Hostname: 106.54.207.45
 Port: 3306
 Username: erg2
 Password: 12345678

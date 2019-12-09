@@ -161,7 +161,6 @@ function fetch_similar_and_change(id1,id2) {
     ).then(
         function (data) {
             radar_charts2_update_data(data,id2);
-            console.log(data);
         }
     )
 }
@@ -177,7 +176,6 @@ function fetch_similar_and_change(id1,id2) {
     // var id_value3= parseInt(document.getElementById('empty3').name)
     // var id_value4= parseInt(document.getElementById('empty4').name)
     // var id_value5= parseInt(document.getElementById('empty5').name)
-        console.log(id_value1);
         fetch_similar_and_change(id_value,id_value1);
     }
     // fetch_similar_and_change(id_value,id_value2)

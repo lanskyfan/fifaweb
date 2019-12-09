@@ -36,7 +36,6 @@ def player_score(id_old, id_new):
         player_score_new.append(new_player[key])
 
     player_score_all = [player_score_old, player_score_new]
-    print(player_score_all)
     return  jsonify(player_score_all)
 
 
@@ -65,6 +64,7 @@ def index(id):
         " WHERE p.nation_id = n.nation_id AND p.club_id=c.club_id AND p.id = %s", player
         )
         similar_player = cursor.fetchone()
+        similar_player["value"] = '%.1f' % (similar_player["value"])
         similar_players.append(similar_player)
     # cursor.execute(
     # "SELECT p.id id, p.photo photo, p.name name, n.flag flag, n.nationality nationality, p.value value, p.wage wage, p.overall overall, p.potential potential"

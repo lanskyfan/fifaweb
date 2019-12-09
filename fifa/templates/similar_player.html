@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block title %}Player Page{% endblock %} {% block content %}
 
-<input id="empty" name={ {id}} hidden> </label>
-<input id="empty1" name={ {similar_players[1].id}} hidden> </label>
-<input id="empty2" name={ {similar_players[2].id}} hidden> </label>
-<input id="empty3" name={ {similar_players[3].id}} hidden> </label>
-<input id="empty4" name={ {similar_players[4].id}} hidden> </label>
-<input id="empty5" name={ {similar_players[5].id}} hidden> </label>
+<input id="empty" name={{id}} hidden> </label>
+<input id="empty1" name={{similar_players[1].id}} hidden> </label>
+<input id="empty2" name={{similar_players[2].id}} hidden> </label>
+<input id="empty3" name={{similar_players[3].id}} hidden> </label>
+<input id="empty4" name={{similar_players[4].id}} hidden> </label>
+<input id="empty5" name={{similar_players[5].id}} hidden> </label>
 
 <div class="content">
     <div class="animated fadeIn">
@@ -124,9 +124,6 @@
                                 <a>  Wage <i class="fa fa-eur"></i> <span class="badge badge-warning pull-right r-activity">{{similar_player["wage"]}} K</span></a>
                             </li>
                         </ul>
-
-
-
                     </section>
                 </aside>
             </div>
