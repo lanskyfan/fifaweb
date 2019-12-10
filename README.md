@@ -55,20 +55,6 @@ It aims at Designing a FIFA website with an integrated data management system. T
    pip install cryptography
    ```
 
-3. To simplify development, create a mysql database called 'photo'. **[for now: skip the step]**
-
-   ```
-   CREATE DATABASE photo;
-   ```
-
-4. When log in mysql as root, create a  user 'photodev' and grant privilege.**[for now: skip the step]**
-
-   ```
-   CREATE USER 'photodev'@'localhost' IDENTIFIED BY '123456';
-   GRANT ALL PRIVILEGES ON photo.* TO 'photodev'@'localhost';
-   ```
-
-
 For Linux and Mac:
 
 ```shell
@@ -95,12 +81,6 @@ $env:FLASK_ENV = "development"
 flask run
 ```
 
-To initialize the database, the following command should be executed. This command will overwrite all data in the database 'photo'
-
-```shell
-flask init-db
-flask run
-```
 If you want to use your computer as a local server, you need to run flask using this command:
 
 ```shell
@@ -139,3 +119,4 @@ Port: 3306
 Username: erg2
 Password: 12345678
 ```
+Note: This user only grants SELECT privilege on our database fifadata.
