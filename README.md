@@ -95,12 +95,6 @@ $env:FLASK_ENV = "development"
 flask run
 ```
 
-To initialize the database, the following command should be executed. This command will overwrite all data in the database 'photo'
-
-```shell
-flask init-db
-flask run
-```
 If you want to use your computer as a local server, you need to run flask using this command:
 
 ```shell
@@ -139,3 +133,4 @@ Port: 3306
 Username: erg2
 Password: 12345678
 ```
+Note: This user only grants SELECT privilege on our database fifadata.
