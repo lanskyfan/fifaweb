@@ -2,8 +2,6 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
 from werkzeug.exceptions import abort
-
-# from photo.auth import login_required
 from fifa.db import get_db
 
 bp = Blueprint('team_list', __name__)
@@ -19,18 +17,10 @@ def team_index():
         team_name = request.form['team_name']
         team_name = str(team_name)
         team_name = team_name.lower()
-        # startdate = str(startdate)
-        # expectduration = int(expectduration)
-        # price = int(price)
-        # ordertype = str(ordertype)
-        # managername = str(managername)
-        # description = str(description)
-        # ordertype = ordertype.lower()
+
         error = None
         if not team_name:
             error = 'Basic information is not complete.'
-
-        # val = (team_name,)
         cursor.execute("SELECT * FROM team WHERE LOWER(club_name) LIKE %s" , ("%"+team_name+"%",))
         teams = cursor.fetchall()
 

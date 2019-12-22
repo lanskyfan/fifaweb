@@ -57,28 +57,10 @@ def close_db(e=None):
         db.close()
 
 
-# def init_db():
-#     db = get_db()
-#     cursor = db.cursor()
-#     DATABASE=os.path.join(os.path.dirname(__file__), 'schema_order.sql')
-#     stmts = parse_sql(DATABASE)
-#     for stmt in stmts:
-#         cursor.execute(stmt)
-    
-#     db.commit()
-#     INSERTION=os.path.join(os.path.dirname(__file__), 'insert.sql')
-#     insts = parse_sql(INSERTION)
-#     for inst in insts:
-#         cursor.execute(inst)
-#     db.commit()
-
-
-
 @click.command('init-db')
 @with_appcontext
 def init_db_command():
     """Clear the existing data and create new tables."""
-    # init_db()
     click.echo('Initialized the database.')
 
 def init_app(app):
